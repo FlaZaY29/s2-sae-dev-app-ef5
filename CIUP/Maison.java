@@ -3,11 +3,11 @@ package CIUP;
 public class Maison {
 
 	private int num;
-	private string nom;
-	private string desc;
-	private string tel;
-	private string localisation;
-	private string directeur;
+	private String nom;
+	private String desc;
+	private String tel;
+	private String localisation;
+	private String directeur;
 	private int anneeCreation;
 	private int dateFete;
 	private int dureeFete;

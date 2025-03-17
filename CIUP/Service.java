@@ -6,8 +6,8 @@ public class Service {
 
 	Collection<MaisonInternationale> saMaison;
 	private int num;
-	private string nom;
-	private string desc;
+	private String nom;
+	private String desc;
 	private int heureOuv;
 	private int heureFerm;
 

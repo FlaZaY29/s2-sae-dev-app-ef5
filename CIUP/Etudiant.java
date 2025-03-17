@@ -3,26 +3,39 @@ package CIUP;
 public class Etudiant {
 
 	private int num;
-	private string nom;
-	private string prenom;
-	private string adresse;
-	private string nationalite;
-	private string dateNaissance;
-	private string tel;
-	private string email;
-	private string promotion;
-	private string universite;
-	private string pieceIdentite;
+	private String nom;
+	private String prenom;
+	private String adresse;
+	private String nationalite;
+	private String dateNaissance;
+	private String tel;
+	private String email;
+	private String promotion;
+	private String universite;
+	private String pieceIdentite;
 	private boolean actuEtudiant;
 
-	public void inscrire() {
-		// TODO - implement Etudiant.inscrire
-		throw new UnsupportedOperationException();
-	}
+	
 
-	public void afficheInfo() {
-		// TODO - implement Etudiant.afficheInfo
-		throw new UnsupportedOperationException();
+	public String to_String()
+	{
+		String s = "";
+		s += num;
+		s += " ; " + nom;
+		s += " ; " + prenom;
+		s += " ; " + adresse;
+		s += " ; " + nationalite;
+		s += " ; " + dateNaissance;
+		s += " ; " + tel;
+		s += " ; " + email;
+		s += " ; " + promotion;
+		s += " ; " + universite;
+		s += " ; " + pieceIdentite;
+		return s;
 	}
+	public void afficheInfo() {
+		System.out.println(to_String());
+	}
+	
 
 }

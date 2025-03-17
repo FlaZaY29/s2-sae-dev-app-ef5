@@ -2,7 +2,7 @@ package CIUP;
 
 public class MaisonClassique {
 
-	private string nationalite;
+	private String nationalite;
 	private int placeDispo;
 	private int nbPlace;
 

@@ -25,4 +25,12 @@ public class Etudiant {
 		throw new UnsupportedOperationException();
 	}
 
+	public String getNom(){
+		return nom;
+	}
+
+	public String getPrenom(){
+		return prenom;
+	}
+
 }

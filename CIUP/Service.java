@@ -21,4 +21,11 @@ public class Service {
 		throw new UnsupportedOperationException();
 	}
 
+    public String getNom() {
+        return nom;
+    }
+
+    public String getDescription() {
+        return desc;
+    }
 }

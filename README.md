@@ -19,7 +19,7 @@ GitHub : Gestion de version du code.
 JUnit : Pour les tests unitaires.
 Figma/Draw.io/Penpot : Outils pour la création des maquettes et storyboards IHM.
 
-voici les membre de notre projet:
+Voici les membres de notre projet:
 - Mouhou Maksen
 - Zamperlini Flavio
 - Urkmez Yavuz

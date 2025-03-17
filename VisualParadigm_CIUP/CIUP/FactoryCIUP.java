@@ -5,7 +5,7 @@ public class FactoryCIUP {
 	Etudiant sesEtudiants;
 	Service sesServices;
 	MaisonInternationale saMaison;
-	private string listeMaison;
+	private String listeMaison;
 
 	public void creeMaison() {
 		// TODO - implement FactoryCIUP.creeMaison

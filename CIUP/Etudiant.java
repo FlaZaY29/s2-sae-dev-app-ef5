@@ -3,16 +3,16 @@ package CIUP;
 public class Etudiant {
 
 	private int num;
-	private string nom;
-	private string prenom;
-	private string adresse;
-	private string nationalite;
-	private string dateNaissance;
-	private string tel;
-	private string email;
-	private string promotion;
-	private string universite;
-	private string pieceIdentite;
+	private String nom;
+	private String prenom;
+	private String adresse;
+	private String nationalite;
+	private String dateNaissance;
+	private String tel;
+	private String email;
+	private String promotion;
+	private String universite;
+	private String pieceIdentite;
 	private boolean actuEtudiant;
 
 	public void inscrire() {

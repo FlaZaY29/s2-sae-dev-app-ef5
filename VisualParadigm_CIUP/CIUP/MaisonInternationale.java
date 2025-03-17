@@ -4,11 +4,11 @@ public class MaisonInternationale {
 
 	Service sesServices;
 	private int nom;
-	private string desc;
-	private string listeEtudiant;
-	private string localisation;
-	private string anneeCreation;
-	private string tel;
+	private String desc;
+	private String listeEtudiant;
+	private String localisation;
+	private String anneeCreation;
+	private String tel;
 
 	public void ajoutService() {
 		// TODO - implement MaisonInternationale.ajoutService

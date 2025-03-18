@@ -56,5 +56,108 @@ public class Etudiant {
 		System.out.println(num + " ; " + nom + " ; " + prenom + " ; " + promotion + " ; " + universite);
 	}
 
+	// Getters and Setters
+public int getNum() {
+    return num;
+}
 
+public void setNum(int num) {
+    this.num = num;
+}
+
+public String getNom() {
+    return nom;
+}
+
+public void setNom(String nom) {
+    this.nom = nom;
+}
+
+public String getPrenom() {
+    return prenom;
+}
+
+public void setPrenom(String prenom) {
+    this.prenom = prenom;
+}
+
+public String getAdresse() {
+    return adresse;
+}
+
+public void setAdresse(String adresse) {
+    this.adresse = adresse;
+}
+
+public String getNationalite() {
+    return nationalite;
+}
+
+public void setNationalite(String nationalite) {
+    this.nationalite = nationalite;
+}
+
+public String getDateNaissance() {
+    return dateNaissance;
+}
+
+public void setDateNaissance(String dateNaissance) {
+    this.dateNaissance = dateNaissance;
+}
+
+public String getTel() {
+    return tel;
+}
+
+public void setTel(String tel) {
+    this.tel = tel;
+}
+
+public String getEmail() {
+    return email;
+}
+
+public void setEmail(String email) {
+    this.email = email;
+}
+
+public String getPromotion() {
+    return promotion;
+}
+
+public void setPromotion(String promotion) {
+    this.promotion = promotion;
+}
+
+public String getUniversite() {
+    return universite;
+}
+
+public void setUniversite(String universite) {
+    this.universite = universite;
+}
+
+public String getPieceIdentite() {
+    return pieceIdentite;
+}
+
+public void setPieceIdentite(String pieceIdentite) {
+    this.pieceIdentite = pieceIdentite;
+}
+
+public boolean isActuEtudiant() {
+    return actuEtudiant;
+}
+
+public void setActuEtudiant(boolean actuEtudiant) {
+    this.actuEtudiant = actuEtudiant;
+}
+
+public Maison getMaisonActuelle() {
+    return maisonActuelle;
+}
+
+public void setMaisonActuelle(Maison maisonActuelle) {
+    this.maisonActuelle = maisonActuelle;
+}
 }

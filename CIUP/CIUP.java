@@ -1,13 +1,16 @@
 package CIUP;
 
+import java.util.*;
+
 public class CIUP {
 
-	private Maison listeMaison;
-	private Service listeService;
+	private ArrayList<Maison> listeMaison;
+	private ArrayList<Service> listeService;
 
 	public void afficheListeMaison() {
-		// TODO - implement CIUP.afficheListeMaison
-		throw new UnsupportedOperationException();
+		for (Maison maison : listeMaison) {
+			maison.afficheMaison();
+		}
 	}
 
 	public void afficheListeService() {

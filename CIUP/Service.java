@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Service {
 
-	Collection<MaisonInternationale> saMaison;
+	ArrayList<MaisonInternationale> saMaison;
 	private int num;
 	private String nom;
 	private String desc;
@@ -39,5 +39,16 @@ public class Service {
 	// Setter pour le nom du service
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public void afficheService() {
+		System.out.println("Service: " + nom);
+		System.out.println("Description: " + desc);
+		System.out.println("Heure d'ouverture: " + heureOuv);
+		System.out.println("Heure de fermeture: " + heureFerm);
+		System.out.println("Maison(s) associee(s): ");
+		for (MaisonInternationale maison : saMaison) {
+			System.out.println(maison.getNom());
+		}
 	}
 }

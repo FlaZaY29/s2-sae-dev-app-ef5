@@ -14,47 +14,23 @@ public class Etudiant {
 	private String universite;
 	private String pieceIdentite;
 	private boolean actuEtudiant;
-	Maison maisonActuelle;
 
-
-	public Etudiant(int num, String nom, String prenom, String adresse, String nationalite, String dateNaissance, String tel, String email, String promotion, String universite, String pieceIdentite) {
-	    this.num = num;
-	    this.nom = nom;
-	    this.prenom = prenom;
-	    this.adresse = adresse;
-	    this.nationalite = nationalite;
-	    this.dateNaissance = dateNaissance;
-	    this.tel = tel;
-	    this.email = email;
-	    this.promotion = promotion;
-	    this.universite = universite;
-	    this.pieceIdentite = pieceIdentite;
-	    this.actuEtudiant = true; // l'etudiant est actuellement dans sa periode d'etude
-	    this.maisonActuelle = null; // l'etudiant n'est pas encore affecte a une maison
+	public void inscrire() {
+		// TODO - implement Etudiant.inscrire
+		throw new UnsupportedOperationException();
 	}
 
-	public String to_String()
-	{
-		String s = "";
-		s += num;
-		s += " ; " + nom;
-		s += " ; " + prenom;
-		s += " ; " + adresse;
-		s += " ; " + nationalite;
-		s += " ; " + dateNaissance;
-		s += " ; " + tel;
-		s += " ; " + email;
-		s += " ; " + promotion;
-		s += " ; " + universite;
-		return s;
-	}
 	public void afficheInfo() {
-		System.out.println(to_String());
+		// TODO - implement Etudiant.afficheInfo
+		throw new UnsupportedOperationException();
 	}
 
-	public void afficheInfoResume() {
-		System.out.println(num + " ; " + nom + " ; " + prenom + " ; " + promotion + " ; " + universite);
+	public String getNom(){
+		return nom;
 	}
 
+	public String getPrenom(){
+		return prenom;
+	}
 
 }

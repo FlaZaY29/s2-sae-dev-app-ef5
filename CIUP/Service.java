@@ -11,21 +11,33 @@ public class Service {
 	private int heureOuv;
 	private int heureFerm;
 
-	public void ajoutService() {
-		// TODO - implement Service.ajoutService
-		throw new UnsupportedOperationException();
+	// Constructeur
+	public Service(int num, String nom, String desc, int heureOuv, int heureFerm) {
+		this.num = num;
+		this.nom = nom;
+		this.desc = desc;
+		this.heureOuv = heureOuv;
+		this.heureFerm = heureFerm;
+		this.saMaison = new ArrayList<>();
 	}
 
-	public void supprService() {
-		// TODO - implement Service.supprService
-		throw new UnsupportedOperationException();
+	// Méthode pour ajouter un service
+	public void ajoutService(MaisonInternationale maison) {
+		saMaison.add(maison);
 	}
 
-    public String getNom() {
-        return nom;
-    }
+	// Méthode pour supprimer un service
+	public void supprService(MaisonInternationale maison) {
+		saMaison.remove(maison);
+	}
 
-    public String getDescription() {
-        return desc;
-    }
+	// Getter pour le nom du service
+	public String getNom() {
+		return nom;
+	}
+
+	// Setter pour le nom du service
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 }

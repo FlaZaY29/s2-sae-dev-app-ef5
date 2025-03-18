@@ -1,22 +1,28 @@
 package CIUP;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class CIUP {
 
-	private ArrayList<Maison> listMaison;
-	private ArrayList<Service> listService;
+	private ArrayList<Maison> listeMaison = new ArrayList<>();
+	private ArrayList<Service> listeService = new ArrayList<>();
 
-	public void printListMaison() {
-
+	public void afficheListeMaison() {
+		for (Maison maison : listeMaison) {
+			maison.afficheMaison();
+		}
+	}
+	
+	public void afficheListeService() {
+		for (Service service : listeService) {
+			service.afficheService();
+		}
 	}
 
-	public void printListService() {
-
+	public void ajouterMaison(Maison maison) {
+		listeMaison.add(maison);
 	}
-
-	public static void main(String[] args) {
-		System.out.println("Hello World !");
+	public void ajouterService(Service service) {
+		listeService.add(service);
 	}
-
 }

@@ -74,7 +74,7 @@ public class Maison {
         }
     }
 
-	public void afficheMaisons(){
-
+	public void afficheMaison(){
+        System.out.println("Maison: " + nom);
 	}
 }

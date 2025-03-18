@@ -1,13 +1,15 @@
 package CIUP;
 
-public class MaisonClassique {
+public class MaisonClassique extends Maison{
 
 	private String nationalite;
 	private int placeDispo;
 	private int nbPlace;
 
 	// Constructeur
-    public MaisonClassique(String nationalite, int nbPlace) {
+    public MaisonClassique(int num, String nom, String desc, String tel, String localisation, String directeur,
+                           int anneeCreation, int dateFete, int dureeFete, int capacite) {
+        super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete, capacite);
         this.nationalite = nationalite;
         this.nbPlace = nbPlace;
         this.placeDispo = nbPlace;
@@ -54,5 +56,4 @@ public class MaisonClassique {
         this.nbPlace = nbPlace;
     }
 
-	
 }

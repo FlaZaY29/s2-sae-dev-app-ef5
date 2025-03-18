@@ -3,26 +3,27 @@ package CIUP;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MaisonInternationale {
+public class MaisonInternationale extends Maison {
 
 	ArrayList<Service> sesServices;
 	private String nom;
 	private String desc;
-	private ArrayList<Etudiant> listeEtudiant;
 	private String localisation;
 	private int anneeCreation;
 	private String tel;
+	private ArrayList<Etudiant> listeEtudiant;
 
 	// Constructeur
-    public MaisonInternationale(String nom, String desc, String localisation, int annee, String tel) {
-        this.nom = nom;
-        this.desc = desc;
-        this.localisation = localisation;
-        this.anneeCreation = annee;
-        this.tel = tel;
-        this.sesServices = new ArrayList<>();
-        this.listeEtudiant = new ArrayList<>();
-    }
+    public MaisonInternationale(int num, String nom, String desc, String tel, String localisation, String directeur,
+								int anneeCreation, int dateFete, int dureeFete, int capacite) {
+		super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete, capacite);
+		this.nom = nom;
+		this.desc = desc;
+		this.localisation = localisation;
+		this.anneeCreation = anneeCreation;
+		this.tel = tel;
+		this.listeEtudiant = new ArrayList<Etudiant>();
+	}
 
     // Méthode pour ajouter un service à la Maison Internationale
     public void ajoutService(Service service) {
@@ -83,7 +84,7 @@ public class MaisonInternationale {
     public void setListeEtudiant(ArrayList<Etudiant> listeEtu) {
         this.listeEtudiant = listeEtu;
     }
-	
+
 
     public String getLocalisation() {
         return localisation;

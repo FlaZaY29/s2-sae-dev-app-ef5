@@ -4,18 +4,19 @@ import java.util.*;
 
 public class CIUP {
 
-	private ArrayList<Maison> listeMaison;
-	private ArrayList<Service> listeService;
+	private ArrayList<Maison> listMaison;
+	private ArrayList<Service> listService;
 
-	public void afficheListeMaison() {
-		for (Maison maison : listeMaison) {
-			maison.afficheMaison();
-		}
+	public void printListMaison() {
+
 	}
 
-	public void afficheListeService() {
-		// TODO - implement CIUP.afficheListeService
-		throw new UnsupportedOperationException();
+	public void printListService() {
+
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Hello World !");
 	}
 
 }

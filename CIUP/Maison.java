@@ -28,6 +28,8 @@ public class Maison {
         this.listeEtudiant = new Etudiant[capacite];
     }
 
+
+
     // Méthode pour ajouter un étudiant
     public boolean ajoutEtudiant(Etudiant etu) {
         for (int i = 0; i < listeEtudiant.length; i++) {
@@ -71,4 +73,8 @@ public class Maison {
             }
         }
     }
+
+	public void afficheMaisons(){
+
+	}
 }

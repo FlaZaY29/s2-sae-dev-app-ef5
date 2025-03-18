@@ -5,16 +5,11 @@ import java.util.List;
 
 public class FactoryCIUP {
 
-    private List<Maison> listeMaisons;  // Liste des maisons
-    private List<Etudiant> listeEtudiants;  // Liste des étudiants
-    private List<Service> listeServices;  // Liste des services
+    private ArrayLis<Maison> listeMaisons;  // Liste des maisons
+    private ArrayLis<Etudiant> listeEtudiants;  // Liste des étudiants
+    private ArrayLis<Service> listeServices;  // Liste des services
 
-    public FactoryCIUP() {
-        // Initialisation des listes
-        this.listeMaisons = new ArrayList<>();
-        this.listeEtudiants = new ArrayList<>();
-        this.listeServices = new ArrayList<>();
-    }
+
 
     // Créer une maisonClassique
     public void creeMaison(String nom, String nationalite, String directeur, String localisationGPS, int nbChambres) {

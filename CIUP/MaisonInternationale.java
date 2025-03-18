@@ -108,4 +108,12 @@ public class MaisonInternationale {
     public void setTel(String tel) {
         this.tel = tel;
     }
+
+	public ArrayList<Service> getSesServices() {
+		return sesServices;
+	}
+
+	public void setSesServices(ArrayList<Service> sesServices) {
+		this.sesServices = sesServices;
+	}
 }

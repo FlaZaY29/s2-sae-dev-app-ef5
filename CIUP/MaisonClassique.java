@@ -53,4 +53,6 @@ public class MaisonClassique {
     public void setNbPlace(int nbPlace) {
         this.nbPlace = nbPlace;
     }
+
+	
 }

@@ -1,5 +1,7 @@
 package CIUP;
 
+import java.util.ArrayList;
+
 public class Maison {
 
 	private int num;
@@ -9,13 +11,13 @@ public class Maison {
 	private String localisation;
 	private String directeur;
 	private int anneeCreation;
-	private int dateFete;
+	private String dateFete;
 	private int dureeFete;
-	private Etudiant[] listeEtudiant;
+    
 
     // Constructeur
     public Maison(int num, String nom, String desc, String tel, String localisation, String directeur,
-                  int anneeCreation, int dateFete, int dureeFete, int capacite) {
+                  int anneeCreation, String dateFete, int dureeFete) {
         this.num = num;
         this.nom = nom;
         this.desc = desc;
@@ -25,32 +27,14 @@ public class Maison {
         this.anneeCreation = anneeCreation;
         this.dateFete = dateFete;
         this.dureeFete = dureeFete;
-        this.listeEtudiant = new Etudiant[capacite];
+    }
+    //constructeur vide
+    public Maison() {
     }
 
 
 
-    // Méthode pour ajouter un étudiant
-    public boolean ajoutEtudiant(Etudiant etu) {
-        for (int i = 0; i < listeEtudiant.length; i++) {
-            if (listeEtudiant[i] == null) {
-                listeEtudiant[i] = etu;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // Méthode pour supprimer un étudiant
-    public boolean supprEtudiant(Etudiant etu) {
-        for (int i = 0; i < listeEtudiant.length; i++) {
-            if (listeEtudiant[i] != null && listeEtudiant[i].equals(etu)) {
-                listeEtudiant[i] = null;
-                return true;
-            }
-        }
-        return false; 
-    }
+    
 
     // Méthode pour afficher la description de la maison
     public void afficheDesc() {
@@ -64,17 +48,66 @@ public class Maison {
         System.out.println("Durée de la fête: " + dureeFete + " jours");
     }
 
-    // Méthode pour afficher la liste des étudiants dans la maison
-    public void afficherEtudiants() {
-        System.out.println("Liste des étudiants dans la maison " + nom + ":");
-        for (Etudiant etu : listeEtudiant) {
-            if (etu != null) {
-                System.out.println(etu.getNom() + " " + etu.getPrenom());
-            }
-        }
-    }
+   
 
 	public void afficheMaison(){
         System.out.println("Maison: " + nom);
 	}
+    public int getNum() {
+        return num;
+    }
+    public void setNum(int num) {
+        this.num = num;
+    }
+    public String getNom() {
+        return nom;
+    }
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    public String getDesc() {
+        return desc;
+    }
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+    public String getTel() {
+        return tel;
+    }
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+    public String getLocalisation() {
+        return localisation;
+    }
+    public void setLocalisation(String localisation) {
+        this.localisation = localisation;
+    }
+    public String getDirecteur() {
+        return directeur;
+    }
+    public void setDirecteur(String directeur) {
+        this.directeur = directeur;
+    }
+    public int getAnneeCreation() {
+        return anneeCreation;
+    }
+    public void setAnneeCreation(int anneeCreation) {
+        this.anneeCreation = anneeCreation;
+    }
+    public String getDateFete() {
+        return dateFete;
+    }
+    public void setDateFete(String dateFete) {
+        this.dateFete = dateFete;
+    }
+    public int getDureeFete() {
+        return dureeFete;
+    }
+    public void setDureeFete(int dureeFete) {
+        this.dureeFete = dureeFete;
+    }
+   
+
+    
 }

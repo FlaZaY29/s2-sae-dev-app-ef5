@@ -11,28 +11,32 @@ public class MaisonInternationale extends Maison {
 	private String localisation;
 	private int anneeCreation;
 	private String tel;
-	private ArrayList<Etudiant> listeEtudiant;
 
 	// Constructeur
     public MaisonInternationale(int num, String nom, String desc, String tel, String localisation, String directeur,
-								int anneeCreation, int dateFete, int dureeFete, int capacite) {
-		super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete, capacite);
+								int anneeCreation, String dateFete, int dureeFete) {
+		super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
 		this.nom = nom;
 		this.desc = desc;
 		this.localisation = localisation;
 		this.anneeCreation = anneeCreation;
 		this.tel = tel;
-		this.listeEtudiant = new ArrayList<Etudiant>();
+
 	}
+    //constructeur vide
+    public MaisonInternationale() {
+    }
 
     // Méthode pour ajouter un service à la Maison Internationale
     public void ajoutService(Service service) {
         sesServices.add(service);
+        service.ajoutMaison(this);  // Ajout de la maison à la liste des maisons proposant ce service
     }
 
-    // Méthode pour ajouter un étudiant
-    public void ajoutEtudiant(Etudiant etu) {
-        listeEtudiant.add(etu);
+    // Méthode pour supprimer un service de la Maison Internationale
+    public void supprService(Service service) {
+        sesServices.remove(service);
+        service.supprMaison(this);  // Suppression de la maison de la liste des maisons proposant ce service
     }
 
     // Méthode pour afficher les informations de la Maison Internationale
@@ -48,15 +52,7 @@ public class MaisonInternationale extends Maison {
     public void afficherServices() {
         System.out.println("Services proposés par la Maison Internationale:");
         for (Service service : sesServices) {
-            System.out.println(service.getNom() + ": " + service.getDescription());
-        }
-    }
-
-    // Méthode pour afficher la liste des étudiants
-    public void afficherEtudiants() {
-        System.out.println("Liste des étudiants dans la Maison Internationale:");
-        for (Etudiant etu : listeEtudiant) {
-            System.out.println(etu.getNom() + " " + etu.getPrenom());
+            System.out.println(service.getNom() + ": " + service.getDesc());
         }
     }
 
@@ -76,15 +72,6 @@ public class MaisonInternationale extends Maison {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
-    public List<Etudiant> getListeEtudiant() {
-        return listeEtudiant;
-    }
-
-    public void setListeEtudiant(ArrayList<Etudiant> listeEtu) {
-        this.listeEtudiant = listeEtu;
-    }
-
 
     public String getLocalisation() {
         return localisation;

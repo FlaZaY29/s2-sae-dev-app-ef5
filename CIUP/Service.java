@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Service {
 
-	ArrayList<MaisonInternationale> saMaison;
+	ArrayList<MaisonInternationale> sesMaison; // Liste des maisons proposant ce service
 	private int num;
 	private String nom;
 	private String desc;
@@ -18,27 +18,22 @@ public class Service {
 		this.desc = desc;
 		this.heureOuv = heureOuv;
 		this.heureFerm = heureFerm;
-		this.saMaison = new ArrayList<>();
+		this.sesMaison = new ArrayList<>();
+	}
+
+	// Constructeur vide
+	public Service() {
+		this.sesMaison = new ArrayList<>();
 	}
 
 	// Méthode pour ajouter un service
-	public void ajoutService(MaisonInternationale maison) {
-		saMaison.add(maison);
+	public void ajoutMaison(MaisonInternationale maison) {
+		sesMaison.add(maison);
 	}
 
 	// Méthode pour supprimer un service
-	public void supprService(MaisonInternationale maison) {
-		saMaison.remove(maison);
-	}
-
-	// Getter pour le nom du service
-	public String getNom() {
-		return nom;
-	}
-
-	// Setter pour le nom du service
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void supprMaison(MaisonInternationale maison) {
+		sesMaison.remove(maison);
 	}
 
 	public void afficheService() {
@@ -47,8 +42,51 @@ public class Service {
 		System.out.println("Heure d'ouverture: " + heureOuv);
 		System.out.println("Heure de fermeture: " + heureFerm);
 		System.out.println("Maison(s) associee(s): ");
-		for (MaisonInternationale maison : saMaison) {
+		for (MaisonInternationale maison : sesMaison) {
 			System.out.println(maison.getNom());
 		}
 	}
+
+	// Getter et Setter pour les attributs
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public int getHeureOuv() {
+		return heureOuv;
+	}
+
+	public void setHeureOuv(int heureOuv) {
+		this.heureOuv = heureOuv;
+	}
+
+	public int getHeureFerm() {
+		return heureFerm;
+	}
+
+	public void setHeureFerm(int heureFerm) {
+		this.heureFerm = heureFerm;
+	}
+
+	
 }

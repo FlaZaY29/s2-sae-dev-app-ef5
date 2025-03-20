@@ -14,9 +14,10 @@ public class Etudiant {
 	private String universite;
 	private String pieceIdentite;
 	private boolean actuEtudiant;
+	private boolean enAttente;
 	Maison maisonActuelle;
 
-
+	// Constructeur
 	public Etudiant(int num, String nom, String prenom, String adresse, String nationalite, String dateNaissance, String tel, String email, String promotion, String universite, String pieceIdentite) {
 	    this.num = num;
 	    this.nom = nom;
@@ -31,6 +32,10 @@ public class Etudiant {
 	    this.pieceIdentite = pieceIdentite;
 	    this.actuEtudiant = true; // l'etudiant est actuellement dans sa periode d'etude
 	    this.maisonActuelle = null; // l'etudiant n'est pas encore affecte a une maison
+		this.enAttente = false; // l'etudiant n'est pas en attente
+	}
+	//constructeur vide
+	public Etudiant() {
 	}
 
 	public String to_String()
@@ -56,108 +61,115 @@ public class Etudiant {
 		System.out.println(num + " ; " + nom + " ; " + prenom + " ; " + promotion + " ; " + universite);
 	}
 
-	// Getters and Setters
-public int getNum() {
-    return num;
-}
 
-public void setNum(int num) {
-    this.num = num;
-}
 
-public String getNom() {
-    return nom;
-}
 
-public void setNom(String nom) {
-    this.nom = nom;
-}
 
-public String getPrenom() {
-    return prenom;
-}
 
-public void setPrenom(String prenom) {
-    this.prenom = prenom;
-}
 
-public String getAdresse() {
-    return adresse;
-}
+		// Getters and Setters
+	public int getNum() {
+		return num;
+	}
 
-public void setAdresse(String adresse) {
-    this.adresse = adresse;
-}
+	public void setNum(int num) {
+		this.num = num;
+	}
 
-public String getNationalite() {
-    return nationalite;
-}
+	public String getNom() {
+		return nom;
+	}
 
-public void setNationalite(String nationalite) {
-    this.nationalite = nationalite;
-}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
-public String getDateNaissance() {
-    return dateNaissance;
-}
+	public String getPrenom() {
+		return prenom;
+	}
 
-public void setDateNaissance(String dateNaissance) {
-    this.dateNaissance = dateNaissance;
-}
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
 
-public String getTel() {
-    return tel;
-}
+	public String getAdresse() {
+		return adresse;
+	}
 
-public void setTel(String tel) {
-    this.tel = tel;
-}
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
 
-public String getEmail() {
-    return email;
-}
+	public String getNationalite() {
+		return nationalite;
+	}
 
-public void setEmail(String email) {
-    this.email = email;
-}
+	public void setNationalite(String nationalite) {
+		this.nationalite = nationalite;
+	}
 
-public String getPromotion() {
-    return promotion;
-}
+	public String getDateNaissance() {
+		return dateNaissance;
+	}
 
-public void setPromotion(String promotion) {
-    this.promotion = promotion;
-}
+	public void setDateNaissance(String dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
 
-public String getUniversite() {
-    return universite;
-}
+	public String getTel() {
+		return tel;
+	}
 
-public void setUniversite(String universite) {
-    this.universite = universite;
-}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
 
-public String getPieceIdentite() {
-    return pieceIdentite;
-}
+	public String getEmail() {
+		return email;
+	}
 
-public void setPieceIdentite(String pieceIdentite) {
-    this.pieceIdentite = pieceIdentite;
-}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-public boolean isActuEtudiant() {
-    return actuEtudiant;
-}
+	public String getPromotion() {
+		return promotion;
+	}
 
-public void setActuEtudiant(boolean actuEtudiant) {
-    this.actuEtudiant = actuEtudiant;
-}
+	public void setPromotion(String promotion) {
+		this.promotion = promotion;
+	}
 
-public Maison getMaisonActuelle() {
-    return maisonActuelle;
-}
+	public String getUniversite() {
+		return universite;
+	}
 
-public void setMaisonActuelle(Maison maisonActuelle) {
-    this.maisonActuelle = maisonActuelle;
-}
+	public void setUniversite(String universite) {
+		this.universite = universite;
+	}
+
+	public String getPieceIdentite() {
+		return pieceIdentite;
+	}
+
+	public void setPieceIdentite(String pieceIdentite) {
+		this.pieceIdentite = pieceIdentite;
+	}
+
+	public boolean isActuEtudiant() {
+		return actuEtudiant;
+	}
+
+	public void setActuEtudiant(boolean actuEtudiant) {
+		this.actuEtudiant = actuEtudiant;
+	}
+
+	public boolean isEnAttente() {
+		return enAttente;
+	}
+
+	public void setEnAttente(boolean enAttente) {
+		this.enAttente = enAttente;
+	}
+
 }

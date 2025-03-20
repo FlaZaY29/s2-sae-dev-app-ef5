@@ -1,59 +1,94 @@
 package CIUP;
 
+import java.util.ArrayList;
+
 public class MaisonClassique extends Maison{
 
 	private String nationalite;
-	private int placeDispo;
-	private int nbPlace;
+    private int capacite;
+	ArrayList<Etudiant> listeEtudiant;
+    ArrayList<Etudiant> listeAttente;
 
 	// Constructeur
     public MaisonClassique(int num, String nom, String desc, String tel, String localisation, String directeur,
-                           int anneeCreation, int dateFete, int dureeFete, int capacite) {
-        super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete, capacite);
+                           int anneeCreation, String dateFete, int dureeFete, int capacite, String nationalite) {
+        super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
         this.nationalite = nationalite;
-        this.nbPlace = nbPlace;
-        this.placeDispo = nbPlace;
+        this.capacite = capacite;
+    }
+    //constructeur vide
+    public MaisonClassique() {
+        super();
     }
 
-    // Méthode pour inscrire un étudiant (si des places sont disponibles)
-    public boolean inscrireEtudiant(Etudiant etu) {
-        if (placeDispo > 0) {
-            placeDispo--;
-            return true;
+    // Méthode pour ajouter un étudiant et le mettre en liste d'attente si la maison est pleine
+    public void ajoutEtudiant(Etudiant etu) {
+        if(listeEtudiant.size() < capacite){
+            listeEtudiant.add(etu);
+            etu.setActuEtudiant(true);
         }
-        return false; 
-    }
-
-    // Méthode pour annuler l'inscription d'un étudiant (libère une place)
-    public void annulerInscription() {
-        if (placeDispo < nbPlace) {
-            placeDispo++;
+        else{
+            System.out.println("La maison est pleine mise en liste d'attente");
+            ajoutEtudiantAttente(etu);
         }
     }
 
-    // Getter et Setter
-    public String getNationalite() {
-        return nationalite;
+    // Méthode pour supprimer un étudiant et le remplacer par l'étudiant en premiere position de la liste d'attente
+    public void supprEtudiant(Etudiant etu) {
+        listeEtudiant.remove(etu);
+        System.out.println("L'étudiant a été supprimé de la maison");
+        etu.setActuEtudiant(false);
+        if(listeAttente.size() > 0){
+            Etudiant etuAttente = listeAttente.get(0);
+            listeAttente.remove(0);
+            ajoutEtudiant(etuAttente);
+            etuAttente.setEnAttente(false);
+        }
+        
     }
 
-    public void setNationalite(String nationalite) {
-        this.nationalite = nationalite;
+    // Méthode pour afficher la liste des étudiants dans la maison
+    public void afficherEtudiants() {
+        System.out.println("Liste des étudiants dans la maison " + getNom() + ":");
+        for (Etudiant etu : listeEtudiant) {
+            System.out.println(etu.getNom() + " " + etu.getPrenom());
+        }
     }
 
-    public int getPlaceDispo() {
-        return placeDispo;
+    // Méthode pour ajouter un étudiant en attente
+    public void ajoutEtudiantAttente(Etudiant etu) {
+        listeAttente.add(etu);
+        etu.setEnAttente(true);
     }
 
-    public void setPlaceDispo(int placeDispo) {
-        this.placeDispo = placeDispo;
+    // Méthode pour supprimer un étudiant de la liste d'attente
+    public void supprEtudiantAttente(Etudiant etu) {
+        listeAttente.remove(etu);
+        etu.setEnAttente(false);
     }
 
-    public int getNbPlace() {
-        return nbPlace;
-    }
+    // Méthode pour afficher la liste des étudiants en attente
+    public void afficherEtudiantsAttente() {
+        System.out.println("Liste des étudiants en attente pour la maison " + getNom() + ":");
+        for (Etudiant etu : listeAttente) {
+            System.out.println(etu.getNom() + " " + etu.getPrenom());
+        }
+    }   
 
-    public void setNbPlace(int nbPlace) {
-        this.nbPlace = nbPlace;
-    }
+        // Getter et Setter
+        public String getNationalite() {
+            return nationalite;
+        }
 
+        public void setNationalite(String nationalite) {
+            this.nationalite = nationalite;
+        }
+        public int getCapacite() {
+            return capacite;
+        }
+        public void setCapacite(int capacite) {
+            this.capacite = capacite;
+        }
+
+        
 }

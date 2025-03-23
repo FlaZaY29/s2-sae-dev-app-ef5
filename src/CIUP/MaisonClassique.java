@@ -39,15 +39,20 @@ public class MaisonClassique extends Maison {
 
     // Méthode pour supprimer un étudiant et le remplacer par l'étudiant en premiere position de la liste d'attente
     public void supprEtudiant(Etudiant etu) {
-        listeEtudiant.remove(etu);
-        System.out.println("L'étudiant a été supprimé de la maison");
-        etu.setActuEtudiant(false);
+        if (listeEtudiant.contains(etu)) {
+            listeEtudiant.remove(etu);
+            System.out.println("L'étudiant a été supprimé de la maison");
+            etu.setActuEtudiant(false);
+        } else {
+            System.out.println("L'étudiant n'est pas présent dans la maison");
+        }
 
         if (listeAttente.size() > 0) {
             Etudiant etuAttente = listeAttente.get(0);
             listeAttente.remove(0);
             ajoutEtudiant(etuAttente);
             etuAttente.setEnAttente(false);
+            System.out.println("Un étudiant de la liste d'attente a été ajouté à la maison");
         }
     }
 

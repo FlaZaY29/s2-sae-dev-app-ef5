@@ -15,7 +15,7 @@ public class Service {
 
     // Constructeur
     public Service(int num, String nom, String desc, int heureOuv, int heureFerm) {
-        this.sesMaison = new ArrayList<>();
+        this.sesMaison = new ArrayList<MaisonInternationale>();
         this.num = num;
         this.nom = nom;
         this.desc = desc;
@@ -25,7 +25,7 @@ public class Service {
 
     // Constructeur vide
     public Service() {
-        this.sesMaison = new ArrayList<>();
+        this.sesMaison = new ArrayList<MaisonInternationale>();
     }
 
     // Méthode pour ajouter un service

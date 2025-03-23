@@ -36,8 +36,7 @@ public class Etudiant {
     }
 
     // Constructeur vide
-    public Etudiant() {
-    }
+    public Etudiant() {}
 
     // Méthode toString
     public String toString() {

@@ -1,42 +1,49 @@
 package CIUP;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MaisonInternationale extends Maison {
 
-	ArrayList<Service> sesServices;
-	private String nom;
-	private String desc;
-	private String localisation;
-	private int anneeCreation;
-	private String tel;
+    // Liste des services proposant la Maison Internationale
+    public ArrayList<Service> sesServices;
 
-	// Constructeur
+    private String nom;
+    private String desc;
+    private String localisation;
+    private int anneeCreation;
+    private String tel;
+
+    // Constructeur
     public MaisonInternationale(int num, String nom, String desc, String tel, String localisation, String directeur,
-								int anneeCreation, String dateFete, int dureeFete) {
-		super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
-		this.nom = nom;
-		this.desc = desc;
-		this.localisation = localisation;
-		this.anneeCreation = anneeCreation;
-		this.tel = tel;
+                                int anneeCreation, String dateFete, int dureeFete) {
+        super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
+        this.nom = nom;
+        this.desc = desc;
+        this.tel = tel;
+        this.localisation = localisation;
+        this.anneeCreation = anneeCreation;
+    }
 
-	}
-    //constructeur vide
+    // Constructeur vide
     public MaisonInternationale() {
+        super();
+        this.sesServices = new ArrayList<>();
     }
 
     // Méthode pour ajouter un service à la Maison Internationale
     public void ajoutService(Service service) {
         sesServices.add(service);
-        service.ajoutMaison(this);  // Ajout de la maison à la liste des maisons proposant ce service
+
+        // Ajout de la maison à la liste des maisons proposant ce service
+        service.ajoutMaison(this);
     }
 
     // Méthode pour supprimer un service de la Maison Internationale
     public void supprService(Service service) {
         sesServices.remove(service);
-        service.supprMaison(this);  // Suppression de la maison de la liste des maisons proposant ce service
+
+        // Suppression de la maison de la liste des maisons proposant ce service
+        service.supprMaison(this);
     }
 
     // Méthode pour afficher les informations de la Maison Internationale
@@ -49,8 +56,9 @@ public class MaisonInternationale extends Maison {
     }
 
     // Méthode pour afficher les services proposés
-    public void afficherServices() {
+    public void afficheServices() {
         System.out.println("Services proposés par la Maison Internationale:");
+
         for (Service service : sesServices) {
             System.out.println(service.getNom() + ": " + service.getDesc());
         }
@@ -97,11 +105,11 @@ public class MaisonInternationale extends Maison {
         this.tel = tel;
     }
 
-	public ArrayList<Service> getSesServices() {
-		return sesServices;
-	}
+    public ArrayList<Service> getSesServices() {
+        return sesServices;
+    }
 
-	public void setSesServices(ArrayList<Service> sesServices) {
-		this.sesServices = sesServices;
-	}
+    public void setSesServices(ArrayList<Service> sesServices) {
+        this.sesServices = sesServices;
+    }
 }

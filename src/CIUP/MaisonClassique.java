@@ -2,32 +2,36 @@ package CIUP;
 
 import java.util.ArrayList;
 
-public class MaisonClassique extends Maison{
+public class MaisonClassique extends Maison {
 
-	private String nationalite;
+    // Listes des Etudiant et Etudiant en attente de la MaisonClassique
+    public ArrayList<Etudiant> listeEtudiant;
+    public ArrayList<Etudiant> listeAttente;
+
+    private String nationalite;
     private int capacite;
-	ArrayList<Etudiant> listeEtudiant;
-    ArrayList<Etudiant> listeAttente;
 
-	// Constructeur
+    // Constructeur
     public MaisonClassique(int num, String nom, String desc, String tel, String localisation, String directeur,
-                           int anneeCreation, String dateFete, int dureeFete, int capacite, String nationalite) {
+                           int anneeCreation, String dateFete, int dureeFete) {
         super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
         this.nationalite = nationalite;
         this.capacite = capacite;
     }
-    //constructeur vide
+
+    // Constructeur vide
     public MaisonClassique() {
         super();
+        this.listeEtudiant = new ArrayList<>();
+        this.listeAttente = new ArrayList<>();
     }
 
     // Méthode pour ajouter un étudiant et le mettre en liste d'attente si la maison est pleine
     public void ajoutEtudiant(Etudiant etu) {
-        if(listeEtudiant.size() < capacite){
+        if (listeEtudiant.size() < capacite) {
             listeEtudiant.add(etu);
             etu.setActuEtudiant(true);
-        }
-        else{
+        } else {
             System.out.println("La maison est pleine mise en liste d'attente");
             ajoutEtudiantAttente(etu);
         }
@@ -38,18 +42,19 @@ public class MaisonClassique extends Maison{
         listeEtudiant.remove(etu);
         System.out.println("L'étudiant a été supprimé de la maison");
         etu.setActuEtudiant(false);
-        if(listeAttente.size() > 0){
+
+        if (listeAttente.size() > 0) {
             Etudiant etuAttente = listeAttente.get(0);
             listeAttente.remove(0);
             ajoutEtudiant(etuAttente);
             etuAttente.setEnAttente(false);
         }
-        
     }
 
     // Méthode pour afficher la liste des étudiants dans la maison
-    public void afficherEtudiants() {
+    public void afficheEtudiants() {
         System.out.println("Liste des étudiants dans la maison " + getNom() + ":");
+
         for (Etudiant etu : listeEtudiant) {
             System.out.println(etu.getNom() + " " + etu.getPrenom());
         }
@@ -68,27 +73,44 @@ public class MaisonClassique extends Maison{
     }
 
     // Méthode pour afficher la liste des étudiants en attente
-    public void afficherEtudiantsAttente() {
+    public void afficheEtudiantsAttente() {
         System.out.println("Liste des étudiants en attente pour la maison " + getNom() + ":");
+
         for (Etudiant etu : listeAttente) {
             System.out.println(etu.getNom() + " " + etu.getPrenom());
         }
-    }   
+    }
 
-        // Getter et Setter
-        public String getNationalite() {
-            return nationalite;
-        }
+    // Getter et Setter pour les attributs
+    public String getNationalite() {
+        return nationalite;
+    }
 
-        public void setNationalite(String nationalite) {
-            this.nationalite = nationalite;
-        }
-        public int getCapacite() {
-            return capacite;
-        }
-        public void setCapacite(int capacite) {
-            this.capacite = capacite;
-        }
+    public void setNationalite(String nationalite) {
+        this.nationalite = nationalite;
+    }
 
-        
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public void setCapacite(int capacite) {
+        this.capacite = capacite;
+    }
+
+    public ArrayList<Etudiant> getListeEtudiant() {
+        return listeEtudiant;
+    }
+
+    public void setListeEtudiant(ArrayList<Etudiant> listeEtudiant) {
+        this.listeEtudiant = listeEtudiant;
+    }
+
+    public ArrayList<Etudiant> getListeAttente() {
+        return listeAttente;
+    }
+
+    public void setListeAttente(ArrayList<Etudiant> listeAttente) {
+        this.listeAttente = listeAttente;
+    }
 }

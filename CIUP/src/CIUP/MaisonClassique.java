@@ -15,8 +15,6 @@ public class MaisonClassique extends Maison {
     public MaisonClassique(int num, String nom, String desc, String tel, String localisation, String directeur,
                            int anneeCreation, String dateFete, int dureeFete) {
         super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
-        this.nationalite = nationalite;
-        this.capacite = capacite;
     }
 
     // Constructeur vide

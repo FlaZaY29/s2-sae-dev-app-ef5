@@ -2,6 +2,23 @@ package CIUP;
 
 public class FactoryCIUP {
 
+    // Créer une Maison internationale
+    static MaisonInternationale creeMaisonInternationale() {
+        MaisonInternationale maison = new MaisonInternationale();
+        maison.setNum(1);
+        maison.setNom("Maison internationale");
+        maison.setDesc("Maison internationale type moderne");
+        maison.setTel("01 23 45 67 89");
+        maison.setLocalisation("Paris");
+        maison.setDirecteur("Directeur Jean");
+        maison.setAnneeCreation(1995);
+        maison.setDateFete("25/12");
+        maison.setDureeFete(1);
+
+        return maison;
+    }
+
+
     // Créer une maisonClassique FrancoBritannique
     static MaisonClassique maisonFrançaise() {
         MaisonClassique maison = new MaisonClassique();
@@ -64,23 +81,8 @@ public class FactoryCIUP {
         return maison;
     }
 
-    // Créer une Maison internationale
-    static MaisonInternationale creeMaisonInternationale() {
-        MaisonInternationale maison = new MaisonInternationale();
-        maison.setNum(1);
-        maison.setNom("Maison internationale");
-        maison.setDesc("Maison internationale type moderne");
-        maison.setTel("01 23 45 67 89");
-        maison.setLocalisation("Paris");
-        maison.setDirecteur("Directeur Jean");
-        maison.setAnneeCreation(1995);
-        maison.setDateFete("25/12");
-        maison.setDureeFete(1);
-
-        return maison;
-    }
-
-    // Créer une maison
+    // Exemple d'objets pour CIUP
+    /*// Créer une maison
     static MaisonClassique creeMaison() {
         MaisonClassique maison = new MaisonClassique();
 
@@ -134,7 +136,7 @@ public class FactoryCIUP {
         etudiant.setMaisonActuelle(new MaisonClassique());
 
         return etudiant;
-    }
+    }*/
 
     // Créer le service de restauration
     static Service creeServiceRestauration() {

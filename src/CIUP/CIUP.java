@@ -42,8 +42,8 @@ public class CIUP {
     public static void main(String[] args) {
         CIUP ciup = new CIUP();
         MaisonInternationale mInternationale = FactoryCIUP.creeMaisonInternationale();
-        Maison m1 = FactoryCIUP.creeMaison();
-        Maison m2 = FactoryCIUP.creeMaison();
+        Maison m1 = FactoryCIUP.maisonFrancoBritannique();
+        Maison m2 = FactoryCIUP.maisonJaponaise();
         ciup.ajouterMaison(mInternationale);
         ciup.ajouterMaison(m1);
         ciup.ajouterMaison(m2);

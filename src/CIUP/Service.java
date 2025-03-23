@@ -28,6 +28,17 @@ public class Service {
         this.sesMaison = new ArrayList<MaisonInternationale>();
     }
 
+    // Méthode toString
+    public String toString() {
+        String s = "";
+        s += num;
+        s += " ; " + nom;
+        s += " ; " + desc;
+        s += " ; " + heureOuv;
+        s += " ; " + heureFerm;
+        return s;
+    }
+
     // Méthode pour ajouter un service
     public void ajoutMaison(MaisonInternationale maison) {
         sesMaison.add(maison);
@@ -46,10 +57,10 @@ public class Service {
         System.out.println("Heure d'ouverture: " + heureOuv);
         System.out.println("Heure de fermeture: " + heureFerm);
         System.out.println("Maison(s) associee(s): ");
-
         for (MaisonInternationale maison : sesMaison) {
             System.out.println(maison.getNom());
         }
+        System.out.println();
     }
 
     // Getter et Setter pour les attributs

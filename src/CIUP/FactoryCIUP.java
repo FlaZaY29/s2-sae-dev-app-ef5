@@ -1,7 +1,5 @@
 package CIUP;
 
-import java.util.ArrayList;
-
 public class FactoryCIUP {
 
     // Créer une maisonClassique FrancoBritannique
@@ -78,8 +76,6 @@ public class FactoryCIUP {
         maison.setAnneeCreation(1995);
         maison.setDateFete("25/12");
         maison.setDureeFete(1);
-        maison.ajoutService(creeServiceRestauration());
-        maison.ajoutService(creeServiceSecurite());
 
         return maison;
     }
@@ -115,7 +111,6 @@ public class FactoryCIUP {
         service.setDesc("Description du service");
         service.setHeureOuv(8);
         service.setHeureFerm(20);
-        service.setSesMaison(new ArrayList<MaisonInternationale>());
 
         return service;
     }
@@ -149,7 +144,6 @@ public class FactoryCIUP {
         service.setDesc("Service de restauration pour les étudiants");
         service.setHeureOuv(8);
         service.setHeureFerm(20);
-        service.setSesMaison(new ArrayList<MaisonInternationale>());
 
         return service;
     }
@@ -162,7 +156,6 @@ public class FactoryCIUP {
         service.setDesc("Service de sécurité pour les étudiants");
         service.setHeureOuv(0);
         service.setHeureFerm(24);
-        service.setSesMaison(new ArrayList<MaisonInternationale>());
 
         return service;
     }
@@ -249,70 +242,70 @@ public class FactoryCIUP {
 
     // Créer un étudiant japonais 1
     static Etudiant etudiant1Japonais() {
-        return new Etudiant(1, "Hiroshi", "Tanaka", "7 rue Sakura",
+        return new Etudiant(10, "Hiroshi", "Tanaka", "7 rue Sakura",
                 "Japonaise", "25/07/2005", "08 12 34 56 78",
                 "hiroshi.tanaka@mail.com", "Yamato", "Université de Tokyo", "Hiroshi_Tanaka.jpg");
     }
 
     // Créer un étudiant japonais 2
     static Etudiant etudiant2Japonais() {
-        return new Etudiant(2, "Yuki", "Sato", "10 rue Fuji",
+        return new Etudiant(11, "Yuki", "Sato", "10 rue Fuji",
                 "Japonaise", "11/04/2004", "09 13 14 15 16",
                 "yuki.sato@mail.com", "Hana", "Université de Kyoto", "Yuki_Sato.jpg");
     }
 
     // Créer un étudiant japonais 3
     static Etudiant etudiant3Japonais() {
-        return new Etudiant(3, "Akira", "Nakamura", "15 avenue Shibuya",
+        return new Etudiant(12, "Akira", "Nakamura", "15 avenue Shibuya",
                 "Japonaise", "22/03/2003", "06 11 23 34 45",
                 "akira.nakamura@mail.com", "Kaito", "Université de Osaka", "Akira_Nakamura.jpg");
     }
 
     // Créer un étudiant japonais 4
     static Etudiant etudiant4Japonais() {
-        return new Etudiant(4, "Mai", "Kobayashi", "30 rue Kyoto",
+        return new Etudiant(13, "Mai", "Kobayashi", "30 rue Kyoto",
                 "Japonaise", "18/09/1999", "06 55 66 77 88",
                 "mai.kobayashi@mail.com", "Yuki", "Université de Hokkaido", "Mai_Kobayashi.jpg");
     }
 
     // Créer un étudiant japonais 5
     static Etudiant etudiant5Japonais() {
-        return new Etudiant(5, "Ren", "Yamamoto", "20 rue Koi",
+        return new Etudiant(14, "Ren", "Yamamoto", "20 rue Koi",
                 "Japonaise", "12/01/2000", "06 22 33 44 55",
                 "ren.yamamoto@mail.com", "Kazu", "Université de Wako", "Ren_Yamamoto.jpg");
     }
 
     // Créer un étudiant japonais 6
     static Etudiant etudiant6Japonais() {
-        return new Etudiant(6, "Haruto", "Takahashi", "8 rue Nara",
+        return new Etudiant(15, "Haruto", "Takahashi", "8 rue Nara",
                 "Japonaise", "29/06/2004", "06 99 00 11 22",
                 "haruto.takahashi@mail.com", "Ryuu", "Université de Kyoto", "Haruto_Takahashi.jpg");
     }
 
     // Créer un étudiant japonais 7
     static Etudiant etudiant7Japonais() {
-        return new Etudiant(7, "Sakura", "Yoshida", "17 avenue Tokyo",
+        return new Etudiant(16, "Sakura", "Yoshida", "17 avenue Tokyo",
                 "Japonaise", "05/11/1998", "06 77 88 99 00",
                 "sakura.yoshida@mail.com", "Haruki", "Université de Sapporo", "Sakura_Yoshida.jpg");
     }
 
     // Créer un étudiant japonais 8
     static Etudiant etudiant8Japonais() {
-        return new Etudiant(8, "Yuto", "Fujimoto", "10 rue Hokkaido",
+        return new Etudiant(17, "Yuto", "Fujimoto", "10 rue Hokkaido",
                 "Japonaise", "01/02/2006", "06 44 33 22 11",
                 "yuto.fujimoto@mail.com", "Kaito", "Université de Nagoya", "Yuto_Fujimoto.jpg");
     }
 
     // Créer un étudiant japonais 9
     static Etudiant etudiant9Japonais() {
-        return new Etudiant(9, "Kaito", "Inoue", "25 rue Tokyo",
+        return new Etudiant(18, "Kaito", "Inoue", "25 rue Tokyo",
                 "Japonaise", "13/08/2001", "06 55 66 77 88",
                 "kaito.inoue@mail.com", "Ryuu", "Université de Keio", "Kaito_Inoue.jpg");
     }
 
     // Créer un étudiant japonais 10
     static Etudiant etudiant10Japonais() {
-        return new Etudiant(10, "Nina", "Matsumoto", "9 rue Shin",
+        return new Etudiant(19, "Nina", "Matsumoto", "9 rue Shin",
                 "Japonaise", "23/05/2002", "06 22 33 44 55",
                 "nina.matsumoto@mail.com", "Haruto", "Université de Tokyo", "Nina_Matsumoto.jpg");
     }

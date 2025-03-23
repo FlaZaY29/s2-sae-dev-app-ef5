@@ -29,6 +29,21 @@ public class Maison {
     //constructeur Vide
     public Maison() {}
 
+    // Méthode toString
+    public String toString() {
+        String s = "";
+        s += num;
+        s += " ; " + nom;
+        s += " ; " + desc;
+        s += " ; " + tel;
+        s += " ; " + localisation;
+        s += " ; " + directeur;
+        s += " ; " + anneeCreation;
+        s += " ; " + dateFete;
+        s += " ; " + dureeFete;
+        return s;
+    }
+
     // Méthode pour afficher la description de la maison
     public void afficheDesc() {
         System.out.println("Maison: " + nom);
@@ -39,11 +54,13 @@ public class Maison {
         System.out.println("Année de création: " + anneeCreation);
         System.out.println("Date de la fête: " + dateFete);
         System.out.println("Durée de la fête: " + dureeFete + " jours");
+        System.out.println();
     }
 
     // Méthode pour afficher le nom de la maison
     public void afficheMaison() {
         System.out.println("Maison: " + nom);
+        System.out.println();
     }
 
     // Getter et Setter pour les attributs

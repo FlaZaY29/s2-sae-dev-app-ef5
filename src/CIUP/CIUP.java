@@ -25,7 +25,7 @@ public class CIUP {
     // Affiche la liste des Etudiants
     public void afficheListeEtudiant() {
         for (Etudiant etudiant : listeEtudiant) {
-            etudiant.afficheInfo();
+            etudiant.afficheInfoResume();
         }
     }
 
@@ -47,26 +47,36 @@ public class CIUP {
     public static void main(String[] args) {
         CIUP ciup = new CIUP();
 
-        // Maison Internationale & Maisons
+        // Maison Internationale & Maisons & Services
         MaisonInternationale mInternationale = FactoryCIUP.creeMaisonInternationale();
         Maison m1 = FactoryCIUP.maisonFrançaise();
         Maison m2 = FactoryCIUP.maisonJaponaise();
 
-        // Affichage description des maisons
-        /*m1.afficheDesc();
-        m2.afficheDesc();*/
+        Service s1 = FactoryCIUP.creeServiceRestauration();
+        Service s2 = FactoryCIUP.creeServiceSecurite();
+        mInternationale.ajoutService(s1);
+        mInternationale.ajoutService(s2);
 
-        // Ajouter les Maisons et Etudiants dans CIUP
+        // Ajouter les Maisons & Services & Etudiants dans CIUP
         ciup.ajouterMaison(mInternationale);
         ciup.ajouterMaison(m1);
         ciup.ajouterMaison(m2);
-        // ciup.ajouterEtudiant(FactoryCIUP.creeEtudiant());
 
-        // Affichage de ciup
+        ciup.ajouterService(s1);
+        ciup.ajouterService(s2);
+
+        // Optionel mais pas fiable : j'ajoute les étudiants
+        for (Etudiant etudiant : FactoryCIUP.maisonFrançaise().getListeEtudiant()) {
+            ciup.ajouterEtudiant(etudiant);
+        }
+        for (Etudiant etudiant : FactoryCIUP.maisonJaponaise().getListeEtudiant()) {
+            ciup.ajouterEtudiant(etudiant);
+        }
+
+        // Affichage toutes les liste dans ciup
         ciup.afficheListeMaison();
         ciup.afficheListeService();
-        // ciup.afficheListeEtudiant();
-
+        ciup.afficheListeEtudiant();
 
     }
 }

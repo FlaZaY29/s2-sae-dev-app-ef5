@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MaisonInternationale extends Maison {
 
     // Liste des services proposant la Maison Internationale
-    public ArrayList<Service> sesServices;
+    private ArrayList<Service> sesServices;
 
     private String nom;
     private String desc;

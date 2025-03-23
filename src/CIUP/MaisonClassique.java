@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class MaisonClassique extends Maison {
 
     // Listes des Etudiant et Etudiant en attente de la MaisonClassique
-    public ArrayList<Etudiant> listeEtudiant;
-    public ArrayList<Etudiant> listeAttente;
+    private ArrayList<Etudiant> listeEtudiant;
+    private ArrayList<Etudiant> listeAttente;
 
     private String nationalite;
     private int capacite;

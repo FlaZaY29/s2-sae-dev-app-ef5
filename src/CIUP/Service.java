@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Service {
 
     // Liste des maisons proposant ce service
-    public ArrayList<MaisonInternationale> sesMaison;
+    private ArrayList<MaisonInternationale> sesMaison;
 
     private int num;
     private String nom;

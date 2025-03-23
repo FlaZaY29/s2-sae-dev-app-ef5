@@ -37,15 +37,15 @@ public class FactoryCIUP {
         // Maison Classique
         maison.setNationalite("Française");
         maison.setCapacite(100);
-        maison.listeEtudiant.add(etudiant1());
-        maison.listeEtudiant.add(etudiant2());
-        maison.listeEtudiant.add(etudiant3());
-        maison.listeEtudiant.add(etudiant4());
-        maison.listeEtudiant.add(etudiant5());
-        maison.listeEtudiant.add(etudiant6());
-        maison.listeEtudiant.add(etudiant7());
-        maison.listeEtudiant.add(etudiant8());
-        maison.listeEtudiant.add(etudiant9());
+        maison.getListeEtudiant().add(etudiant1());
+        maison.getListeEtudiant().add(etudiant2());
+        maison.getListeEtudiant().add(etudiant3());
+        maison.getListeEtudiant().add(etudiant4());
+        maison.getListeEtudiant().add(etudiant5());
+        maison.getListeEtudiant().add(etudiant6());
+        maison.getListeEtudiant().add(etudiant7());
+        maison.getListeEtudiant().add(etudiant8());
+        maison.getListeEtudiant().add(etudiant9());
 
         return maison;
     }
@@ -67,16 +67,16 @@ public class FactoryCIUP {
         // Maison Classique
         maison.setNationalite("Japonaise");
         maison.setCapacite(50);
-        maison.listeEtudiant.add(etudiant1Japonais());
-        maison.listeEtudiant.add(etudiant2Japonais());
-        maison.listeEtudiant.add(etudiant3Japonais());
-        maison.listeEtudiant.add(etudiant4Japonais());
-        maison.listeEtudiant.add(etudiant5Japonais());
-        maison.listeEtudiant.add(etudiant6Japonais());
-        maison.listeEtudiant.add(etudiant7Japonais());
-        maison.listeEtudiant.add(etudiant8Japonais());
-        maison.listeEtudiant.add(etudiant9Japonais());
-        maison.listeEtudiant.add(etudiant10Japonais());
+        maison.getListeEtudiant().add(etudiant1Japonais());
+        maison.getListeEtudiant().add(etudiant2Japonais());
+        maison.getListeEtudiant().add(etudiant3Japonais());
+        maison.getListeEtudiant().add(etudiant4Japonais());
+        maison.getListeEtudiant().add(etudiant5Japonais());
+        maison.getListeEtudiant().add(etudiant6Japonais());
+        maison.getListeEtudiant().add(etudiant7Japonais());
+        maison.getListeEtudiant().add(etudiant8Japonais());
+        maison.getListeEtudiant().add(etudiant9Japonais());
+        maison.getListeEtudiant().add(etudiant10Japonais());
 
         return maison;
     }

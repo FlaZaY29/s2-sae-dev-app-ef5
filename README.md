@@ -73,10 +73,10 @@ Le projet est divisé en plusieurs domaines spécifiques :
 
 ## 👥 Équipe du Projet
 
-- **Zamperlini Flavio**    
-- **Se Donald**
-- **Mouhou Maksen**  
-- **Urkmez Yavuz**
+- **Zamperlini Flavio (flavio.zamperlini.pro@gmail.com)**    
+- **Se Donald (donaldse175@gmail.com)**
+- **Mouhou Maksen (maksenmouhoupro@gmail.com)**  
+- **Urkmez Yavuz (yavuz.urk28@gmail.com)**
 
 ---
 

@@ -63,4 +63,8 @@ public class MaisonInternationale extends Maison {
             System.out.println(service.getNom() + ": " + service.getDesc());
         }
     }
+
+    public ArrayList<Service> getSesServices() {
+        return sesServices;
+    }
 }

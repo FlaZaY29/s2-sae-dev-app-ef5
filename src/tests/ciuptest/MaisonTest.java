@@ -1,4 +1,4 @@
-package tests;
+package tests.ciuptest;
 
 import CIUP.Maison;
 
@@ -28,4 +28,6 @@ public class MaisonTest {
 
         System.out.println("testSettersMaison : OK");
     }
+
+
 }

@@ -1,4 +1,4 @@
-package tests;
+package tests.ciuptest;
 
 import CIUP.MaisonInternationale;
 import CIUP.Service;

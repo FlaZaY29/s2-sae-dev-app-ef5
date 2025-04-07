@@ -1,4 +1,4 @@
-package tests;
+package tests.ciuptest;
 
 import CIUP.Etudiant;
 

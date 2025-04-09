@@ -1,4 +1,4 @@
-package CIUP;
+package ciup;
 
 public class Maison {
 

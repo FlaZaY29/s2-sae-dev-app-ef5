@@ -1,6 +1,6 @@
 package ciuptest;
 
-import CIUP.Service;
+import ciup.Service;
 
 public class ServiceTest {
 

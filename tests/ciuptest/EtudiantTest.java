@@ -1,6 +1,6 @@
 package ciuptest;
 
-import CIUP.Etudiant;
+import ciup.Etudiant;
 
 public class EtudiantTest {
 

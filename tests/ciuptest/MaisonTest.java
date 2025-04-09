@@ -1,6 +1,6 @@
 package ciuptest;
 
-import CIUP.Maison;
+import ciup.Maison;
 
 public class MaisonTest {
 

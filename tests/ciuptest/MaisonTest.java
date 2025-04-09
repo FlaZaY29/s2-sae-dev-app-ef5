@@ -1,4 +1,4 @@
-package tests.ciuptest;
+package ciuptest;
 
 import CIUP.Maison;
 

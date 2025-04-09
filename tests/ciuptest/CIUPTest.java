@@ -1,4 +1,4 @@
-package tests.ciuptest;
+package ciuptest;
 
 public class CIUPTest {
     public static void main(String[] args) {

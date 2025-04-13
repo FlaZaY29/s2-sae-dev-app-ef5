@@ -13,13 +13,20 @@ public class CIUPTest {
         CIUPTest.runTests();
         EtudiantTest.runTests();
         MaisonClassiqueTest.runTests();
-        /*MaisonInternationaleTest.runTests();
+        MaisonInternationaleTest.runTests();
         MaisonTest.runTests();
-        ServiceTest.runTests();*/
+        ServiceTest.runTests();
 
         // Fin des tests
         System.out.println("========================================");
         System.out.println("Tous les tests ont ete executes avec succes!");
+        System.out.println("========================================");
+        System.out.println("CIUPTest [OK]");
+        System.out.println("EtudiantTest [OK]");
+        System.out.println("MaisonClassiqueTest [OK]");
+        System.out.println("MaisonInternationaleTest [OK]");
+        System.out.println("MaisonTest [OK]");
+        System.out.println("ServiceTest [OK]");
         System.out.println("========================================");
     }
     
@@ -60,8 +67,8 @@ public class CIUPTest {
         Maison maison = new Maison(0, "Maison", null, null, null,null, 2025, null, 12);
         ciup.ajouterMaison(maison);
 
-        assert(ciup.getListeMaison().size() == 1) : "[ERR] Nombre de maisons incorrect";
-        assert(ciup.getListeMaison().contains(maison)) : "[ERR] Maison non ajoutee";
+        assert(ciup.getListeMaison().size() == 1) : "Nombre de maisons incorrect";
+        assert(ciup.getListeMaison().contains(maison)) : "Maison non ajoutee";
         System.out.println("\t[OK] testAjouterMaison passe.");
     }
 
@@ -73,7 +80,7 @@ public class CIUPTest {
         ciup.ajouterMaison(maison);
         ciup.supprMaison(maison);
 
-        assert(!ciup.getListeMaison().contains(maison)) : "[ERR] Maison non supprimee";
+        assert(!ciup.getListeMaison().contains(maison)) : "Maison non supprimee";
         System.out.println("\t[OK] testSupprimerMaison passe.");
     }
 
@@ -84,8 +91,8 @@ public class CIUPTest {
         Service service = new Service(0,"Service", "Description", 8, 20);
         ciup.ajouterService(service);
         
-        assert(ciup.getListeService().size() == 1) : "[ERR] Nombre de services incorrect";
-        assert(ciup.getListeService().contains(service)) : "[ERR] Service non ajoutee";
+        assert(ciup.getListeService().size() == 1) : "Nombre de services incorrect";
+        assert(ciup.getListeService().contains(service)) : "Service non ajoutee";
         System.out.println("\t[OK] testAjouterService passe.");
     }
 
@@ -97,7 +104,7 @@ public class CIUPTest {
         ciup.ajouterService(service);
         ciup.supprService(service);
 
-        assert(!ciup.getListeService().contains(service)) : "[ERR] Service non supprimee";
+        assert(!ciup.getListeService().contains(service)) : "Service non supprimee";
         System.out.println("\t[OK] testSupprimerService passe.");
     }
 
@@ -108,8 +115,8 @@ public class CIUPTest {
         Etudiant etudiant = new Etudiant(0,"Nom", "Prenom", "Adresse", "Nationalite", "DateNaissance", "Tel", "Email", "Promotion", "Universite", "PieceIdentite");
         ciup.ajouterEtudiant(etudiant);
         
-        assert(ciup.getListeEtudiant().size() == 1) : "[ERR] Nombre d'etudiants incorrect";
-        assert(ciup.getListeEtudiant().contains(etudiant)) : "[ERR] Etudiant non ajoutee";
+        assert(ciup.getListeEtudiant().size() == 1) : "Nombre d'etudiants incorrect";
+        assert(ciup.getListeEtudiant().contains(etudiant)) : "Etudiant non ajoutee";
         System.out.println("\t[OK] testAjouterEtudiant passe.");
     }
 
@@ -121,7 +128,7 @@ public class CIUPTest {
         ciup.ajouterEtudiant(etudiant);
         ciup.supprEtudiant(etudiant);
         
-        assert(!ciup.getListeEtudiant().contains(etudiant)) : "[ERR] Etudiant non supprimee";
+        assert(!ciup.getListeEtudiant().contains(etudiant)) : "Etudiant non supprimee";
         System.out.println("\t[OK] testSupprimerEtudiant passe.");
     }
 
@@ -134,7 +141,7 @@ public class CIUPTest {
             ciup.ajouterMaison(maison);
         }
         
-        assert(ciup.getListeMaison().size() == 10) : "[ERR] Nombre de maisons incorrect";
+        assert(ciup.getListeMaison().size() == 10) : "Nombre de maisons incorrect";
         System.out.println("\t[OK] testAjouterPlusieursMaisons passe.");
     }
 
@@ -147,7 +154,7 @@ public class CIUPTest {
             ciup.ajouterService(service);
         }
         
-        assert(ciup.getListeService().size() == 10) : "[ERR] Nombre de services incorrect";
+        assert(ciup.getListeService().size() == 10) : "Nombre de services incorrect";
         System.out.println("\t[OK] testAjouterPlusieursServices passe.");
     }
 
@@ -160,7 +167,7 @@ public class CIUPTest {
             ciup.ajouterEtudiant(etudiant);
         }
         
-        assert(ciup.getListeEtudiant().size() == 10) : "[ERR] Nombre d'etudiants incorrect";
+        assert(ciup.getListeEtudiant().size() == 10) : "Nombre d'etudiants incorrect";
         System.out.println("\t[OK] testAjouterPlusieursEtudiants passe.");
     }
 
@@ -171,7 +178,7 @@ public class CIUPTest {
         Maison maison = new Maison(0, "Maison", null, null, null,null, 2025, null, 12);
         ciup.supprMaison(maison);
         
-        assert(!ciup.getListeMaison().contains(maison)) : "[ERR] Maison inexistante non supprimee";
+        assert(!ciup.getListeMaison().contains(maison)) : "Maison inexistante non supprimee";
         System.out.println("\t[OK] testSupprimerMaisonInexistant passe.");
     }
 
@@ -182,7 +189,7 @@ public class CIUPTest {
         Service service = new Service(0,"Service", "Description", 8, 20);
         ciup.supprService(service);
         
-        assert(!ciup.getListeService().contains(service)) : "[ERR] Service inexistant non supprimee";
+        assert(!ciup.getListeService().contains(service)) : "Service inexistant non supprimee";
         System.out.println("\t[OK] testSupprimerServiceInexistant passe.");
     }
 
@@ -193,7 +200,7 @@ public class CIUPTest {
         Etudiant etudiant = new Etudiant(0,"Nom", "Prenom", "Adresse", "Nationalite", "DateNaissance", "Tel", "Email", "Promotion", "Universite", "PieceIdentite");
         ciup.supprEtudiant(etudiant);
         
-        assert(!ciup.getListeEtudiant().contains(etudiant)) : "[ERR] Etudiant inexistant non supprimee";
+        assert(!ciup.getListeEtudiant().contains(etudiant)) : "Etudiant inexistant non supprimee";
         System.out.println("\t[OK] testSupprimerEtudiantInexistant passe.");
     }
 
@@ -211,7 +218,7 @@ public class CIUPTest {
             ciup.afficheListeMaison();
             System.out.println("---------------------------");
         } catch (Exception e) {
-            assert(false) : "[ERR] Erreur lors de l'affichage des maisons"+" : " + e.getMessage();
+            assert(false) : "Erreur lors de l'affichage des maisons"+" : " + e.getMessage();
         }
 
         System.out.println("\t[OK] testAffichageMaison passe.");
@@ -231,7 +238,7 @@ public class CIUPTest {
             ciup.afficheListeService();
             System.out.println("---------------------------");
         } catch (Exception e) {
-            assert(false) : "[ERR] Erreur lors de l'affichage des services"+" : " + e.getMessage();
+            assert(false) : "Erreur lors de l'affichage des services"+" : " + e.getMessage();
         }
 
         System.out.println("\t[OK] testAffichageService passe.");
@@ -251,7 +258,7 @@ public class CIUPTest {
             ciup.afficheListeEtudiant();
             System.out.println("---------------------------");
         } catch (Exception e) {
-            assert(false) : "[ERR] Erreur lors de l'affichage des etudiants"+" : " + e.getMessage();
+            assert(false) : "Erreur lors de l'affichage des etudiants"+" : " + e.getMessage();
         }
 
         System.out.println("\t[OK] testAffichageEtudiant passe.");

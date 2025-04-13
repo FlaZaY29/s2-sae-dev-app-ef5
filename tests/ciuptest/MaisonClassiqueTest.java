@@ -148,8 +148,9 @@ public class MaisonClassiqueTest {
         try {
             System.out.println("-------- AFFICHAGE --------");
             maison.afficheEtudiants();
+            System.out.println("---------------------------");
         } catch (Exception e) {
-            System.out.println("[ERR] Erreur lors de l'affichage des etudiants : " + e.getMessage());
+            assert(false) : "Erreur lors de l'affichage des etudiants : " + e.getMessage();
         }
 
         System.out.println("\t[OK] testAffichageEtudiant passe.");
@@ -169,7 +170,7 @@ public class MaisonClassiqueTest {
             maison.afficheEtudiantsAttente();
             System.out.println("---------------------------");
         } catch (Exception e) {
-            System.out.println("[ERR] Erreur lors de l'affichage des etudiants en attente : " + e.getMessage());
+            assert(false) : "Erreur lors de l'affichage des etudiants en attente : " + e.getMessage();
         }
 
         System.out.println("\t[OK] testAffichageEtudiantEnAttente passe.");

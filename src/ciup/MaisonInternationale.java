@@ -7,21 +7,11 @@ public class MaisonInternationale extends Maison {
     // Liste des services proposant la Maison Internationale
     private ArrayList<Service> sesServices;
 
-    private String nom;
-    private String desc;
-    private String localisation;
-    private int anneeCreation;
-    private String tel;
 
     // Constructeur
     public MaisonInternationale(int num, String nom, String desc, String tel, String localisation, String directeur,
                                 int anneeCreation, String dateFete, int dureeFete) {
         super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
-        this.nom = nom;
-        this.desc = desc;
-        this.tel = tel;
-        this.localisation = localisation;
-        this.anneeCreation = anneeCreation;
     }
 
     // Constructeur vide
@@ -44,15 +34,6 @@ public class MaisonInternationale extends Maison {
 
         // Suppression de la maison de la liste des maisons proposant ce service
         service.supprMaison(this);
-    }
-
-    // Methode pour afficher les informations de la Maison Internationale
-    public void afficheDesc() {
-        System.out.println("Maison Internationale: " + nom);
-        System.out.println("Description: " + desc);
-        System.out.println("Localisation: " + localisation);
-        System.out.println("Annee de creation: " + anneeCreation);
-        System.out.println("Telephone: " + tel);
     }
 
     // Methode pour afficher les services proposes

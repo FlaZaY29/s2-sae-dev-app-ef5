@@ -61,7 +61,7 @@ public class EtudiantTest {
         etudiant.setNom("Martin");
         etudiant.setPrenom("Bob");
         etudiant.setAdresse("123 rue des etudiants");
-        etudiant.setNationalite("Française");
+        etudiant.setNationalite("Francaise");
         etudiant.setDateNaissance("01/01/2000");
         etudiant.setTel("0123456789");
         etudiant.setEmail("bob@exemple.com");
@@ -75,7 +75,7 @@ public class EtudiantTest {
         assert(etudiant.getNom().equals("Martin")) : "Nom incorrect";
         assert(etudiant.getPrenom().equals("Bob")) : "Prenom incorrect";
         assert(etudiant.getAdresse().equals("123 rue des etudiants")) : "Adresse incorrecte";
-        assert(etudiant.getNationalite().equals("Française")) : "Nationalite incorrecte";
+        assert(etudiant.getNationalite().equals("Francaise")) : "Nationalite incorrecte";
         assert(etudiant.getDateNaissance().equals("01/01/2000")) : "Date de naissance incorrecte";
         assert(etudiant.getTel().equals("0123456789")) : "Telephone incorrect";
         assert(etudiant.getEmail().equals("bob@exemple.com")) : "Email incorrect";
@@ -149,7 +149,7 @@ public class EtudiantTest {
             etu.afficheInfo();
             System.out.println("---------------------------");
         } catch (Exception e) {
-            assert(false) : "[ERR] Erreur lors de l'affichage des etudiants"+ e.getMessage();
+            assert(false) : "Erreur lors de l'affichage des etudiants"+ e.getMessage();
         }
 
         System.out.println("\t[OK] testToStringContenuEtudiant passe.");

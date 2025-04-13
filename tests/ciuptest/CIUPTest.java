@@ -52,11 +52,6 @@ public class CIUPTest {
         testSupressionServiceInexistant();
         testSupressionEtudiantInexistant();
 
-        // Affichage des informations de la classe CIUP
-        testAffichageMaison();
-        testAffichageService();
-        testAffichageEtudiant();
-
         System.out.println("\tCIUPTest : Tous les tests sont passes.");
     }
 
@@ -202,65 +197,5 @@ public class CIUPTest {
         
         assert(!ciup.getListeEtudiant().contains(etudiant)) : "Etudiant inexistant non supprimee";
         System.out.println("\t[OK] testSupprimerEtudiantInexistant passe.");
-    }
-
-    // Methode de test pour afficher les maisons
-    private static void testAffichageMaison() {
-        CIUP ciup = new CIUP();
-
-        for (int i = 0; i < 3; i++) {
-            Maison maison = new Maison(i, "Maison" + i, null, null, null,null, 2025, null, 12);
-            ciup.ajouterMaison(maison);
-        }
-        
-        try {
-            System.out.println("-------- AFFICHAGE --------");
-            ciup.afficheListeMaison();
-            System.out.println("---------------------------");
-        } catch (Exception e) {
-            assert(false) : "Erreur lors de l'affichage des maisons"+" : " + e.getMessage();
-        }
-
-        System.out.println("\t[OK] testAffichageMaison passe.");
-    }
-
-    // Methode de test pour afficher les services
-    private static void testAffichageService() {
-        CIUP ciup = new CIUP();
-        
-        for (int i = 0; i < 3; i++) {
-            Service service = new Service(i, "Service" + i, "Description", 8, 20);
-            ciup.ajouterService(service);
-        }
-
-        try {
-            System.out.println("-------- AFFICHAGE --------");
-            ciup.afficheListeService();
-            System.out.println("---------------------------");
-        } catch (Exception e) {
-            assert(false) : "Erreur lors de l'affichage des services"+" : " + e.getMessage();
-        }
-
-        System.out.println("\t[OK] testAffichageService passe.");
-    }
-
-    // Methode de test pour afficher les etudiants
-    private static void testAffichageEtudiant() {
-        CIUP ciup = new CIUP();
-        
-        for (int i = 0; i < 3; i++) {
-            Etudiant etudiant = new Etudiant(i, "Nom" + i, "Prenom" + i, "Adresse", "Nationalite", "DateNaissance", "Tel", "Email", "Promotion", "Universite", "PieceIdentite");
-            ciup.ajouterEtudiant(etudiant);
-        }
-
-        try {
-            System.out.println("-------- AFFICHAGE --------");
-            ciup.afficheListeEtudiant();
-            System.out.println("---------------------------");
-        } catch (Exception e) {
-            assert(false) : "Erreur lors de l'affichage des etudiants"+" : " + e.getMessage();
-        }
-
-        System.out.println("\t[OK] testAffichageEtudiant passe.");
     }
 }

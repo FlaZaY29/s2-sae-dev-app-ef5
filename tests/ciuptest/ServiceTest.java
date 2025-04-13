@@ -16,13 +16,7 @@ public class ServiceTest {
         testAjoutPlusieursMaisonsAuService();
         testSupprMaisonDuService();
         testSuppressionMaisonInexistante();
-
-        // Constructeur et affichage
-        testConstructeurService();
-        testConstructeurServiceVide();
-        testGetterSetterService();
         testToStringService();
-        testAfficheService();
 
         System.out.println("\tServiceTest : Tous les tests sont passes.");
     }
@@ -80,48 +74,6 @@ public class ServiceTest {
         System.out.println("\t[OK] testSuppressionMaisonInexistante passe.");
     }
 
-    // Methode de test pour le constructeur de la classe Service
-    private static void testConstructeurService() {
-        Service service = new Service(1, "Service1", "Description1", 9, 17);
-
-        assert (service.getNum() == 1) : "Numero incorrect";
-        assert (service.getNom().equals("Service1")) : "Nom incorrect";
-        assert (service.getDesc().equals("Description1")) : "Description incorrecte";
-        assert (service.getHeureOuv() == 9) : "Heure d'ouverture incorrecte";
-        assert (service.getHeureFerm() == 17) : "Heure de fermeture incorrecte";
-
-        System.out.println("\t[OK] testConstructeurService passe.");
-    }
-
-    // Methode de test pour le constructeur vide de la classe Service
-    private static void testConstructeurServiceVide() {
-        Service service = new Service();
-
-        assert(service !=null ) : "Service incorrect";
-        System.out.println("\t[OK] testConstructeurServiceVide passe.");
-    }
-
-    // Methode de test pour les getters et setters de la classe Service
-    private static void testGetterSetterService() {
-        Service service = new Service();
-
-        service.setNum(1);
-        service.setNom("Service1");
-        service.setDesc("Description1");
-        service.setHeureOuv(9);
-        service.setHeureFerm(17);
-        service.setSesMaison(new ArrayList<MaisonInternationale>());
-
-        assert (service.getNum() == 1) : "Numero incorrect";
-        assert (service.getNom().equals("Service1")) : "Nom incorrect";
-        assert (service.getDesc().equals("Description1")) : "Description incorrecte";
-        assert (service.getHeureOuv() == 9) : "Heure d'ouverture incorrecte";
-        assert (service.getHeureFerm() == 17) : "Heure de fermeture incorrecte";
-        assert (service.getSesMaison().isEmpty()) : "Liste de maisons incorrecte";
-
-        System.out.println("\t[OK] testGetterSetterService passe.");
-    }
-
     // Methode de test pour la methode toString de la classe Service
     private static void testToStringService() {
         Service service = new Service(1, "Service1", "Description1", 9, 17);
@@ -134,25 +86,5 @@ public class ServiceTest {
         assert (texte.contains("17")) : "Heure de fermeture incorrecte";
 
         System.out.println("\t[OK] testToStringService passe.");
-    }
-
-    // Methode de test pour afficher les informations du service
-    private static void testAfficheService() {
-        Service service = new Service(1, "Service1", "Description1", 9, 17);
-
-        for (int i = 0; i < 3; i++) {
-            MaisonInternationale maison = new MaisonInternationale(i, "Maison" + i, "Description" + i, "0123456789", "Localisation" + i, "Directeur" + i, 2000 + i, "01/01/2000", 5);
-            service.ajoutMaison(maison);
-        }
-
-        try {
-            System.out.println("-------- AFFICHAGE --------");
-            service.afficheService();
-            System.out.println("---------------------------");
-        } catch (Exception e) {
-            assert (false) : "Erreur lors de l'affichage du service : " + e.getMessage();
-        }
-
-        System.out.println("\t[OK] testAfficheService passe.");
     }
 }

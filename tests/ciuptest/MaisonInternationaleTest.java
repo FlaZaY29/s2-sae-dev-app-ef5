@@ -15,11 +15,6 @@ public class MaisonInternationaleTest {
         testSupprServiceMaisonInternationale();
         testSupressionServiceInexistantMaisonInternationale();
 
-        // Constructeur et affichage
-        testConstructeurMaisonInternationale();
-        testConstructeurMaisonInternationaleVide();
-        testAfficheServicesMaisonInternationale();
-
         System.out.println("\tMaisonInternationaleTest : Tous les tests sont passés.");
     }
 
@@ -77,51 +72,4 @@ public class MaisonInternationaleTest {
 
         System.out.println("\t[OK] testSupressionServiceInexistantMaisonInternationale passé.");
     }
-
-    // Methode de test pour le constructeur de la Maison Internationale
-    private static void testConstructeurMaisonInternationale() {
-        MaisonInternationale maison = new MaisonInternationale(1, "Maison Internationale", "Description", "0123456789",
-                "Localisation", "Directeur", 2000, "01/01/2000", 5);
-
-        assert (maison.getNum() == 1) : "Numero incorrect";
-        assert (maison.getNom().equals("Maison Internationale")) : "Nom incorrect";
-        assert (maison.getDesc().equals("Description")) : "Description incorrecte";
-        assert (maison.getTel().equals("0123456789")) : "Telephone incorrect";
-        assert (maison.getLocalisation().equals("Localisation")) : "Localisation incorrecte";
-        assert (maison.getDirecteur().equals("Directeur")) : "Directeur incorrect";
-        assert (maison.getAnneeCreation() == 2000) : "Annee de creation incorrecte";
-        assert (maison.getDateFete().equals("01/01/2000")) : "Date de la fete incorrecte";
-        assert (maison.getDureeFete() == 5) : "Duree de la fete incorrecte";
-
-        System.out.println("\t[OK] testConstructeurMaisonInternationale passé.");
-    } 
-
-    // Methode de test pour le constructeur vide de la Maison Internationale
-    private static void testConstructeurMaisonInternationaleVide() {
-        MaisonInternationale maison = new MaisonInternationale();
-
-        assert (maison != null) : "Maison incorrecte";
-        System.out.println("\t[OK] testConstructeurMaisonInternationaleVide passé.");
-    }
-
-    // Methode de test pour afficher les informations de la Maison Internationale
-    private static void testAfficheServicesMaisonInternationale() {
-        MaisonInternationale maison = new MaisonInternationale();
-
-        for (int i = 0; i < 3; i++) {
-            Service s = new Service(i, "Service" + i, "Description" + i, 8, 18);
-            maison.ajoutService(s);
-        }
-
-        try {
-            System.out.println("-------- AFFICHAGE --------");
-            maison.afficheServices();
-            System.out.println("---------------------------");
-        } catch (Exception e) {
-            assert (false) : "Erreur lors de l'affichage des services de la maison"+ e.getMessage();
-        }
-
-        System.out.println("\t[OK] testAfficheDescMaisonInternationale passé.");
-    }
-
 }

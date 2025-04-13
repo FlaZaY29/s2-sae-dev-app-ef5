@@ -51,6 +51,10 @@ public class Etudiant {
         s += " ; " + email;
         s += " ; " + promotion;
         s += " ; " + universite;
+        s += " ; " + pieceIdentite;
+        s += " ; " + actuEtudiant;
+        s += " ; " + enAttente;
+        s += " ; " + maisonActuelle;
         return s;
     }
 

@@ -34,14 +34,29 @@ public class CIUP {
         listeMaison.add(maison);
     }
 
+    // Méthode pour supprimer une Maison
+    public void supprMaison(Maison maison) {
+        listeMaison.remove(maison);
+    }
+
     // Méthode pour ajouter un service
     public void ajouterService(Service service) {
         listeService.add(service);
     }
 
+    // Méthode pour supprimer un service
+    public void supprService(Service service) {
+        listeService.remove(service);
+    }
+
     // Méthode pour ajouter un étudiant
     public void ajouterEtudiant(Etudiant etudiant) {
         listeEtudiant.add(etudiant);
+    }
+
+    // Méthode pour supprimer un étudiant
+    public void supprEtudiant(Etudiant etudiant) {
+        listeEtudiant.remove(etudiant);
     }
 
     public static void main(String[] args) {
@@ -78,5 +93,17 @@ public class CIUP {
         ciup.afficheListeService();
         ciup.afficheListeEtudiant();
 
+    }
+
+    public ArrayList<Maison> getListeMaison() {
+        return listeMaison;
+    }
+
+    public ArrayList<Service> getListeService() {
+        return listeService;
+    }
+
+    public ArrayList<Etudiant> getListeEtudiant() {
+        return listeEtudiant;
     }
 }

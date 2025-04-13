@@ -30,15 +30,15 @@ public class MaisonInternationale extends Maison {
         this.sesServices = new ArrayList<>();
     }
 
-    // Méthode pour ajouter un service à la Maison Internationale
+    // Methode pour ajouter un service a la Maison Internationale
     public void ajoutService(Service service) {
         sesServices.add(service);
 
-        // Ajout de la maison à la liste des maisons proposant ce service
+        // Ajout de la maison a la liste des maisons proposant ce service
         service.ajoutMaison(this);
     }
 
-    // Méthode pour supprimer un service de la Maison Internationale
+    // Methode pour supprimer un service de la Maison Internationale
     public void supprService(Service service) {
         sesServices.remove(service);
 
@@ -46,18 +46,18 @@ public class MaisonInternationale extends Maison {
         service.supprMaison(this);
     }
 
-    // Méthode pour afficher les informations de la Maison Internationale
+    // Methode pour afficher les informations de la Maison Internationale
     public void afficheDesc() {
         System.out.println("Maison Internationale: " + nom);
         System.out.println("Description: " + desc);
         System.out.println("Localisation: " + localisation);
-        System.out.println("Année de création: " + anneeCreation);
-        System.out.println("Téléphone: " + tel);
+        System.out.println("Annee de creation: " + anneeCreation);
+        System.out.println("Telephone: " + tel);
     }
 
-    // Méthode pour afficher les services proposés
+    // Methode pour afficher les services proposes
     public void afficheServices() {
-        System.out.println("Services proposés par la Maison Internationale:");
+        System.out.println("Services proposes par la Maison Internationale:");
 
         for (Service service : sesServices) {
             System.out.println(service.getNom() + ": " + service.getDesc());

@@ -4,10 +4,11 @@ import ciup.Maison;
 
 public class MaisonTest {
 
+    // Test de la classe Maison
     public static void runTests() {
         testMaisonToString();
         testSettersMaison();
-        System.out.println("MaisonTest : Tous les tests sont passés.");
+        System.out.println("MaisonTest : Tous les tests sont passés.\n");
     }
 
     private static void testMaisonToString() {

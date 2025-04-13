@@ -24,7 +24,7 @@ public class MaisonClassique extends Maison {
         this.listeAttente = new ArrayList<>();
     }
 
-    // Méthode pour ajouter un étudiant et le mettre en liste d'attente si la maison est pleine
+    // Methode pour ajouter un etudiant et le mettre en liste d'attente si la maison est pleine
     public void ajoutEtudiant(Etudiant etu) {
         if (listeEtudiant.size() < capacite) {
             listeEtudiant.add(etu);
@@ -35,14 +35,14 @@ public class MaisonClassique extends Maison {
         }
     }
 
-    // Méthode pour supprimer un étudiant et le remplacer par l'étudiant en premiere position de la liste d'attente
+    // Methode pour supprimer un etudiant et le remplacer par l'etudiant en premiere position de la liste d'attente
     public void supprEtudiant(Etudiant etu) {
         if (listeEtudiant.contains(etu)) {
             listeEtudiant.remove(etu);
-            System.out.println("L'étudiant a été supprimé de la maison");
+            System.out.println("L'etudiant a ete supprime de la maison");
             etu.setActuEtudiant(false);
         } else {
-            System.out.println("L'étudiant n'est pas présent dans la maison");
+            System.out.println("L'etudiant n'est pas present dans la maison");
         }
 
         if (listeAttente.size() > 0) {
@@ -50,34 +50,34 @@ public class MaisonClassique extends Maison {
             listeAttente.remove(0);
             ajoutEtudiant(etuAttente);
             etuAttente.setEnAttente(false);
-            System.out.println("Un étudiant de la liste d'attente a été ajouté à la maison");
+            System.out.println("Un etudiant de la liste d'attente a ete ajoute a la maison");
         }
     }
 
-    // Méthode pour afficher la liste des étudiants dans la maison
+    // Methode pour afficher la liste des etudiants dans la maison
     public void afficheEtudiants() {
-        System.out.println("Liste des étudiants dans la maison " + getNom() + ":");
+        System.out.println("Liste des etudiants dans la maison " + getNom() + ":");
 
         for (Etudiant etu : listeEtudiant) {
             System.out.println(etu.getNom() + " " + etu.getPrenom());
         }
     }
 
-    // Méthode pour ajouter un étudiant en attente
+    // Methode pour ajouter un etudiant en attente
     public void ajoutEtudiantAttente(Etudiant etu) {
         listeAttente.add(etu);
         etu.setEnAttente(true);
     }
 
-    // Méthode pour supprimer un étudiant de la liste d'attente
+    // Methode pour supprimer un etudiant de la liste d'attente
     public void supprEtudiantAttente(Etudiant etu) {
         listeAttente.remove(etu);
         etu.setEnAttente(false);
     }
 
-    // Méthode pour afficher la liste des étudiants en attente
+    // Methode pour afficher la liste des etudiants en attente
     public void afficheEtudiantsAttente() {
-        System.out.println("Liste des étudiants en attente pour la maison " + getNom() + ":");
+        System.out.println("Liste des etudiants en attente pour la maison " + getNom() + ":");
 
         for (Etudiant etu : listeAttente) {
             System.out.println(etu.getNom() + " " + etu.getPrenom());

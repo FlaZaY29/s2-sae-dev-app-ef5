@@ -4,9 +4,10 @@ import ciup.Service;
 
 public class ServiceTest {
 
+    // Test de la classe Service
     public static void runTests() {
         testServiceToString();
-        System.out.println("ServiceTest : Tous les tests sont passés.");
+        System.out.println("ServiceTest : Tous les tests sont passés.\n");
     }
 
     private static void testServiceToString() {

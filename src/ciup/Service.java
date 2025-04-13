@@ -28,7 +28,7 @@ public class Service {
         this.sesMaison = new ArrayList<MaisonInternationale>();
     }
 
-    // Méthode toString
+    // Methode toString
     public String toString() {
         String s = "";
         s += num;
@@ -39,19 +39,19 @@ public class Service {
         return s;
     }
 
-    // Méthode pour ajouter un service
+    // Methode pour ajouter un service
     public void ajoutMaison(MaisonInternationale maison) {
         sesMaison.add(maison);
     }
 
-    // Méthode pour supprimer un service
+    // Methode pour supprimer un service
     public void supprMaison(MaisonInternationale maison) {
         sesMaison.remove(maison);
     }
 
-    // Méthode pour afficher le service
+    // Methode pour afficher le service
     public void afficheService() {
-        System.out.println("Numéro Service: " + num);
+        System.out.println("Numero Service: " + num);
         System.out.println("Nom Service: " + nom);
         System.out.println("Description: " + desc);
         System.out.println("Heure d'ouverture: " + heureOuv);

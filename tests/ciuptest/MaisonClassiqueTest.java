@@ -5,10 +5,11 @@ import ciup.Etudiant;
 
 public class MaisonClassiqueTest {
 
+    // Test de la classe MaisonClassique
     public static void runTests() {
         testAjoutEtudiant();
         testAfficheEtudiants();
-        System.out.println("MaisonClassiqueTest : Tous les tests sont passés.");
+        System.out.println("MaisonClassiqueTest : Tous les tests sont passés.\n");
     }
 
     private static void testAjoutEtudiant() {

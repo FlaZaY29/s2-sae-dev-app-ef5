@@ -5,10 +5,11 @@ import ciup.Service;
 
 public class MaisonInternationaleTest {
 
+    // Test de la classe MaisonInternationale
     public static void runTests() {
         testAjoutService();
         testSupprService();
-        System.out.println("MaisonInternationaleTest : Tous les tests sont passés.");
+        System.out.println("MaisonInternationaleTest : Tous les tests sont passés.\n");
     }
 
     private static void testAjoutService() {

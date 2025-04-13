@@ -13,9 +13,75 @@ L'objectif principal est de gérer différents aspects de la CIUP, tels que :
 
 Ce projet sera réalisé en groupe de **4 étudiants** et impliquera plusieurs rendus collectifs et individuels.
 
+## Importer le projet dans Eclipse
+
+1. Ouvrir Eclipse.
+2. Aller dans `File > Import > Existing Projects into Workspace`.
+3. Sélectionner le dossier du projet cloné.
+4. Valider.
+
+## Configurer les tests
+
+1. Clic droit sur le projet > `Properties > Java Build Path > Source`.
+2. Cliquer sur `Add Folder...`.
+3. Cocher le dossier `tests/` pour l’ajouter.
+4. Appliquer et fermer.
+
+## Activer les assertions
+
+1. Aller dans `Run > Run Configurations... > Arguments`.
+2. Dans la section `VM arguments`, ajouter : `-ea`
 ---
 
+## Compiler automatiquement
+
+1. Vérifier que `Project > Build Automatically` est bien activé.
+
+## Lancer les tests
+
+Le fichier CIUPTest contient `main()` avec tous les appels de test.
+
+### Pour lancer les tests :
+
+1. Clic droit sur le fichier CIUPTest avec les tests.
+2. Sélectionner `Run As > Java Application`.
+3. Lire les résultats.
+
+## Répartition des tests
+
+| Classe Java             | Auteur des tests | Méthodes testées                              |
+|------------------------|------------------|-----------------------------------------------|
+| `Maison`               | Donald Se         | Constructeurs, getters/setters, toString      |
+| `MaisonClassique`      | Donald Se         | ajout/suppression étudiants, attentes, affichage |
+| `MaisonInternationale` | Zamperlini Flavio         | ajout/suppression services, affichage         |
+| `Etudiant`             | Zamperlini Flavio         | Constructeurs, getters/setters, toString      |
+| `CIUPTest`               | Urkmez Yavuz         | Constructeurs, getters/setters, toString      |
+| `Service`              | Mouhou Maksen         | ajout/suppression maisons, getters, toString  |
+
+
 ## 🏗️ Structure du Projet
+
+Le projet est organisé suivant :
+```{code}
+ciup-projet/
+├── src/
+│   └── ciup/
+│       ├── CIUP.java
+│       ├── Etudiant.java
+│       ├── FactoryCIUP.java
+│       ├── Maison.java
+│       ├── MaisonClassique.java
+│       ├── MaisonInternationale.java
+│       └── Service.java
+├── tests/
+│   └── ciuptest/
+│       ├── CIUPTest.java
+│       ├── EtudiantTest.java
+│       ├── MaisonClassiqueTest.java
+│       ├── MaisonInternationaleTest.java
+│       ├── MaisonTest.java
+│       └── ServiceTest.java
+```
 
 Le projet est divisé en plusieurs domaines spécifiques :
 

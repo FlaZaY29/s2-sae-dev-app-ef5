@@ -49,14 +49,14 @@ Le fichier CIUPTest contient `main()` avec tous les appels de test.
 
 ## Répartition des tests
 
-| Classe Java             | Auteur des tests | Méthodes testées                              |
-|------------------------|------------------|-----------------------------------------------|
-| `Maison`               | Donald Se         | Constructeurs, getters/setters, toString      |
-| `MaisonClassique`      | Donald Se         | ajout/suppression étudiants, attentes, affichage |
-| `MaisonInternationale` | Zamperlini Flavio         | ajout/suppression services, affichage         |
-| `Etudiant`             | Zamperlini Flavio         | Constructeurs, getters/setters, toString      |
-| `CIUPTest`               | Urkmez Yavuz         | Constructeurs, getters/setters, toString      |
-| `Service`              | Mouhou Maksen         | ajout/suppression maisons, getters, toString  |
+| Classe Java             | Auteur des tests |
+|------------------------|------------------|
+| `Maison`               | Donald Se         | 
+| `MaisonClassique`      | Donald Se         | 
+| `MaisonInternationale` | Zamperlini Flavio         |
+| `Etudiant`             | Zamperlini Flavio         | |
+| `CIUPTest`               | Urkmez Yavuz         |
+| `Service`              | Mouhou Maksen         |
 
 
 ## 🏗️ Structure du Projet

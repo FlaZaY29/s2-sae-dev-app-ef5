@@ -20,7 +20,7 @@ public class FactoryCIUP {
 
 
     // Créer une maisonClassique FrancoBritannique
-    static MaisonClassique maisonFrançaise() {
+    static MaisonClassique maisonFrancaise() {
         MaisonClassique maison = new MaisonClassique();
 
         // Maison

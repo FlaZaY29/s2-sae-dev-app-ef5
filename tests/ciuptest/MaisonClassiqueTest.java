@@ -31,6 +31,7 @@ public class MaisonClassiqueTest {
 
     private static void testAfficheEtudiants() {
         MaisonClassique maison = new MaisonClassique();
+        maison.setCapacite(1);
         maison.setNom("Maison Française");
 
         Etudiant etu = new Etudiant(1, "Dupont", "Jean", "", "", "", "", "", "", "", "");

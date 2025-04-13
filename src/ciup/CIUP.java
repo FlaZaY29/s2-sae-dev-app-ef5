@@ -49,7 +49,7 @@ public class CIUP {
 
         // Maison Internationale & Maisons & Services
         MaisonInternationale mInternationale = FactoryCIUP.creeMaisonInternationale();
-        Maison m1 = FactoryCIUP.maisonFrançaise();
+        Maison m1 = FactoryCIUP.maisonFrancaise();
         Maison m2 = FactoryCIUP.maisonJaponaise();
 
         Service s1 = FactoryCIUP.creeServiceRestauration();
@@ -66,7 +66,7 @@ public class CIUP {
         ciup.ajouterService(s2);
 
         // Optionel mais pas fiable : j'ajoute les étudiants
-        for (Etudiant etudiant : FactoryCIUP.maisonFrançaise().getListeEtudiant()) {
+        for (Etudiant etudiant : FactoryCIUP.maisonFrancaise().getListeEtudiant()) {
             ciup.ajouterEtudiant(etudiant);
         }
         for (Etudiant etudiant : FactoryCIUP.maisonJaponaise().getListeEtudiant()) {

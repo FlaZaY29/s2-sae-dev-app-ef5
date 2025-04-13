@@ -1,7 +1,5 @@
 package ciuptest;
 
-import java.util.ArrayList;
-
 import ciup.MaisonInternationale;
 import ciup.Service;
 

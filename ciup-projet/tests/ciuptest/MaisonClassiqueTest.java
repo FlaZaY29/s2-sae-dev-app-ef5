@@ -1,9 +1,6 @@
 package ciuptest;
 
 import ciup.MaisonClassique;
-
-import java.util.ArrayList;
-
 import ciup.Etudiant;
 
 public class MaisonClassiqueTest {

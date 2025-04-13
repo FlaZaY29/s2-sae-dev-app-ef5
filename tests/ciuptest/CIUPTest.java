@@ -12,8 +12,8 @@ public class CIUPTest {
         // Executez les tests de chaque classe
         CIUPTest.runTests();
         EtudiantTest.runTests();
-        /*MaisonClassiqueTest.runTests();
-        MaisonInternationaleTest.runTests();
+        MaisonClassiqueTest.runTests();
+        /*MaisonInternationaleTest.runTests();
         MaisonTest.runTests();
         ServiceTest.runTests();*/
 
@@ -60,6 +60,7 @@ public class CIUPTest {
         Maison maison = new Maison(0, "Maison", null, null, null,null, 2025, null, 12);
         ciup.ajouterMaison(maison);
 
+        assert(ciup.getListeMaison().size() == 1) : "[ERR] Nombre de maisons incorrect";
         assert(ciup.getListeMaison().contains(maison)) : "[ERR] Maison non ajoutee";
         System.out.println("\t[OK] testAjouterMaison passe.");
     }
@@ -83,6 +84,7 @@ public class CIUPTest {
         Service service = new Service(0,"Service", "Description", 8, 20);
         ciup.ajouterService(service);
         
+        assert(ciup.getListeService().size() == 1) : "[ERR] Nombre de services incorrect";
         assert(ciup.getListeService().contains(service)) : "[ERR] Service non ajoutee";
         System.out.println("\t[OK] testAjouterService passe.");
     }
@@ -106,6 +108,7 @@ public class CIUPTest {
         Etudiant etudiant = new Etudiant(0,"Nom", "Prenom", "Adresse", "Nationalite", "DateNaissance", "Tel", "Email", "Promotion", "Universite", "PieceIdentite");
         ciup.ajouterEtudiant(etudiant);
         
+        assert(ciup.getListeEtudiant().size() == 1) : "[ERR] Nombre d'etudiants incorrect";
         assert(ciup.getListeEtudiant().contains(etudiant)) : "[ERR] Etudiant non ajoutee";
         System.out.println("\t[OK] testAjouterEtudiant passe.");
     }
@@ -208,7 +211,7 @@ public class CIUPTest {
             ciup.afficheListeMaison();
             System.out.println("---------------------------");
         } catch (Exception e) {
-            assert(false) : "[ERR] Erreur lors de l'affichage des maisons";
+            assert(false) : "[ERR] Erreur lors de l'affichage des maisons"+" : " + e.getMessage();
         }
 
         System.out.println("\t[OK] testAffichageMaison passe.");
@@ -228,7 +231,7 @@ public class CIUPTest {
             ciup.afficheListeService();
             System.out.println("---------------------------");
         } catch (Exception e) {
-            assert(false) : "[ERR] Erreur lors de l'affichage des services";
+            assert(false) : "[ERR] Erreur lors de l'affichage des services"+" : " + e.getMessage();
         }
 
         System.out.println("\t[OK] testAffichageService passe.");
@@ -248,7 +251,7 @@ public class CIUPTest {
             ciup.afficheListeEtudiant();
             System.out.println("---------------------------");
         } catch (Exception e) {
-            assert(false) : "[ERR] Erreur lors de l'affichage des etudiants";
+            assert(false) : "[ERR] Erreur lors de l'affichage des etudiants"+" : " + e.getMessage();
         }
 
         System.out.println("\t[OK] testAffichageEtudiant passe.");

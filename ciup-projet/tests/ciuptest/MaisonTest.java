@@ -1,6 +1,6 @@
 package ciuptest;
 
-import ciup.Maison;
+import modeles.Maison;
 
 public class MaisonTest {
 

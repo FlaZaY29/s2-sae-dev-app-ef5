@@ -1,6 +1,6 @@
 package ciuptest;
 
-import ciup.*;
+import modeles.*;
 
 public class CIUPTest {
     public static void main(String[] args) {

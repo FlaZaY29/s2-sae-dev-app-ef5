@@ -1,4 +1,4 @@
-package ciup;
+package modeles;
 
 import java.util.ArrayList;
 

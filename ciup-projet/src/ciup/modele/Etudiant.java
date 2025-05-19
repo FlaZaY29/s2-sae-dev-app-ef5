@@ -1,4 +1,4 @@
-package ciup;
+package modele;
 
 public class Etudiant {
 

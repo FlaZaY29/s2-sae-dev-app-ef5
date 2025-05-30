@@ -2,15 +2,18 @@ package vues;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.io.File;
+import java.net.URL;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
+import javax.swing.ImageIcon;
 
 import controleurs.MainControleur;
 
 /**
- * Fenêtre principale de l'application
+ * Fenï¿½tre principale de l'application
  * Contient tous les panneaux de l'interface
  */
 public class MainFrame extends JFrame {
@@ -22,13 +25,14 @@ public class MainFrame extends JFrame {
     private MainControleur controleur;
 
     /**
-     * Constructeur de la fenêtre principale
-     * @param controleur Le contrôleur principal
+     * Constructeur de la fenï¿½tre principale
+     * @param controleur Le contrï¿½leur principal
      */
     public MainFrame(MainControleur controleur) {
         this.controleur = controleur;
 
-        setTitle("CIUP - Cité Internationale Universitaire de Paris");
+        setTitle("CIUP - CitÃ© Internationale Universitaire de Paris");
+        setIconImage(loadIconImage().getImage());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1200, 800);
         setLocationRelativeTo(null);
@@ -37,8 +41,62 @@ public class MainFrame extends JFrame {
         layoutComponents();
     }
 
+    private ImageIcon loadIconImage() {
+    try {
+        // Essayer de charger le nouveau logo CIUP
+        String[] logoPaths = {
+            "/resources/icon.png",
+            "resources/icon.png"
+        };
+
+        for (String path : logoPaths) {
+            URL logoUrl = getClass().getResource(path);
+            if (logoUrl != null) {
+                ImageIcon icon = new ImageIcon(logoUrl);
+                if (icon.getIconWidth() > 0) {
+                    return icon;
+                }
+            }
+        }
+
+        // Essayer avec le ClassLoader
+        URL logoUrl = getClass().getClassLoader().getResource("resources/icon.png");
+        if (logoUrl != null) {
+            ImageIcon icon = new ImageIcon(logoUrl);
+            if (icon.getIconWidth() > 0) {
+                return icon;
+            }
+        }
+
+        // Essayer avec un chemin absolu
+        String binPath = System.getProperty("user.dir") + File.separator + "bin" + File.separator + "resources" + File.separator + "icon.png";
+        File logoFile = new File(binPath);
+        if (logoFile.exists()) {
+            ImageIcon icon = new ImageIcon(binPath);
+            if (icon.getIconWidth() > 0) {
+                return icon;
+            }
+        }
+
+        // Essayer avec un chemin relatif
+        String relativePath = "resources" + File.separator + "icon.png";
+        File relativeFile = new File(relativePath);
+        if (relativeFile.exists()) {
+            ImageIcon icon = new ImageIcon(relativePath);
+            if (icon.getIconWidth() > 0) {
+                return icon;
+            }
+        }
+
+        return null;
+
+    } catch (Exception e) {
+        return null;
+    }
+}
+
     /**
-     * Initialise les composants de la fenêtre
+     * Initialise les composants de la fenï¿½tre
      */
     private void initComponents() {
         headerPanel = new HeaderPanel();
@@ -53,7 +111,7 @@ public class MainFrame extends JFrame {
     }
 
     /**
-     * Organise les composants dans la fenêtre
+     * Organise les composants dans la fenï¿½tre
      */
     private void layoutComponents() {
         setLayout(new BorderLayout());
@@ -64,15 +122,15 @@ public class MainFrame extends JFrame {
     }
 
     /**
-     * Affiche un panneau spécifique
-     * @param panelName Le nom du panneau à afficher
+     * Affiche un panneau spï¿½cifique
+     * @param panelName Le nom du panneau ï¿½ afficher
      */
     public void showPanel(String panelName) {
         CardLayout cl = (CardLayout) contentPanel.getLayout();
         cl.show(contentPanel, panelName);
     }
 
-    // Getters pour accéder aux différents panneaux
+    // Getters pour accï¿½der aux diffï¿½rents panneaux
     public HeaderPanel getHeaderPanel() {
         return headerPanel;
     }
@@ -90,5 +148,5 @@ public class MainFrame extends JFrame {
     }
 }
 /**
- * cette classe a été crée par @author Flavio Zamperlini
+ * cette classe a ï¿½tï¿½ crï¿½e par @author Flavio Zamperlini
  */

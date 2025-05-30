@@ -142,6 +142,8 @@ public class HeaderPanel extends JPanel {
         }
     }
 
+    
+
     /**
      * Organise les composants dans le panneau
      */

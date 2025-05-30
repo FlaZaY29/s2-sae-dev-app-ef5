@@ -1,11 +1,11 @@
 package modeles;
 
 /**
- * Classe reprÃ©sentant un Ã©tudiant dans le systÃ¨me CIUP.
+ * Classe représentant un étudiant dans le système CIUP.
  * <p>
- * Cette classe modÃ©lise toutes les informations relatives Ã  un Ã©tudiant :
- * informations personnelles, acadÃ©miques, statut d'inscription et affectation
- * Ã  une maison. Elle gÃ¨re Ã©galement les Ã©tats particuliers comme l'attente
+ * Cette classe modélise toutes les informations relatives à un étudiant :
+ * informations personnelles, académiques, statut d'inscription et affectation
+ * à une maison. Elle gère également les états particuliers comme l'attente
  * d'affectation.
  * </p>
  * 
@@ -16,66 +16,66 @@ package modeles;
  */
 public class Etudiant {
 
-    /** NumÃ©ro unique d'identification de l'Ã©tudiant */
+    /** Numéro unique d'identification de l'étudiant */
     private int num;
     
-    /** Nom de famille de l'Ã©tudiant */
+    /** Nom de famille de l'étudiant */
     private String nom;
     
-    /** PrÃ©nom de l'Ã©tudiant */
+    /** Prénom de l'étudiant */
     private String prenom;
     
-    /** Adresse de rÃ©sidence de l'Ã©tudiant */
+    /** Adresse de résidence de l'étudiant */
     private String adresse;
     
-    /** NationalitÃ© de l'Ã©tudiant */
+    /** Nationalité de l'étudiant */
     private String nationalite;
     
-    /** Date de naissance de l'Ã©tudiant (format String) */
+    /** Date de naissance de l'étudiant (format String) */
     private String dateNaissance;
     
-    /** NumÃ©ro de tÃ©lÃ©phone de l'Ã©tudiant */
+    /** Numéro de téléphone de l'étudiant */
     private String tel;
     
-    /** Adresse email de l'Ã©tudiant */
+    /** Adresse email de l'étudiant */
     private String email;
     
-    /** Promotion ou classe de l'Ã©tudiant */
+    /** Promotion ou classe de l'étudiant */
     private String promotion;
     
-    /** UniversitÃ© d'origine de l'Ã©tudiant */
+    /** Université d'origine de l'étudiant */
     private String universite;
     
-    /** RÃ©fÃ©rence du document d'identitÃ© */
+    /** Référence du document d'identité */
     private String pieceIdentite;
     
-    /** Indique si l'Ã©tudiant est actuellement en pÃ©riode d'Ã©tudes */
+    /** Indique si l'étudiant est actuellement en période d'études */
     private boolean actuEtudiant;
     
-    /** Indique si l'Ã©tudiant est en liste d'attente */
+    /** Indique si l'étudiant est en liste d'attente */
     private boolean enAttente;
     
-    /** Maison Ã  laquelle l'Ã©tudiant est actuellement affectÃ© */
+    /** Maison à laquelle l'étudiant est actuellement affecté */
     private Maison maisonActuelle;
 
     /**
-     * Constructeur complet pour crÃ©er un Ã©tudiant avec toutes ses informations.
+     * Constructeur complet pour créer un étudiant avec toutes ses informations.
      * <p>
-     * Initialise un Ã©tudiant avec le statut par dÃ©faut : actuellement Ã©tudiant,
+     * Initialise un étudiant avec le statut par défaut : actuellement étudiant,
      * non en attente, et sans affectation de maison.
      * </p>
      * 
-     * @param num NumÃ©ro unique d'identification
+     * @param num Numéro unique d'identification
      * @param nom Nom de famille
-     * @param prenom PrÃ©nom
-     * @param adresse Adresse de rÃ©sidence
-     * @param nationalite NationalitÃ©
+     * @param prenom Prénom
+     * @param adresse Adresse de résidence
+     * @param nationalite Nationalité
      * @param dateNaissance Date de naissance
-     * @param tel NumÃ©ro de tÃ©lÃ©phone
+     * @param tel Numéro de téléphone
      * @param email Adresse email
      * @param promotion Promotion ou classe
-     * @param universite UniversitÃ© d'origine
-     * @param pieceIdentite RÃ©fÃ©rence du document d'identitÃ©
+     * @param universite Université d'origine
+     * @param pieceIdentite Référence du document d'identité
      */
     public Etudiant(int num, String nom, String prenom, String adresse, String nationalite, String dateNaissance, String tel, String email, String promotion, String universite, String pieceIdentite) {
         this.num = num;
@@ -95,21 +95,21 @@ public class Etudiant {
     }
 
     /**
-     * Constructeur par dÃ©faut.
+     * Constructeur par défaut.
      * <p>
-     * CrÃ©e un Ã©tudiant avec des valeurs par dÃ©faut.
-     * UtilisÃ© principalement pour l'instanciation avant initialisation des champs.
+     * Crée un étudiant avec des valeurs par défaut.
+     * Utilisé principalement pour l'instanciation avant initialisation des champs.
      * </p>
      */
     public Etudiant() {}
 
     /**
-     * Retourne une reprÃ©sentation textuelle complÃ¨te de l'Ã©tudiant.
+     * Retourne une représentation textuelle complète de l'étudiant.
      * <p>
      * Format : num ; nom ; prenom ; adresse ; nationalite ; dateNaissance ; tel ; email ; promotion ; universite ; pieceIdentite ; actuEtudiant ; enAttente ; maisonActuelle
      * </p>
      * 
-     * @return ChaÃ®ne de caractÃ¨res reprÃ©sentant l'Ã©tudiant
+     * @return Chaîne de caractères représentant l'étudiant
      */
     public String toString() {
         String s = "";
@@ -131,9 +131,9 @@ public class Etudiant {
     }
 
     /**
-     * Affiche toutes les informations de l'Ã©tudiant sur la console.
+     * Affiche toutes les informations de l'étudiant sur la console.
      * <p>
-     * Utilise la mÃ©thode toString() pour afficher les informations complÃ¨tes.
+     * Utilise la méthode toString() pour afficher les informations complètes.
      * </p>
      */
     public void afficheInfo() {
@@ -141,7 +141,7 @@ public class Etudiant {
     }
 
     /**
-     * Affiche un rÃ©sumÃ© des informations principales de l'Ã©tudiant.
+     * Affiche un résumé des informations principales de l'étudiant.
      * <p>
      * Format d'affichage : num ; nom ; prenom ; promotion ; universite
      * </p>
@@ -153,25 +153,25 @@ public class Etudiant {
     // Getters et Setters avec documentation
 
     /**
-     * Retourne le numÃ©ro d'identification de l'Ã©tudiant.
+     * Retourne le numéro d'identification de l'étudiant.
      * 
-     * @return Le numÃ©ro unique d'identification
+     * @return Le numéro unique d'identification
      */
     public int getNum() {
         return num;
     }
 
     /**
-     * DÃ©finit le numÃ©ro d'identification de l'Ã©tudiant.
+     * Définit le numéro d'identification de l'étudiant.
      * 
-     * @param num Le numÃ©ro unique d'identification
+     * @param num Le numéro unique d'identification
      */
     public void setNum(int num) {
         this.num = num;
     }
 
     /**
-     * Retourne le nom de famille de l'Ã©tudiant.
+     * Retourne le nom de famille de l'étudiant.
      * 
      * @return Le nom de famille
      */
@@ -180,7 +180,7 @@ public class Etudiant {
     }
 
     /**
-     * DÃ©finit le nom de famille de l'Ã©tudiant.
+     * Définit le nom de famille de l'étudiant.
      * 
      * @param nom Le nom de famille
      */
@@ -189,61 +189,61 @@ public class Etudiant {
     }
 
     /**
-     * Retourne le prÃ©nom de l'Ã©tudiant.
+     * Retourne le prénom de l'étudiant.
      * 
-     * @return Le prÃ©nom
+     * @return Le prénom
      */
     public String getPrenom() {
         return prenom;
     }
 
     /**
-     * DÃ©finit le prÃ©nom de l'Ã©tudiant.
+     * Définit le prénom de l'étudiant.
      * 
-     * @param prenom Le prÃ©nom
+     * @param prenom Le prénom
      */
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
 
     /**
-     * Retourne l'adresse de rÃ©sidence de l'Ã©tudiant.
+     * Retourne l'adresse de résidence de l'étudiant.
      * 
-     * @return L'adresse de rÃ©sidence
+     * @return L'adresse de résidence
      */
     public String getAdresse() {
         return adresse;
     }
 
     /**
-     * DÃ©finit l'adresse de rÃ©sidence de l'Ã©tudiant.
+     * Définit l'adresse de résidence de l'étudiant.
      * 
-     * @param adresse L'adresse de rÃ©sidence
+     * @param adresse L'adresse de résidence
      */
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
 
     /**
-     * Retourne la nationalitÃ© de l'Ã©tudiant.
+     * Retourne la nationalité de l'étudiant.
      * 
-     * @return La nationalitÃ©
+     * @return La nationalité
      */
     public String getNationalite() {
         return nationalite;
     }
 
     /**
-     * DÃ©finit la nationalitÃ© de l'Ã©tudiant.
+     * Définit la nationalité de l'étudiant.
      * 
-     * @param nationalite La nationalitÃ©
+     * @param nationalite La nationalité
      */
     public void setNationalite(String nationalite) {
         this.nationalite = nationalite;
     }
 
     /**
-     * Retourne la date de naissance de l'Ã©tudiant.
+     * Retourne la date de naissance de l'étudiant.
      * 
      * @return La date de naissance (format String)
      */
@@ -252,7 +252,7 @@ public class Etudiant {
     }
 
     /**
-     * DÃ©finit la date de naissance de l'Ã©tudiant.
+     * Définit la date de naissance de l'étudiant.
      * 
      * @param dateNaissance La date de naissance
      */
@@ -261,25 +261,25 @@ public class Etudiant {
     }
 
     /**
-     * Retourne le numÃ©ro de tÃ©lÃ©phone de l'Ã©tudiant.
+     * Retourne le numéro de téléphone de l'étudiant.
      * 
-     * @return Le numÃ©ro de tÃ©lÃ©phone
+     * @return Le numéro de téléphone
      */
     public String getTel() {
         return tel;
     }
 
     /**
-     * DÃ©finit le numÃ©ro de tÃ©lÃ©phone de l'Ã©tudiant.
+     * Définit le numéro de téléphone de l'étudiant.
      * 
-     * @param tel Le numÃ©ro de tÃ©lÃ©phone
+     * @param tel Le numéro de téléphone
      */
     public void setTel(String tel) {
         this.tel = tel;
     }
 
     /**
-     * Retourne l'adresse email de l'Ã©tudiant.
+     * Retourne l'adresse email de l'étudiant.
      * 
      * @return L'adresse email
      */
@@ -288,7 +288,7 @@ public class Etudiant {
     }
 
     /**
-     * DÃ©finit l'adresse email de l'Ã©tudiant.
+     * Définit l'adresse email de l'étudiant.
      * 
      * @param email L'adresse email
      */
@@ -297,7 +297,7 @@ public class Etudiant {
     }
 
     /**
-     * Retourne la promotion de l'Ã©tudiant.
+     * Retourne la promotion de l'étudiant.
      * 
      * @return La promotion ou classe
      */
@@ -306,7 +306,7 @@ public class Etudiant {
     }
 
     /**
-     * DÃ©finit la promotion de l'Ã©tudiant.
+     * Définit la promotion de l'étudiant.
      * 
      * @param promotion La promotion ou classe
      */
@@ -315,79 +315,79 @@ public class Etudiant {
     }
 
     /**
-     * Retourne l'universitÃ© d'origine de l'Ã©tudiant.
+     * Retourne l'université d'origine de l'étudiant.
      * 
-     * @return L'universitÃ© d'origine
+     * @return L'université d'origine
      */
     public String getUniversite() {
         return universite;
     }
 
     /**
-     * DÃ©finit l'universitÃ© d'origine de l'Ã©tudiant.
+     * Définit l'université d'origine de l'étudiant.
      * 
-     * @param universite L'universitÃ© d'origine
+     * @param universite L'université d'origine
      */
     public void setUniversite(String universite) {
         this.universite = universite;
     }
 
     /**
-     * Retourne la rÃ©fÃ©rence du document d'identitÃ©.
+     * Retourne la référence du document d'identité.
      * 
-     * @return La rÃ©fÃ©rence du document d'identitÃ©
+     * @return La référence du document d'identité
      */
     public String getPieceIdentite() {
         return pieceIdentite;
     }
 
     /**
-     * DÃ©finit la rÃ©fÃ©rence du document d'identitÃ©.
+     * Définit la référence du document d'identité.
      * 
-     * @param pieceIdentite La rÃ©fÃ©rence du document d'identitÃ©
+     * @param pieceIdentite La référence du document d'identité
      */
     public void setPieceIdentite(String pieceIdentite) {
         this.pieceIdentite = pieceIdentite;
     }
 
     /**
-     * Indique si l'Ã©tudiant est actuellement en pÃ©riode d'Ã©tudes.
+     * Indique si l'étudiant est actuellement en période d'études.
      * 
-     * @return true si l'Ã©tudiant est actuellement Ã©tudiant, false sinon
+     * @return true si l'étudiant est actuellement étudiant, false sinon
      */
     public boolean isActuEtudiant() {
         return actuEtudiant;
     }
 
     /**
-     * DÃ©finit le statut d'Ã©tudiant actuel.
+     * Définit le statut d'étudiant actuel.
      * 
-     * @param actuEtudiant true si l'Ã©tudiant est actuellement Ã©tudiant
+     * @param actuEtudiant true si l'étudiant est actuellement étudiant
      */
     public void setActuEtudiant(boolean actuEtudiant) {
         this.actuEtudiant = actuEtudiant;
     }
 
     /**
-     * Indique si l'Ã©tudiant est en liste d'attente.
+     * Indique si l'étudiant est en liste d'attente.
      * 
-     * @return true si l'Ã©tudiant est en attente, false sinon
+     * @return true si l'étudiant est en attente, false sinon
      */
     public boolean isEnAttente() {
         return enAttente;
     }
 
     /**
-     * DÃ©finit le statut d'attente de l'Ã©tudiant.
+     * Définit le statut d'attente de l'étudiant.
      * 
-     * @param enAttente true si l'Ã©tudiant est en attente
+     * @param enAttente true si l'étudiant est en attente
      */
     public void setEnAttente(boolean enAttente) {
         this.enAttente = enAttente;
     }
 
     /**
-     * Retourne la maison actuellement affectÃ©e Ã  l'Ã©tudiant.
+     * Retourne la maison actuellement affectée à l'étudiant.
      * 
      * @return La maison actuelle ou null si aucune affectation
      */
@@ -396,14 +396,14 @@ public class Etudiant {
     }
 
     /**
-     * DÃ©finit la maison affectÃ©e Ã  l'Ã©tudiant.
+     * Définit la maison affectée à l'étudiant.
      * 
-     * @param maisonActuelle La maison Ã  affecter
+     * @param maisonActuelle La maison à affecter
      */
     public void setMaisonActuelle(Maison maisonActuelle) {
         this.maisonActuelle = maisonActuelle;
     }
 }
 /**
-* cette classe a Ã©tÃ© crÃ©e par @author Flavio Zamperlini
+* cette classe a été crée par @author Flavio Zamperlini
 */

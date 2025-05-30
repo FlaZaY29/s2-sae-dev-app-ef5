@@ -10,7 +10,7 @@ import javax.swing.WindowConstants;
 import controleurs.MainControleur;
 
 /**
- * FenÃªtre principale de l'application
+ * Fenêtre principale de l'application
  * Contient tous les panneaux de l'interface
  */
 public class MainFrame extends JFrame {
@@ -22,13 +22,13 @@ public class MainFrame extends JFrame {
     private MainControleur controleur;
 
     /**
-     * Constructeur de la fenÃªtre principale
-     * @param controleur Le contrÃ´leur principal
+     * Constructeur de la fenêtre principale
+     * @param controleur Le contrôleur principal
      */
     public MainFrame(MainControleur controleur) {
         this.controleur = controleur;
 
-        setTitle("CIUP - CitÃ© Internationale Universitaire de Paris");
+        setTitle("CIUP - Cité Internationale Universitaire de Paris");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1200, 800);
         setLocationRelativeTo(null);
@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
     }
 
     /**
-     * Initialise les composants de la fenÃªtre
+     * Initialise les composants de la fenêtre
      */
     private void initComponents() {
         headerPanel = new HeaderPanel();
@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
     }
 
     /**
-     * Organise les composants dans la fenÃªtre
+     * Organise les composants dans la fenêtre
      */
     private void layoutComponents() {
         setLayout(new BorderLayout());
@@ -64,15 +64,15 @@ public class MainFrame extends JFrame {
     }
 
     /**
-     * Affiche un panneau spÃ©cifique
-     * @param panelName Le nom du panneau Ã  afficher
+     * Affiche un panneau spécifique
+     * @param panelName Le nom du panneau à afficher
      */
     public void showPanel(String panelName) {
         CardLayout cl = (CardLayout) contentPanel.getLayout();
         cl.show(contentPanel, panelName);
     }
 
-    // Getters pour accÃ©der aux diffÃ©rents panneaux
+    // Getters pour accéder aux différents panneaux
     public HeaderPanel getHeaderPanel() {
         return headerPanel;
     }
@@ -90,5 +90,5 @@ public class MainFrame extends JFrame {
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Flavio Zamperlini
+ * cette classe a été crée par @author Flavio Zamperlini
  */

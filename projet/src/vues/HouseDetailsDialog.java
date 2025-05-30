@@ -33,7 +33,7 @@ import modeles.MaisonInternationale;
 import modeles.Service;
 
 /**
- * BoÃ®te de dialogue affichant les dÃ©tails d'une maison
+ * Boîte de dialogue affichant les détails d'une maison
  */
 public class HouseDetailsDialog extends JDialog {
     private Maison maison;
@@ -42,12 +42,12 @@ public class HouseDetailsDialog extends JDialog {
     private JButton manageServicesButton;
 
     /**
-     * Constructeur de la boÃ®te de dialogue de dÃ©tails de maison
-     * @param parent La fenÃªtre parente
-     * @param maison La maison Ã  afficher
+     * Constructeur de la boîte de dialogue de détails de maison
+     * @param parent La fenêtre parente
+     * @param maison La maison à afficher
      */
     public HouseDetailsDialog(JFrame parent, Maison maison) {
-        super(parent, "DÃ©tails de la maison", true);
+        super(parent, "Détails de la maison", true);
         this.maison = maison;
 
         setSize(800, 600); // Taille d'origine
@@ -58,10 +58,10 @@ public class HouseDetailsDialog extends JDialog {
     }
 
     /**
-     * Constructeur avec contrÃ´leur pour la gestion des services
-     * @param parent La fenÃªtre parente
-     * @param maison La maison Ã  afficher
-     * @param controleur Le contrÃ´leur principal
+     * Constructeur avec contrôleur pour la gestion des services
+     * @param parent La fenêtre parente
+     * @param maison La maison à afficher
+     * @param controleur Le contrôleur principal
      */
     public HouseDetailsDialog(JFrame parent, Maison maison, MainControleur controleur) {
         this(parent, maison);
@@ -74,7 +74,7 @@ public class HouseDetailsDialog extends JDialog {
     }
 
     /**
-     * Initialise les composants de la boÃ®te de dialogue
+     * Initialise les composants de la boîte de dialogue
      */
     private void initComponents() {
         // Header panel with house name
@@ -101,7 +101,7 @@ public class HouseDetailsDialog extends JDialog {
         // If it's a MaisonClassique, show students
         if (maison instanceof MaisonClassique) {
             MaisonClassique maisonClassique = (MaisonClassique) maison;
-            // VÃ©rifier si la liste des Ã©tudiants est initialisÃ©e
+            // Vérifier si la liste des étudiants est initialisée
             if (maisonClassique.getListeEtudiant() != null && !maisonClassique.getListeEtudiant().isEmpty()) {
                 JPanel studentsPanel = createStudentsPanel(maisonClassique);
                 contentPanel.add(Box.createRigidArea(new Dimension(0, 20)));
@@ -136,7 +136,7 @@ public class HouseDetailsDialog extends JDialog {
      */
     private void addManageServicesButton() {
         if (manageServicesButton == null) {
-            manageServicesButton = new JButton("GÃ©rer les Services");
+            manageServicesButton = new JButton("Gérer les Services");
             manageServicesButton.setBackground(new Color(0, 150, 136));
             manageServicesButton.setForeground(Color.WHITE);
             manageServicesButton.setFocusPainted(false);
@@ -166,7 +166,7 @@ public class HouseDetailsDialog extends JDialog {
     }
 
     /**
-     * CrÃ©e le panneau d'informations gÃ©nÃ©rales
+     * Crée le panneau d'informations générales
      * @return Le panneau d'informations
      */
     private JPanel createInfoPanel() {
@@ -175,31 +175,31 @@ public class HouseDetailsDialog extends JDialog {
 
         JPanel panel = new JPanel(new GridLayout(0, 2, 10, 10));
         panel.setBackground(Color.WHITE);
-        panel.setBorder(BorderFactory.createTitledBorder("Informations gÃ©nÃ©rales"));
+        panel.setBorder(BorderFactory.createTitledBorder("Informations générales"));
 
         // Add house information
-        addLabelAndValue(panel, "NumÃ©ro:", String.valueOf(maison.getNum()));
+        addLabelAndValue(panel, "Numéro:", String.valueOf(maison.getNum()));
         addLabelAndValue(panel, "Nom:", maison.getNom());
         addLabelAndValue(panel, "Description:", maison.getDesc());
-        addLabelAndValue(panel, "TÃ©lÃ©phone:", maison.getTel());
+        addLabelAndValue(panel, "Téléphone:", maison.getTel());
         addLabelAndValue(panel, "Localisation:", maison.getLocalisation());
         addLabelAndValue(panel, "Directeur:", maison.getDirecteur());
-        addLabelAndValue(panel, "AnnÃ©e de crÃ©ation:", String.valueOf(maison.getAnneeCreation()));
-        addLabelAndValue(panel, "Date de fÃªte:", maison.getDateFete());
-        addLabelAndValue(panel, "DurÃ©e de fÃªte:", maison.getDureeFete() + " jour(s)");
+        addLabelAndValue(panel, "Année de création:", String.valueOf(maison.getAnneeCreation()));
+        addLabelAndValue(panel, "Date de fête:", maison.getDateFete());
+        addLabelAndValue(panel, "Durée de fête:", maison.getDureeFete() + " jour(s)");
 
         // Add specific information for MaisonClassique
         if (maison instanceof MaisonClassique) {
             MaisonClassique maisonClassique = (MaisonClassique) maison;
-            addLabelAndValue(panel, "NationalitÃ©:", maisonClassique.getNationalite());
-            addLabelAndValue(panel, "CapacitÃ©:", String.valueOf(maisonClassique.getCapacite()));
+            addLabelAndValue(panel, "Nationalité:", maisonClassique.getNationalite());
+            addLabelAndValue(panel, "Capacité:", String.valueOf(maisonClassique.getCapacite()));
 
-            // VÃ©rifier si la liste des Ã©tudiants est initialisÃ©e
+            // Vérifier si la liste des étudiants est initialisée
             ArrayList<Etudiant> listeEtudiant = maisonClassique.getListeEtudiant();
             int nbEtudiants = (listeEtudiant != null) ? listeEtudiant.size() : 0;
-            addLabelAndValue(panel, "Nombre d'Ã©tudiants:", String.valueOf(nbEtudiants));
+            addLabelAndValue(panel, "Nombre d'étudiants:", String.valueOf(nbEtudiants));
 
-            // VÃ©rifier si la liste d'attente est initialisÃ©e
+            // Vérifier si la liste d'attente est initialisée
             ArrayList<Etudiant> listeAttente = maisonClassique.getListeAttente();
             int nbAttente = (listeAttente != null) ? listeAttente.size() : 0;
             addLabelAndValue(panel, "Liste d'attente:", String.valueOf(nbAttente));
@@ -243,27 +243,27 @@ public class HouseDetailsDialog extends JDialog {
     }
 
     /**
-     * CrÃ©e le panneau d'Ã©tudiants
+     * Crée le panneau d'étudiants
      * @param maisonClassique La maison classique
-     * @return Le panneau d'Ã©tudiants
+     * @return Le panneau d'étudiants
      */
     private JPanel createStudentsPanel(MaisonClassique maisonClassique) {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(Color.WHITE);
-        panel.setBorder(BorderFactory.createTitledBorder("Ã‰tudiants"));
+        panel.setBorder(BorderFactory.createTitledBorder("Étudiants"));
 
-        // VÃ©rifier si la liste des Ã©tudiants est initialisÃ©e
+        // Vérifier si la liste des étudiants est initialisée
         ArrayList<Etudiant> listeEtudiant = maisonClassique.getListeEtudiant();
         if (listeEtudiant == null) {
             // Si la liste est null, afficher un message
-            JLabel emptyLabel = new JLabel("Aucun Ã©tudiant dans cette maison");
+            JLabel emptyLabel = new JLabel("Aucun étudiant dans cette maison");
             emptyLabel.setHorizontalAlignment(SwingConstants.CENTER);
             panel.add(emptyLabel, BorderLayout.CENTER);
             return panel;
         }
 
         // Create table model
-        String[] columnNames = {"ID", "Nom", "PrÃ©nom", "NationalitÃ©", "Promotion", "UniversitÃ©"};
+        String[] columnNames = {"ID", "Nom", "Prénom", "Nationalité", "Promotion", "Université"};
         Object[][] data = new Object[listeEtudiant.size()][6];
 
         int i = 0;
@@ -287,7 +287,7 @@ public class HouseDetailsDialog extends JDialog {
     }
 
     /**
-     * CrÃ©e le panneau de services
+     * Crée le panneau de services
      * @param maisonInternationale La maison internationale
      * @return Le panneau de services
      */
@@ -304,7 +304,7 @@ public class HouseDetailsDialog extends JDialog {
         headerPanel.add(titleLabel, BorderLayout.WEST);
 
         if (controleur != null) {
-            JButton manageButton = new JButton("GÃ©rer");
+            JButton manageButton = new JButton("Gérer");
             manageButton.setBackground(new Color(0, 150, 136));
             manageButton.setForeground(Color.WHITE);
             manageButton.setFocusPainted(false);
@@ -317,7 +317,7 @@ public class HouseDetailsDialog extends JDialog {
 
         panel.add(headerPanel, BorderLayout.NORTH);
 
-        // VÃ©rifier si la liste des services est initialisÃ©e
+        // Vérifier si la liste des services est initialisée
         ArrayList<Service> sesServices = maisonInternationale.getSesServices();
         if (sesServices == null || sesServices.isEmpty()) {
             // Si la liste est null ou vide, afficher un message
@@ -376,5 +376,5 @@ public class HouseDetailsDialog extends JDialog {
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Donald Se Maksen Mouhou
+ * cette classe a été crée par @author Donald Se Maksen Mouhou
  */

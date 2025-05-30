@@ -3,14 +3,14 @@ package modeles;
 import java.util.ArrayList;
 
 /**
- * Classe reprÃ©sentant un service dans le systÃ¨me CIUP.
+ * Classe représentant un service dans le système CIUP.
  * <p>
- * Un service est une prestation offerte aux Ã©tudiants de la CIUP par une ou
+ * Un service est une prestation offerte aux étudiants de la CIUP par une ou
  * plusieurs maisons internationales. Chaque service a des horaires d'ouverture
- * et peut Ãªtre proposÃ© par plusieurs maisons simultanÃ©ment.
+ * et peut être proposé par plusieurs maisons simultanément.
  * </p>
  * <p>
- * Cette classe gÃ¨re la relation bidirectionnelle avec les maisons internationales
+ * Cette classe gère la relation bidirectionnelle avec les maisons internationales
  * qui proposent le service.
  * </p>
  * 
@@ -23,13 +23,13 @@ public class Service {
     /** Liste des maisons internationales proposant ce service */
     private ArrayList<MaisonInternationale> sesMaison;
 
-    /** NumÃ©ro unique d'identification du service */
+    /** Numéro unique d'identification du service */
     private int num;
     
     /** Nom du service */
     private String nom;
     
-    /** Description dÃ©taillÃ©e du service */
+    /** Description détaillée du service */
     private String desc;
     
     /** Heure d'ouverture du service (format 24h) */
@@ -39,12 +39,12 @@ public class Service {
     private int heureFerm;
 
     /**
-     * Constructeur complet pour crÃ©er un service.
+     * Constructeur complet pour créer un service.
      * <p>
      * Initialise automatiquement la liste des maisons proposant le service.
      * </p>
      * 
-     * @param num NumÃ©ro unique d'identification
+     * @param num Numéro unique d'identification
      * @param nom Nom du service
      * @param desc Description du service
      * @param heureOuv Heure d'ouverture (0-23)
@@ -60,9 +60,9 @@ public class Service {
     }
 
     /**
-     * Constructeur par dÃ©faut.
+     * Constructeur par défaut.
      * <p>
-     * CrÃ©e un service avec des valeurs par dÃ©faut et initialise
+     * Crée un service avec des valeurs par défaut et initialise
      * la liste des maisons.
      * </p>
      */
@@ -71,12 +71,12 @@ public class Service {
     }
 
     /**
-     * Retourne une reprÃ©sentation textuelle complÃ¨te du service.
+     * Retourne une représentation textuelle complète du service.
      * <p>
      * Format : num ; nom ; desc ; heureOuv ; heureFerm
      * </p>
      * 
-     * @return ChaÃ®ne de caractÃ¨res reprÃ©sentant le service
+     * @return Chaîne de caractères représentant le service
      */
     public String toString() {
         String s = "";
@@ -89,13 +89,13 @@ public class Service {
     }
 
     /**
-     * Ajoute une maison internationale Ã  la liste des maisons proposant ce service.
+     * Ajoute une maison internationale à la liste des maisons proposant ce service.
      * <p>
-     * Cette mÃ©thode est appelÃ©e automatiquement lors de l'ajout d'un service
-     * Ã  une maison internationale pour maintenir la cohÃ©rence bidirectionnelle.
+     * Cette méthode est appelée automatiquement lors de l'ajout d'un service
+     * à une maison internationale pour maintenir la cohérence bidirectionnelle.
      * </p>
      * 
-     * @param maison La maison internationale Ã  ajouter
+     * @param maison La maison internationale à ajouter
      */
     public void ajoutMaison(MaisonInternationale maison) {
         if (sesMaison == null) {
@@ -107,11 +107,11 @@ public class Service {
     /**
      * Supprime une maison internationale de la liste des maisons proposant ce service.
      * <p>
-     * Cette mÃ©thode est appelÃ©e automatiquement lors de la suppression d'un service
-     * d'une maison internationale pour maintenir la cohÃ©rence bidirectionnelle.
+     * Cette méthode est appelée automatiquement lors de la suppression d'un service
+     * d'une maison internationale pour maintenir la cohérence bidirectionnelle.
      * </p>
      * 
-     * @param maison La maison internationale Ã  supprimer
+     * @param maison La maison internationale à supprimer
      */
     public void supprMaison(MaisonInternationale maison) {
         if (sesMaison == null) {
@@ -122,7 +122,7 @@ public class Service {
     }
 
     /**
-     * Affiche les informations complÃ¨tes du service sur la console.
+     * Affiche les informations complètes du service sur la console.
      * <p>
      * Affiche toutes les informations du service ainsi que la liste
      * des maisons qui le proposent.
@@ -138,7 +138,7 @@ public class Service {
         
         if (sesMaison == null) {
             sesMaison = new ArrayList<>();
-            System.out.println("Aucune maison associÃ©e");
+            System.out.println("Aucune maison associée");
         } else {
             for (MaisonInternationale maison : sesMaison) {
                 System.out.println(maison.getNom());
@@ -165,7 +165,7 @@ public class Service {
     }
 
     /**
-     * DÃ©finit la liste des maisons proposant ce service.
+     * Définit la liste des maisons proposant ce service.
      * 
      * @param sesMaison La nouvelle liste de maisons
      */
@@ -174,18 +174,18 @@ public class Service {
     }
 
     /**
-     * Retourne le numÃ©ro d'identification du service.
+     * Retourne le numéro d'identification du service.
      * 
-     * @return Le numÃ©ro unique d'identification
+     * @return Le numéro unique d'identification
      */
     public int getNum() {
         return num;
     }
 
     /**
-     * DÃ©finit le numÃ©ro d'identification du service.
+     * Définit le numéro d'identification du service.
      * 
-     * @param num Le numÃ©ro unique d'identification
+     * @param num Le numéro unique d'identification
      */
     public void setNum(int num) {
         this.num = num;
@@ -201,7 +201,7 @@ public class Service {
     }
 
     /**
-     * DÃ©finit le nom du service.
+     * Définit le nom du service.
      * 
      * @param nom Le nom du service
      */
@@ -219,7 +219,7 @@ public class Service {
     }
 
     /**
-     * DÃ©finit la description du service.
+     * Définit la description du service.
      * 
      * @param desc La description du service
      */
@@ -237,7 +237,7 @@ public class Service {
     }
 
     /**
-     * DÃ©finit l'heure d'ouverture du service.
+     * Définit l'heure d'ouverture du service.
      * 
      * @param heureOuv L'heure d'ouverture (0-23)
      */
@@ -255,7 +255,7 @@ public class Service {
     }
 
     /**
-     * DÃ©finit l'heure de fermeture du service.
+     * Définit l'heure de fermeture du service.
      * 
      * @param heureFerm L'heure de fermeture (0-23)
      */
@@ -264,5 +264,5 @@ public class Service {
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Maksen Mouhou
+ * cette classe a été crée par @author Maksen Mouhou
  */

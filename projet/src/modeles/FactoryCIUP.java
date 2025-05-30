@@ -1,15 +1,15 @@
 package modeles;
 
 /**
- * Classe factory pour crÃ©er des instances prÃ©-configurÃ©es des objets du modÃ¨le CIUP.
+ * Classe factory pour créer des instances pré-configurées des objets du modèle CIUP.
  * <p>
- * Cette classe implÃ©mente le pattern Factory pour faciliter la crÃ©ation d'objets
- * de test et d'exemples avec des donnÃ©es cohÃ©rentes. Elle fournit des mÃ©thodes
- * statiques pour crÃ©er des maisons, services et Ã©tudiants prÃ©-configurÃ©s.
+ * Cette classe implémente le pattern Factory pour faciliter la création d'objets
+ * de test et d'exemples avec des données cohérentes. Elle fournit des méthodes
+ * statiques pour créer des maisons, services et étudiants pré-configurés.
  * </p>
  * <p>
- * UtilisÃ©e principalement pour l'initialisation de l'application avec des donnÃ©es
- * de dÃ©monstration et pour les tests unitaires.
+ * Utilisée principalement pour l'initialisation de l'application avec des données
+ * de démonstration et pour les tests unitaires.
  * </p>
  * 
  * @author CIUP Development Team
@@ -22,13 +22,13 @@ package modeles;
 public class FactoryCIUP {
 
     /**
-     * CrÃ©e une instance prÃ©-configurÃ©e de maison internationale.
+     * Crée une instance pré-configurée de maison internationale.
      * <p>
-     * Retourne une maison internationale avec des donnÃ©es d'exemple
-     * typiques pour les tests et dÃ©monstrations.
+     * Retourne une maison internationale avec des données d'exemple
+     * typiques pour les tests et démonstrations.
      * </p>
      * 
-     * @return Une maison internationale prÃ©-configurÃ©e
+     * @return Une maison internationale pré-configurée
      */
     public static MaisonInternationale creeMaisonInternationale() {
         MaisonInternationale maison = new MaisonInternationale();
@@ -46,13 +46,13 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e une instance prÃ©-configurÃ©e de maison classique franÃ§aise.
+     * Crée une instance pré-configurée de maison classique française.
      * <p>
-     * Retourne une maison classique avec nationalitÃ© franÃ§aise et
-     * une liste d'Ã©tudiants franÃ§ais prÃ©-dÃ©finis.
+     * Retourne une maison classique avec nationalité française et
+     * une liste d'étudiants français pré-définis.
      * </p>
      * 
-     * @return Une maison classique franÃ§aise avec Ã©tudiants
+     * @return Une maison classique française avec étudiants
      */
     public static MaisonClassique maisonFrancaise() {
         MaisonClassique maison = new MaisonClassique();
@@ -85,13 +85,13 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e une instance prÃ©-configurÃ©e de maison classique japonaise.
+     * Crée une instance pré-configurée de maison classique japonaise.
      * <p>
-     * Retourne une maison classique avec nationalitÃ© japonaise et
-     * une liste d'Ã©tudiants japonais prÃ©-dÃ©finis.
+     * Retourne une maison classique avec nationalité japonaise et
+     * une liste d'étudiants japonais pré-définis.
      * </p>
      * 
-     * @return Une maison classique japonaise avec Ã©tudiants
+     * @return Une maison classique japonaise avec étudiants
      */
     public static MaisonClassique maisonJaponaise() {
         MaisonClassique maison = new MaisonClassique();
@@ -124,12 +124,12 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e une instance prÃ©-configurÃ©e du service de restauration.
+     * Crée une instance pré-configurée du service de restauration.
      * <p>
-     * Service ouvert de 8h Ã  20h pour la restauration des Ã©tudiants.
+     * Service ouvert de 8h à 20h pour la restauration des étudiants.
      * </p>
      * 
-     * @return Un service de restauration prÃ©-configurÃ©
+     * @return Un service de restauration pré-configuré
      */
     public static Service creeServiceRestauration() {
         Service service = new Service();
@@ -143,12 +143,12 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e une instance prÃ©-configurÃ©e du service de sÃ©curitÃ©.
+     * Crée une instance pré-configurée du service de sécurité.
      * <p>
-     * Service ouvert 24h/24 pour la sÃ©curitÃ© des Ã©tudiants.
+     * Service ouvert 24h/24 pour la sécurité des étudiants.
      * </p>
      * 
-     * @return Un service de sÃ©curitÃ© prÃ©-configurÃ©
+     * @return Un service de sécurité pré-configuré
      */
     public static Service creeServiceSecurite() {
         Service service = new Service();
@@ -162,13 +162,13 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant franÃ§ais d'exemple (Nathan Thanna).
+     * Crée un étudiant français d'exemple (Nathan Thanna).
      * <p>
-     * Premier Ã©tudiant de la liste des Ã©tudiants franÃ§ais avec
-     * des informations complÃ¨tes prÃ©-dÃ©finies.
+     * Premier étudiant de la liste des étudiants français avec
+     * des informations complètes pré-définies.
      * </p>
      * 
-     * @return Un Ã©tudiant franÃ§ais prÃ©-configurÃ©
+     * @return Un étudiant français pré-configuré
      */
     public static Etudiant etudiant1() {
         return new Etudiant(1, "Nathan", "Thanna", "9 rue jolie",
@@ -178,9 +178,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant franÃ§ais d'exemple (Alice Dupont).
+     * Crée un étudiant français d'exemple (Alice Dupont).
      * 
-     * @return Un Ã©tudiant franÃ§ais prÃ©-configurÃ©
+     * @return Un étudiant français pré-configuré
      */
     public static Etudiant etudiant2() {
         return new Etudiant(2, "Alice", "Dupont", "15 avenue des Champs",
@@ -190,9 +190,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant franÃ§ais d'exemple (Jean Martin).
+     * Crée un étudiant français d'exemple (Jean Martin).
      * 
-     * @return Un Ã©tudiant franÃ§ais prÃ©-configurÃ©
+     * @return Un étudiant français pré-configuré
      */
     public static Etudiant etudiant3() {
         return new Etudiant(3, "Jean", "Martin", "20 boulevard Haussmann",
@@ -202,9 +202,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant franÃ§ais d'exemple (Marie Curie).
+     * Crée un étudiant français d'exemple (Marie Curie).
      * 
-     * @return Un Ã©tudiant franÃ§ais prÃ©-configurÃ©
+     * @return Un étudiant français pré-configuré
      */
     public static Etudiant etudiant4() {
         return new Etudiant(4, "Marie", "Curie", "5 rue des Sciences",
@@ -214,9 +214,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant allemand d'exemple (Albert Einstein).
+     * Crée un étudiant allemand d'exemple (Albert Einstein).
      * 
-     * @return Un Ã©tudiant allemand prÃ©-configurÃ©
+     * @return Un étudiant allemand pré-configuré
      */
     public static Etudiant etudiant5() {
         return new Etudiant(5, "Albert", "Einstein", "10 avenue Relativite",
@@ -226,9 +226,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant anglais d'exemple (Isaac Newton).
+     * Crée un étudiant anglais d'exemple (Isaac Newton).
      * 
-     * @return Un Ã©tudiant anglais prÃ©-configurÃ©
+     * @return Un étudiant anglais pré-configuré
      */
     public static Etudiant etudiant6() {
         return new Etudiant(6, "Isaac", "Newton", "20 rue Gravite",
@@ -238,9 +238,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant anglais d'exemple (Ada Lovelace).
+     * Crée un étudiant anglais d'exemple (Ada Lovelace).
      * 
-     * @return Un Ã©tudiant anglais prÃ©-configurÃ©
+     * @return Un étudiant anglais pré-configuré
      */
     public static Etudiant etudiant7() {
         return new Etudiant(7, "Ada", "Lovelace", "15 boulevard Algorithmique",
@@ -250,9 +250,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant anglais d'exemple (Charles Darwin).
+     * Crée un étudiant anglais d'exemple (Charles Darwin).
      * 
-     * @return Un Ã©tudiant anglais prÃ©-configurÃ©
+     * @return Un étudiant anglais pré-configuré
      */
     public static Etudiant etudiant8() {
         return new Etudiant(8, "Charles", "Darwin", "25 avenue Evolution",
@@ -262,9 +262,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant italien d'exemple (Galileo Galilei).
+     * Crée un étudiant italien d'exemple (Galileo Galilei).
      * 
-     * @return Un Ã©tudiant italien prÃ©-configurÃ©
+     * @return Un étudiant italien pré-configuré
      */
     public static Etudiant etudiant9() {
         return new Etudiant(9, "Galileo", "Galilei", "30 rue Astronomie",
@@ -274,9 +274,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant italien d'exemple (Leonardo Da Vinci).
+     * Crée un étudiant italien d'exemple (Leonardo Da Vinci).
      * 
-     * @return Un Ã©tudiant italien prÃ©-configurÃ©
+     * @return Un étudiant italien pré-configuré
      */
     public static Etudiant etudiant10() {
         return new Etudiant(10, "Leonardo", "Da Vinci", "40 rue Renaissance",
@@ -286,9 +286,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Hiroshi Tanaka).
+     * Crée un étudiant japonais d'exemple (Hiroshi Tanaka).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant1Japonais() {
         return new Etudiant(10, "Hiroshi", "Tanaka", "7 rue Sakura",
@@ -297,9 +297,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Yuki Sato).
+     * Crée un étudiant japonais d'exemple (Yuki Sato).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant2Japonais() {
         return new Etudiant(11, "Yuki", "Sato", "10 rue Fuji",
@@ -308,9 +308,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Akira Nakamura).
+     * Crée un étudiant japonais d'exemple (Akira Nakamura).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant3Japonais() {
         return new Etudiant(12, "Akira", "Nakamura", "15 avenue Shibuya",
@@ -319,9 +319,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Mai Kobayashi).
+     * Crée un étudiant japonais d'exemple (Mai Kobayashi).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant4Japonais() {
         return new Etudiant(13, "Mai", "Kobayashi", "30 rue Kyoto",
@@ -330,9 +330,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Ren Yamamoto).
+     * Crée un étudiant japonais d'exemple (Ren Yamamoto).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant5Japonais() {
         return new Etudiant(14, "Ren", "Yamamoto", "20 rue Koi",
@@ -341,9 +341,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Haruto Takahashi).
+     * Crée un étudiant japonais d'exemple (Haruto Takahashi).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant6Japonais() {
         return new Etudiant(15, "Haruto", "Takahashi", "8 rue Nara",
@@ -352,9 +352,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Sakura Yoshida).
+     * Crée un étudiant japonais d'exemple (Sakura Yoshida).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant7Japonais() {
         return new Etudiant(16, "Sakura", "Yoshida", "17 avenue Tokyo",
@@ -363,9 +363,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Yuto Fujimoto).
+     * Crée un étudiant japonais d'exemple (Yuto Fujimoto).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant8Japonais() {
         return new Etudiant(17, "Yuto", "Fujimoto", "10 rue Hokkaido",
@@ -374,9 +374,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Kaito Inoue).
+     * Crée un étudiant japonais d'exemple (Kaito Inoue).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant9Japonais() {
         return new Etudiant(18, "Kaito", "Inoue", "25 rue Tokyo",
@@ -385,9 +385,9 @@ public class FactoryCIUP {
     }
 
     /**
-     * CrÃ©e un Ã©tudiant japonais d'exemple (Nina Matsumoto).
+     * Crée un étudiant japonais d'exemple (Nina Matsumoto).
      * 
-     * @return Un Ã©tudiant japonais prÃ©-configurÃ©
+     * @return Un étudiant japonais pré-configuré
      */
     public static Etudiant etudiant10Japonais() {
         return new Etudiant(19, "Nina", "Matsumoto", "9 rue Shin",
@@ -396,5 +396,5 @@ public class FactoryCIUP {
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Flavio Zamperlini
+ * cette classe a été crée par @author Flavio Zamperlini
  */

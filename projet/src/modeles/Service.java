@@ -1,35 +1,43 @@
 package modeles;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Classe représentant un service dans le système CIUP.
+ * Classe reprÃ©sentant un service dans le systÃ¨me CIUP.
  * <p>
- * Un service est une prestation offerte aux étudiants de la CIUP par une ou
+ * Un service est une prestation offerte aux Ã©tudiants de la CIUP par une ou
  * plusieurs maisons internationales. Chaque service a des horaires d'ouverture
- * et peut être proposé par plusieurs maisons simultanément.
+ * et peut Ãªtre proposÃ© par plusieurs maisons simultanÃ©ment.
  * </p>
  * <p>
- * Cette classe gère la relation bidirectionnelle avec les maisons internationales
+ * Cette classe gÃ¨re la relation bidirectionnelle avec les maisons internationales
  * qui proposent le service.
+ * </p>
+ * <p>
+ * Cette classe implÃ©mente Serializable pour permettre la sauvegarde des services
+ * sur le disque dur.
  * </p>
  * 
  * @author CIUP Development Team
- * @version 1.0
+ * @version 1.1
  * @see MaisonInternationale
  */
-public class Service {
+public class Service implements Serializable {
+
+    /** Identifiant de version pour la sÃ©rialisation */
+    private static final long serialVersionUID = 1L;
 
     /** Liste des maisons internationales proposant ce service */
     private ArrayList<MaisonInternationale> sesMaison;
 
-    /** Numéro unique d'identification du service */
+    /** Numï¿½ro unique d'identification du service */
     private int num;
     
     /** Nom du service */
     private String nom;
     
-    /** Description détaillée du service */
+    /** Description dï¿½taillï¿½e du service */
     private String desc;
     
     /** Heure d'ouverture du service (format 24h) */
@@ -39,12 +47,12 @@ public class Service {
     private int heureFerm;
 
     /**
-     * Constructeur complet pour créer un service.
+     * Constructeur complet pour crï¿½er un service.
      * <p>
      * Initialise automatiquement la liste des maisons proposant le service.
      * </p>
      * 
-     * @param num Numéro unique d'identification
+     * @param num Numï¿½ro unique d'identification
      * @param nom Nom du service
      * @param desc Description du service
      * @param heureOuv Heure d'ouverture (0-23)
@@ -60,9 +68,9 @@ public class Service {
     }
 
     /**
-     * Constructeur par défaut.
+     * Constructeur par dï¿½faut.
      * <p>
-     * Crée un service avec des valeurs par défaut et initialise
+     * Crï¿½e un service avec des valeurs par dï¿½faut et initialise
      * la liste des maisons.
      * </p>
      */
@@ -71,12 +79,12 @@ public class Service {
     }
 
     /**
-     * Retourne une représentation textuelle complète du service.
+     * Retourne une reprï¿½sentation textuelle complï¿½te du service.
      * <p>
      * Format : num ; nom ; desc ; heureOuv ; heureFerm
      * </p>
      * 
-     * @return Chaîne de caractères représentant le service
+     * @return Chaï¿½ne de caractï¿½res reprï¿½sentant le service
      */
     public String toString() {
         String s = "";
@@ -89,13 +97,13 @@ public class Service {
     }
 
     /**
-     * Ajoute une maison internationale à la liste des maisons proposant ce service.
+     * Ajoute une maison internationale ï¿½ la liste des maisons proposant ce service.
      * <p>
-     * Cette méthode est appelée automatiquement lors de l'ajout d'un service
-     * à une maison internationale pour maintenir la cohérence bidirectionnelle.
+     * Cette mï¿½thode est appelï¿½e automatiquement lors de l'ajout d'un service
+     * ï¿½ une maison internationale pour maintenir la cohï¿½rence bidirectionnelle.
      * </p>
      * 
-     * @param maison La maison internationale à ajouter
+     * @param maison La maison internationale ï¿½ ajouter
      */
     public void ajoutMaison(MaisonInternationale maison) {
         if (sesMaison == null) {
@@ -107,11 +115,11 @@ public class Service {
     /**
      * Supprime une maison internationale de la liste des maisons proposant ce service.
      * <p>
-     * Cette méthode est appelée automatiquement lors de la suppression d'un service
-     * d'une maison internationale pour maintenir la cohérence bidirectionnelle.
+     * Cette mï¿½thode est appelï¿½e automatiquement lors de la suppression d'un service
+     * d'une maison internationale pour maintenir la cohï¿½rence bidirectionnelle.
      * </p>
      * 
-     * @param maison La maison internationale à supprimer
+     * @param maison La maison internationale ï¿½ supprimer
      */
     public void supprMaison(MaisonInternationale maison) {
         if (sesMaison == null) {
@@ -122,7 +130,7 @@ public class Service {
     }
 
     /**
-     * Affiche les informations complètes du service sur la console.
+     * Affiche les informations complï¿½tes du service sur la console.
      * <p>
      * Affiche toutes les informations du service ainsi que la liste
      * des maisons qui le proposent.
@@ -138,7 +146,7 @@ public class Service {
         
         if (sesMaison == null) {
             sesMaison = new ArrayList<>();
-            System.out.println("Aucune maison associée");
+            System.out.println("Aucune maison associï¿½e");
         } else {
             for (MaisonInternationale maison : sesMaison) {
                 System.out.println(maison.getNom());
@@ -165,7 +173,7 @@ public class Service {
     }
 
     /**
-     * Définit la liste des maisons proposant ce service.
+     * Dï¿½finit la liste des maisons proposant ce service.
      * 
      * @param sesMaison La nouvelle liste de maisons
      */
@@ -174,18 +182,18 @@ public class Service {
     }
 
     /**
-     * Retourne le numéro d'identification du service.
+     * Retourne le numï¿½ro d'identification du service.
      * 
-     * @return Le numéro unique d'identification
+     * @return Le numï¿½ro unique d'identification
      */
     public int getNum() {
         return num;
     }
 
     /**
-     * Définit le numéro d'identification du service.
+     * Dï¿½finit le numï¿½ro d'identification du service.
      * 
-     * @param num Le numéro unique d'identification
+     * @param num Le numï¿½ro unique d'identification
      */
     public void setNum(int num) {
         this.num = num;
@@ -201,7 +209,7 @@ public class Service {
     }
 
     /**
-     * Définit le nom du service.
+     * Dï¿½finit le nom du service.
      * 
      * @param nom Le nom du service
      */
@@ -219,7 +227,7 @@ public class Service {
     }
 
     /**
-     * Définit la description du service.
+     * Dï¿½finit la description du service.
      * 
      * @param desc La description du service
      */
@@ -237,7 +245,7 @@ public class Service {
     }
 
     /**
-     * Définit l'heure d'ouverture du service.
+     * Dï¿½finit l'heure d'ouverture du service.
      * 
      * @param heureOuv L'heure d'ouverture (0-23)
      */
@@ -255,7 +263,7 @@ public class Service {
     }
 
     /**
-     * Définit l'heure de fermeture du service.
+     * Dï¿½finit l'heure de fermeture du service.
      * 
      * @param heureFerm L'heure de fermeture (0-23)
      */
@@ -264,5 +272,5 @@ public class Service {
     }
 }
 /**
- * cette classe a été crée par @author Maksen Mouhou
+ * cette classe a ï¿½tï¿½ crï¿½e par @author Maksen Mouhou
  */

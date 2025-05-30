@@ -9,12 +9,16 @@ import modeles.MaisonInternationale;
 import modeles.Service;
 import vues.MainFrame;
 
+import javax.swing.*;
+import java.io.File;
+
 /**
- * Point d'entrée de l'application CIUP
- * Initialise le modèle, la vue principale et le contrôleur principal
+ * Point d'entrï¿½e de l'application CIUP
+ * Initialise le modï¿½le, la vue principale et le contrï¿½leur principal
  */
 public class ApplicationCIUP {
 
+    private static final String DEFAULT_SAVE_FILE = "ciup_data.ser";
     public static void main(String[] args) {
         // Configuration du look and feel
         try {
@@ -23,18 +27,51 @@ public class ApplicationCIUP {
             e.printStackTrace();
         }
 
-        // Exécution de l'application dans l'EDT (Event Dispatch Thread)
+        // Exï¿½cution de l'application dans l'EDT (Event Dispatch Thread)
         javax.swing.SwingUtilities.invokeLater(() -> {
-            // Initialisation du modèle
-            CIUP ciupModel = initializeModel();
-
-            // Initialisation du contrôleur principal
+            // VÃ©rifier si un fichier de sauvegarde existe
+            File saveFile = new File(DEFAULT_SAVE_FILE);
+            CIUP ciupModel;
+            
+            if (saveFile.exists()) {
+                // Demander Ã  l'utilisateur s'il souhaite charger les donnÃ©es sauvegardÃ©es
+                int response = JOptionPane.showConfirmDialog(
+                    null,
+                    "Un fichier de sauvegarde a Ã©tÃ© trouvÃ©. Voulez-vous charger les donnÃ©es sauvegardÃ©es?",
+                    "Charger les donnÃ©es",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE
+                );
+                
+                if (response == JOptionPane.YES_OPTION) {
+                    // Initialisation du contrÃ´leur principal avec un modÃ¨le vide
+                    ciupModel = new CIUP();
+                    MainControleur mainControleur = new MainControleur(ciupModel);
+                    
+                    // Initialisation de la vue principale
+                    MainFrame mainFrame = new MainFrame(mainControleur);
+                    
+                    // Connexion du contrÃ´leur Ã  la vue
+                    mainControleur.setMainFrame(mainFrame);
+                    
+                    // Charger les donnÃ©es sauvegardÃ©es
+                    mainControleur.loadData();
+                    
+                    // Affichage de la vue principale
+                    mainFrame.setVisible(true);
+                    return;
+                }
+            }
+            
+            // Initialisation du modÃ¨le avec des donnÃ©es de test
+            ciupModel = initializeModel();
+            // Initialisation du contrï¿½leur principal
             MainControleur mainControleur = new MainControleur(ciupModel);
 
             // Initialisation de la vue principale
             MainFrame mainFrame = new MainFrame(mainControleur);
 
-            // Connexion du contrôleur à la vue
+            // Connexion du contrï¿½leur ï¿½ la vue
             mainControleur.setMainFrame(mainFrame);
 
             // Affichage de la vue principale
@@ -43,23 +80,23 @@ public class ApplicationCIUP {
     }
 
     /**
-     * Initialise le modèle avec des données de test
-     * @return Le modèle CIUP initialisé
+     * Initialise le modï¿½le avec des donnï¿½es de test
+     * @return Le modï¿½le CIUP initialisï¿½
      */
     private static CIUP initializeModel() {
-        // Création du modèle CIUP
+        // Crï¿½ation du modï¿½le CIUP
         CIUP ciup = new CIUP();
 
-        // Création des maisons d'exemple
+        // Crï¿½ation des maisons d'exemple
         MaisonInternationale maisonInternationale = FactoryCIUP.creeMaisonInternationale();
         MaisonClassique maisonFrancaise = FactoryCIUP.maisonFrancaise();
         MaisonClassique maisonJaponaise = FactoryCIUP.maisonJaponaise();
 
-        // Création des services
+        // Crï¿½ation des services
         Service serviceRestauration = FactoryCIUP.creeServiceRestauration();
         Service serviceSecurite = FactoryCIUP.creeServiceSecurite();
 
-        // Ajout des services à la maison internationale
+        // Ajout des services ï¿½ la maison internationale
         maisonInternationale.ajoutService(serviceRestauration);
         maisonInternationale.ajoutService(serviceSecurite);
 
@@ -72,7 +109,7 @@ public class ApplicationCIUP {
         ciup.ajouterService(serviceRestauration);
         ciup.ajouterService(serviceSecurite);
 
-        // Ajout des étudiants au CIUP
+        // Ajout des ï¿½tudiants au CIUP
         for (Etudiant etudiant : maisonFrancaise.getListeEtudiant()) {
             ciup.ajouterEtudiant(etudiant);
         }
@@ -81,13 +118,13 @@ public class ApplicationCIUP {
         }
 
         // Affichage d'informations dans la console
-        System.out.println("Application CIUP démarrée");
+        System.out.println("Application CIUP dï¿½marrï¿½e");
         System.out.println("Nombre de maisons: " + ciup.getListeMaison().size());
-        System.out.println("Nombre d'étudiants: " + ciup.getListeEtudiant().size());
+        System.out.println("Nombre d'ï¿½tudiants: " + ciup.getListeEtudiant().size());
 
         return ciup;
     }
 }
 /**
- * cette classe a été crée par @author Flavio Zamperlini
+ * cette classe a ï¿½tï¿½ crï¿½e par @author Flavio Zamperlini
  */

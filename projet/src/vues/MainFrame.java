@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.io.File;
 import java.net.URL;
+import vues.MenuBar;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -99,6 +100,7 @@ public class MainFrame extends JFrame {
      * Initialise les composants de la fen�tre
      */
     private void initComponents() {
+        setJMenuBar(new MenuBar(controleur));
         headerPanel = new HeaderPanel();
         sidebarPanel = new SidebarPanel();
         contentPanel = new JPanel(new CardLayout());

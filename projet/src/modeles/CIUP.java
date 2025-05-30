@@ -1,18 +1,23 @@
 package modeles;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
- * Classe principale du modèle représentant la Cité Internationale Universitaire de Paris.
+ * Classe principale du modï¿½le reprï¿½sentant la Citï¿½ Internationale Universitaire de Paris.
  * <p>
- * Cette classe constitue le point central du modèle de données de l'application.
- * Elle gère les collections principales de l'établissement : les maisons, les services
- * et les étudiants. Elle fournit les méthodes nécessaires pour manipuler ces collections
+ * Cette classe constitue le point central du modï¿½le de donnï¿½es de l'application.
+ * Elle gï¿½re les collections principales de l'ï¿½tablissement : les maisons, les services
+ * et les ï¿½tudiants. Elle fournit les mï¿½thodes nï¿½cessaires pour manipuler ces collections
  * et effectuer des recherches.
  * </p>
  * <p>
- * La classe suit le pattern Singleton implicite en tant que modèle principal de l'application
- * et centralise toutes les opérations CRUD sur les entités principales.
+ * La classe suit le pattern Singleton implicite en tant que modï¿½le principal de l'application
+ * et centralise toutes les opï¿½rations CRUD sur les entitï¿½s principales.
+ * * </p>
+ * <p>
+ * Cette classe implÃ©mente Serializable pour permettre la sauvegarde de l'Ã©tat de l'application
+ * sur le disque dur.
  * </p>
  * 
  * @author CIUP Development Team
@@ -21,22 +26,24 @@ import java.util.ArrayList;
  * @see Service
  * @see Etudiant
  */
-public class CIUP {
-
+public class CIUP implements Serializable {
+    
+    /** Identifiant de version pour la sÃ©rialisation */
+    private static final long serialVersionUID = 1L;
     /** Liste des maisons de la CIUP */
     private ArrayList<Maison> listeMaison = new ArrayList<>();
     
-    /** Liste des services proposés par la CIUP */
+    /** Liste des services proposï¿½s par la CIUP */
     private ArrayList<Service> listeService = new ArrayList<>();
     
-    /** Liste des étudiants inscrits à la CIUP */
+    /** Liste des ï¿½tudiants inscrits ï¿½ la CIUP */
     private ArrayList<Etudiant> listeEtudiant = new ArrayList<>();
 
     /**
-     * Affiche la liste complète des maisons de la CIUP.
+     * Affiche la liste complï¿½te des maisons de la CIUP.
      * <p>
-     * Cette méthode parcourt toutes les maisons enregistrées et affiche
-     * leurs informations via la méthode afficheMaison() de chaque maison.
+     * Cette mï¿½thode parcourt toutes les maisons enregistrï¿½es et affiche
+     * leurs informations via la mï¿½thode afficheMaison() de chaque maison.
      * </p>
      */
     public void afficheListeMaison() {
@@ -46,10 +53,10 @@ public class CIUP {
     }
 
     /**
-     * Affiche la liste complète des services de la CIUP.
+     * Affiche la liste complï¿½te des services de la CIUP.
      * <p>
-     * Cette méthode parcourt tous les services enregistrés et affiche
-     * leurs informations via la méthode afficheService() de chaque service.
+     * Cette mï¿½thode parcourt tous les services enregistrï¿½s et affiche
+     * leurs informations via la mï¿½thode afficheService() de chaque service.
      * </p>
      */
     public void afficheListeService() {
@@ -59,10 +66,10 @@ public class CIUP {
     }
 
     /**
-     * Affiche la liste complète des étudiants de la CIUP.
+     * Affiche la liste complï¿½te des ï¿½tudiants de la CIUP.
      * <p>
-     * Cette méthode parcourt tous les étudiants enregistrés et affiche
-     * un résumé de leurs informations via la méthode afficheInfoResume().
+     * Cette mï¿½thode parcourt tous les ï¿½tudiants enregistrï¿½s et affiche
+     * un rï¿½sumï¿½ de leurs informations via la mï¿½thode afficheInfoResume().
      * </p>
      */
     public void afficheListeEtudiant() {
@@ -72,9 +79,9 @@ public class CIUP {
     }
 
     /**
-     * Ajoute une maison à la collection des maisons de la CIUP.
+     * Ajoute une maison ï¿½ la collection des maisons de la CIUP.
      * 
-     * @param maison La maison à ajouter à la collection
+     * @param maison La maison ï¿½ ajouter ï¿½ la collection
      */
     public void ajouterMaison(Maison maison) {
         listeMaison.add(maison);
@@ -83,16 +90,16 @@ public class CIUP {
     /**
      * Supprime une maison de la collection des maisons de la CIUP.
      * 
-     * @param maison La maison à supprimer de la collection
+     * @param maison La maison ï¿½ supprimer de la collection
      */
     public void supprMaison(Maison maison) {
         listeMaison.remove(maison);
     }
 
     /**
-     * Ajoute un service à la collection des services de la CIUP.
+     * Ajoute un service ï¿½ la collection des services de la CIUP.
      * 
-     * @param service Le service à ajouter à la collection
+     * @param service Le service ï¿½ ajouter ï¿½ la collection
      */
     public void ajouterService(Service service) {
         listeService.add(service);
@@ -101,25 +108,25 @@ public class CIUP {
     /**
      * Supprime un service de la collection des services de la CIUP.
      * 
-     * @param service Le service à supprimer de la collection
+     * @param service Le service ï¿½ supprimer de la collection
      */
     public void supprService(Service service) {
         listeService.remove(service);
     }
 
     /**
-     * Ajoute un étudiant à la collection des étudiants de la CIUP.
+     * Ajoute un ï¿½tudiant ï¿½ la collection des ï¿½tudiants de la CIUP.
      * 
-     * @param etudiant L'étudiant à ajouter à la collection
+     * @param etudiant L'ï¿½tudiant ï¿½ ajouter ï¿½ la collection
      */
     public void ajouterEtudiant(Etudiant etudiant) {
         listeEtudiant.add(etudiant);
     }
 
     /**
-     * Supprime un étudiant de la collection des étudiants de la CIUP.
+     * Supprime un ï¿½tudiant de la collection des ï¿½tudiants de la CIUP.
      * 
-     * @param etudiant L'étudiant à supprimer de la collection
+     * @param etudiant L'ï¿½tudiant ï¿½ supprimer de la collection
      */
     public void supprEtudiant(Etudiant etudiant) {
         listeEtudiant.remove(etudiant);
@@ -128,11 +135,11 @@ public class CIUP {
     /**
      * Recherche une maison par son nom.
      * <p>
-     * La recherche est insensible à la casse (ignore majuscules/minuscules).
+     * La recherche est insensible ï¿½ la casse (ignore majuscules/minuscules).
      * </p>
      * 
-     * @param nom Le nom de la maison à rechercher
-     * @return La maison trouvée ou null si aucune maison ne correspond
+     * @param nom Le nom de la maison ï¿½ rechercher
+     * @return La maison trouvï¿½e ou null si aucune maison ne correspond
      */
     public Maison rechercherMaisonParNom(String nom) {
         for (Maison maison : listeMaison) {
@@ -144,14 +151,14 @@ public class CIUP {
     }
 
     /**
-     * Recherche un étudiant par son nom et prénom.
+     * Recherche un ï¿½tudiant par son nom et prï¿½nom.
      * <p>
-     * La recherche est insensible à la casse pour les deux critères.
+     * La recherche est insensible ï¿½ la casse pour les deux critï¿½res.
      * </p>
      * 
-     * @param nom Le nom de famille de l'étudiant
-     * @param prenom Le prénom de l'étudiant
-     * @return L'étudiant trouvé ou null si aucun étudiant ne correspond
+     * @param nom Le nom de famille de l'ï¿½tudiant
+     * @param prenom Le prï¿½nom de l'ï¿½tudiant
+     * @return L'ï¿½tudiant trouvï¿½ ou null si aucun ï¿½tudiant ne correspond
      */
     public Etudiant rechercherEtudiantParNomPrenom(String nom, String prenom) {
         for (Etudiant etudiant : listeEtudiant) {
@@ -181,14 +188,14 @@ public class CIUP {
     }
 
     /**
-     * Retourne la liste des étudiants de la CIUP.
+     * Retourne la liste des ï¿½tudiants de la CIUP.
      * 
-     * @return ArrayList contenant tous les étudiants
+     * @return ArrayList contenant tous les ï¿½tudiants
      */
     public ArrayList<Etudiant> getListeEtudiant() {
         return listeEtudiant;
     }
 }
 /**
- * cette classe a été crée par @author Flavio Zamperlini
+ * cette classe a ï¿½tï¿½ crï¿½e par @author Flavio Zamperlini
  */

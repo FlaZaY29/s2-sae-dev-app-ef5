@@ -1,26 +1,35 @@
 package modeles;
 
+import java.io.Serializable;
+
 /**
- * Classe abstraite représentant une maison dans le système CIUP.
+ * Classe abstraite reprÃ©sentant une maison dans le systÃ¨me CIUP.
  * <p>
  * Cette classe constitue la base pour tous les types de maisons de la CIUP.
- * Elle définit les propriétés communes à toutes les maisons : informations
- * administratives, coordonnées, et événements. Elle utilise également un
- * système de propriétés extensible pour stocker des informations additionnelles.
+ * Elle dÃ©finit les propriÃ©tÃ©s communes Ã  toutes les maisons : informations
+ * administratives, coordonnÃ©es, et Ã©vÃ©nements. Elle utilise Ã©galement un
+ * systÃ¨me de propriÃ©tÃ©s extensible pour stocker des informations additionnelles.
  * </p>
  * <p>
- * Les classes dérivées doivent implémenter les spécificités de chaque type
+ * Les classes dÃ©rivÃ©es doivent implÃ©menter les spÃ©cificitÃ©s de chaque type
  * de maison (classique, internationale).
+ * </p>
+ * <p>
+ * Cette classe implÃ©mente Serializable pour permettre la sauvegarde des maisons
+ * sur le disque dur.
  * </p>
  * 
  * @author CIUP Development Team
- * @version 1.0
+ * @version 1.1
  * @see MaisonClassique
  * @see MaisonInternationale
  */
-public abstract class Maison {
+public abstract class Maison implements Serializable {
 
-    /** Numéro unique d'identification de la maison */
+    /** Identifiant de version pour la sÃ©rialisation */
+    private static final long serialVersionUID = 1L;
+
+    /** Numï¿½ro unique d'identification de la maison */
     private int num;
     
     /** Nom de la maison */
@@ -29,39 +38,39 @@ public abstract class Maison {
     /** Description de la maison */
     private String desc;
     
-    /** Numéro de téléphone de la maison */
+    /** Numï¿½ro de tï¿½lï¿½phone de la maison */
     private String tel;
     
-    /** Localisation géographique de la maison */
+    /** Localisation gï¿½ographique de la maison */
     private String localisation;
     
     /** Nom du directeur de la maison */
     private String directeur;
     
-    /** Année de création de la maison */
+    /** Annï¿½e de crï¿½ation de la maison */
     private int anneeCreation;
     
-    /** Date de la fête annuelle de la maison */
+    /** Date de la fï¿½te annuelle de la maison */
     private String dateFete;
     
-    /** Durée en jours de la fête annuelle */
+    /** Durï¿½e en jours de la fï¿½te annuelle */
     private int dureeFete;
     
-    /** Système de propriétés extensible pour stocker des informations additionnelles */
+    /** Systï¿½me de propriï¿½tï¿½s extensible pour stocker des informations additionnelles */
     private java.util.HashMap<String, String> properties = new java.util.HashMap<>();
 
     /**
-     * Constructeur complet pour créer une maison avec toutes ses informations.
+     * Constructeur complet pour crï¿½er une maison avec toutes ses informations.
      * 
-     * @param num Numéro unique d'identification
+     * @param num Numï¿½ro unique d'identification
      * @param nom Nom de la maison
      * @param desc Description de la maison
-     * @param tel Numéro de téléphone
-     * @param localisation Localisation géographique
+     * @param tel Numï¿½ro de tï¿½lï¿½phone
+     * @param localisation Localisation gï¿½ographique
      * @param directeur Nom du directeur
-     * @param anneeCreation Année de création
-     * @param dateFete Date de la fête annuelle
-     * @param dureeFete Durée de la fête en jours
+     * @param anneeCreation Annï¿½e de crï¿½ation
+     * @param dateFete Date de la fï¿½te annuelle
+     * @param dureeFete Durï¿½e de la fï¿½te en jours
      */
     public Maison(int num, String nom, String desc, String tel, String localisation, String directeur,
                   int anneeCreation, String dateFete, int dureeFete) {
@@ -77,21 +86,21 @@ public abstract class Maison {
     }
 
     /**
-     * Constructeur par défaut.
+     * Constructeur par dï¿½faut.
      * <p>
-     * Crée une maison avec des valeurs par défaut et initialise
-     * le système de propriétés.
+     * Crï¿½e une maison avec des valeurs par dï¿½faut et initialise
+     * le systï¿½me de propriï¿½tï¿½s.
      * </p>
      */
     public Maison() {}
 
     /**
-     * Retourne une représentation textuelle complète de la maison.
+     * Retourne une reprï¿½sentation textuelle complï¿½te de la maison.
      * <p>
      * Format : num ; nom ; desc ; tel ; localisation ; directeur ; anneeCreation ; dateFete ; dureeFete
      * </p>
      * 
-     * @return Chaîne de caractères représentant la maison
+     * @return Chaï¿½ne de caractï¿½res reprï¿½sentant la maison
      */
     public String toString() {
         String s = "";
@@ -108,7 +117,7 @@ public abstract class Maison {
     }
 
     /**
-     * Affiche la description complète de la maison sur la console.
+     * Affiche la description complï¿½te de la maison sur la console.
      * <p>
      * Affiche toutes les informations de la maison dans un format lisible.
      * </p>
@@ -128,7 +137,7 @@ public abstract class Maison {
     /**
      * Affiche le nom de la maison sur la console.
      * <p>
-     * Affichage simplifié pour les listes.
+     * Affichage simplifiï¿½ pour les listes.
      * </p>
      */
     public void afficheMaison() {
@@ -137,14 +146,14 @@ public abstract class Maison {
     }
 
     /**
-     * Définit une propriété personnalisée pour la maison.
+     * Dï¿½finit une propriï¿½tï¿½ personnalisï¿½e pour la maison.
      * <p>
-     * Le système de propriétés permet d'ajouter des informations
+     * Le systï¿½me de propriï¿½tï¿½s permet d'ajouter des informations
      * additionnelles sans modifier la structure de la classe.
      * </p>
      * 
-     * @param key La clé de la propriété
-     * @param value La valeur de la propriété
+     * @param key La clï¿½ de la propriï¿½tï¿½
+     * @param value La valeur de la propriï¿½tï¿½
      */
     public void setProperty(String key, String value) {
         if (properties == null) {
@@ -154,10 +163,10 @@ public abstract class Maison {
     }
     
     /**
-     * Récupère une propriété personnalisée de la maison.
+     * Rï¿½cupï¿½re une propriï¿½tï¿½ personnalisï¿½e de la maison.
      * 
-     * @param key La clé de la propriété
-     * @return La valeur de la propriété ou null si elle n'existe pas
+     * @param key La clï¿½ de la propriï¿½tï¿½
+     * @return La valeur de la propriï¿½tï¿½ ou null si elle n'existe pas
      */
     public String getProperty(String key) {
         if (properties == null) {
@@ -167,10 +176,10 @@ public abstract class Maison {
     }
     
     /**
-     * Vérifie si une propriété personnalisée existe.
+     * Vï¿½rifie si une propriï¿½tï¿½ personnalisï¿½e existe.
      * 
-     * @param key La clé de la propriété
-     * @return true si la propriété existe, false sinon
+     * @param key La clï¿½ de la propriï¿½tï¿½
+     * @return true si la propriï¿½tï¿½ existe, false sinon
      */
     public boolean hasProperty(String key) {
         if (properties == null) {
@@ -182,18 +191,18 @@ public abstract class Maison {
     // Getters et Setters avec documentation
 
     /**
-     * Retourne le numéro d'identification de la maison.
+     * Retourne le numï¿½ro d'identification de la maison.
      * 
-     * @return Le numéro unique d'identification
+     * @return Le numï¿½ro unique d'identification
      */
     public int getNum() {
         return num;
     }
 
     /**
-     * Définit le numéro d'identification de la maison.
+     * Dï¿½finit le numï¿½ro d'identification de la maison.
      * 
-     * @param num Le numéro unique d'identification
+     * @param num Le numï¿½ro unique d'identification
      */
     public void setNum(int num) {
         this.num = num;
@@ -209,7 +218,7 @@ public abstract class Maison {
     }
 
     /**
-     * Définit le nom de la maison.
+     * Dï¿½finit le nom de la maison.
      * 
      * @param nom Le nom de la maison
      */
@@ -227,7 +236,7 @@ public abstract class Maison {
     }
 
     /**
-     * Définit la description de la maison.
+     * Dï¿½finit la description de la maison.
      * 
      * @param desc La description de la maison
      */
@@ -236,18 +245,18 @@ public abstract class Maison {
     }
 
     /**
-     * Retourne le numéro de téléphone de la maison.
+     * Retourne le numï¿½ro de tï¿½lï¿½phone de la maison.
      * 
-     * @return Le numéro de téléphone
+     * @return Le numï¿½ro de tï¿½lï¿½phone
      */
     public String getTel() {
         return tel;
     }
 
     /**
-     * Définit le numéro de téléphone de la maison.
+     * Dï¿½finit le numï¿½ro de tï¿½lï¿½phone de la maison.
      * 
-     * @param tel Le numéro de téléphone
+     * @param tel Le numï¿½ro de tï¿½lï¿½phone
      */
     public void setTel(String tel) {
         this.tel = tel;
@@ -256,16 +265,16 @@ public abstract class Maison {
     /**
      * Retourne la localisation de la maison.
      * 
-     * @return La localisation géographique
+     * @return La localisation gï¿½ographique
      */
     public String getLocalisation() {
         return localisation;
     }
 
     /**
-     * Définit la localisation de la maison.
+     * Dï¿½finit la localisation de la maison.
      * 
-     * @param localisation La localisation géographique
+     * @param localisation La localisation gï¿½ographique
      */
     public void setLocalisation(String localisation) {
         this.localisation = localisation;
@@ -281,7 +290,7 @@ public abstract class Maison {
     }
 
     /**
-     * Définit le nom du directeur de la maison.
+     * Dï¿½finit le nom du directeur de la maison.
      * 
      * @param directeur Le nom du directeur
      */
@@ -290,59 +299,59 @@ public abstract class Maison {
     }
 
     /**
-     * Retourne l'année de création de la maison.
+     * Retourne l'annï¿½e de crï¿½ation de la maison.
      * 
-     * @return L'année de création
+     * @return L'annï¿½e de crï¿½ation
      */
     public int getAnneeCreation() {
         return anneeCreation;
     }
 
     /**
-     * Définit l'année de création de la maison.
+     * Dï¿½finit l'annï¿½e de crï¿½ation de la maison.
      * 
-     * @param anneeCreation L'année de création
+     * @param anneeCreation L'annï¿½e de crï¿½ation
      */
     public void setAnneeCreation(int anneeCreation) {
         this.anneeCreation = anneeCreation;
     }
 
     /**
-     * Retourne la date de la fête annuelle.
+     * Retourne la date de la fï¿½te annuelle.
      * 
-     * @return La date de la fête annuelle
+     * @return La date de la fï¿½te annuelle
      */
     public String getDateFete() {
         return dateFete;
     }
 
     /**
-     * Définit la date de la fête annuelle.
+     * Dï¿½finit la date de la fï¿½te annuelle.
      * 
-     * @param dateFete La date de la fête annuelle
+     * @param dateFete La date de la fï¿½te annuelle
      */
     public void setDateFete(String dateFete) {
         this.dateFete = dateFete;
     }
 
     /**
-     * Retourne la durée de la fête annuelle.
+     * Retourne la durï¿½e de la fï¿½te annuelle.
      * 
-     * @return La durée en jours
+     * @return La durï¿½e en jours
      */
     public int getDureeFete() {
         return dureeFete;
     }
 
     /**
-     * Définit la durée de la fête annuelle.
+     * Dï¿½finit la durï¿½e de la fï¿½te annuelle.
      * 
-     * @param dureeFete La durée en jours
+     * @param dureeFete La durï¿½e en jours
      */
     public void setDureeFete(int dureeFete) {
         this.dureeFete = dureeFete;
     }
 }
 /**
- * cette classe a été crée par @author Donald Se
+ * cette classe a ï¿½tï¿½ crï¿½e par @author Donald Se
  */

@@ -343,3 +343,6 @@ public abstract class Maison {
         this.dureeFete = dureeFete;
     }
 }
+/**
+ * cette classe a été crée par @Donald
+ */

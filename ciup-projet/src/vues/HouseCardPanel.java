@@ -302,3 +302,6 @@ public class HouseCardPanel extends JPanel {
         return "maison_internationale.jpg"; // Default fallback
     }
 }
+/**
+ * cette classe a été crée par @Donald
+ */

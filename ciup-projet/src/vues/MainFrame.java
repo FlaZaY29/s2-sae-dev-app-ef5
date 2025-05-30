@@ -89,3 +89,6 @@ public class MainFrame extends JFrame {
         return inscriptionPanel;
     }
 }
+/**
+ * cette classe a été crée par @Maksen
+ */

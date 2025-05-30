@@ -88,3 +88,6 @@ public class ApplicationCIUP {
         return ciup;
     }
 }
+/**
+ * cette classe a été crée par @Flavio
+ */

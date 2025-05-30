@@ -395,3 +395,6 @@ public class FactoryCIUP {
                 "nina.matsumoto@mail.com", "Haruto", "Universite de Tokyo", "Nina_Matsumoto.jpg");
     }
 }
+/**
+ * cette classe a été crée par @Flavio
+ */

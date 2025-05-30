@@ -410,3 +410,6 @@ public class MaisonControleur {
         return new MaisonInternationale(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
     }
 }
+/**
+ * cette classe a été crée par @Donald
+ */

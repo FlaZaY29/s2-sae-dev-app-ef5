@@ -552,3 +552,6 @@ public class AddHouseDialog extends JDialog {
         return typeComboBox;
     }
 }
+/**
+ * cette classe a été crée par @Flavio
+ */

@@ -404,3 +404,6 @@ public class Etudiant {
         this.maisonActuelle = maisonActuelle;
     }
 }
+/**
+ * cette classe a été crée par @Flavio
+ */

@@ -375,3 +375,6 @@ public class HouseDetailsDialog extends JDialog {
         return closeButton;
     }
 }
+/**
+ * cette classe a été crée par @Flavio
+ */

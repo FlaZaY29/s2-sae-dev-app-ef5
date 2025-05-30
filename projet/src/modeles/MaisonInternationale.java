@@ -126,10 +126,13 @@ public class MaisonInternationale extends Maison {
      * 
      * @return ArrayList des services proposés
      */
-    public ArrayList<Service> getSesServices() {
+    public ArrayList<Sservice> getSesServices() {
         if (sesServices == null) {
             sesServices = new ArrayList<>();
         }
         return sesServices;
     }
 }
+/**
+ * cette classe a été crée par @Maksen
+ */

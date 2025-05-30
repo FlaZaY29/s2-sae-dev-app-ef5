@@ -437,3 +437,6 @@ public class EditHouseDialog extends JDialog {
         }
     }
 }
+/**
+ * cette classe a été crée par @Flavio
+ */

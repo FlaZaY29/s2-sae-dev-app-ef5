@@ -302,3 +302,6 @@ public class MaisonClassique extends Maison {
         this.listeAttente = listeAttente;
     }
 }
+/**
+ * cette classe a été crée par @Donald
+ */

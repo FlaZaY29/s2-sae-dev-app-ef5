@@ -177,3 +177,6 @@ public class HeaderPanel extends JPanel {
         return searchField;
     }
 }
+/**
+ * cette classe a été crée par @Donald
+ */

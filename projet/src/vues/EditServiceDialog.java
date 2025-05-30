@@ -248,3 +248,6 @@ public class EditServiceDialog extends JDialog {
         return serviceToEdit;
     }
 }
+/**
+ * cette classe a été crée par @Maksen
+ */

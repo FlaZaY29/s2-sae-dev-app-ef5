@@ -1,7 +1,10 @@
-package ciup;
+package modeles;
 
 import java.util.ArrayList;
 
+/**
+ * Classe représentant un service dans le système CIUP
+ */
 public class Service {
 
     // Liste des maisons proposant ce service
@@ -15,7 +18,7 @@ public class Service {
 
     // Constructeur
     public Service(int num, String nom, String desc, int heureOuv, int heureFerm) {
-        this.sesMaison = new ArrayList<MaisonInternationale>();
+        this.sesMaison = new ArrayList<>();
         this.num = num;
         this.nom = nom;
         this.desc = desc;
@@ -25,11 +28,12 @@ public class Service {
 
     // Constructeur vide
     public Service() {
-        this.sesMaison = new ArrayList<MaisonInternationale>();
+        this.sesMaison = new ArrayList<>();
     }
 
     // Methode toString
-    public String toString() {
+    @Override
+	public String toString() {
         String s = "";
         s += num;
         s += " ; " + nom;
@@ -41,11 +45,18 @@ public class Service {
 
     // Methode pour ajouter un service
     public void ajoutMaison(MaisonInternationale maison) {
+        if (sesMaison == null) {
+            sesMaison = new ArrayList<>();
+        }
         sesMaison.add(maison);
     }
 
     // Methode pour supprimer un service
     public void supprMaison(MaisonInternationale maison) {
+        if (sesMaison == null) {
+            sesMaison = new ArrayList<>();
+            return;
+        }
         sesMaison.remove(maison);
     }
 
@@ -57,14 +68,23 @@ public class Service {
         System.out.println("Heure d'ouverture: " + heureOuv);
         System.out.println("Heure de fermeture: " + heureFerm);
         System.out.println("Maison(s) associee(s): ");
-        for (MaisonInternationale maison : sesMaison) {
-            System.out.println(maison.getNom());
+
+        if (sesMaison == null) {
+            sesMaison = new ArrayList<>();
+            System.out.println("Aucune maison associée");
+        } else {
+            for (MaisonInternationale maison : sesMaison) {
+                System.out.println(maison.getNom());
+            }
         }
         System.out.println();
     }
 
     // Getter et Setter pour les attributs
     public ArrayList<MaisonInternationale> getSesMaison() {
+        if (sesMaison == null) {
+            sesMaison = new ArrayList<>();
+        }
         return sesMaison;
     }
 

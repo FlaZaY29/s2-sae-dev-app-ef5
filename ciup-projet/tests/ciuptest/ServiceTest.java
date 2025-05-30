@@ -1,7 +1,7 @@
 package ciuptest;
 
-import ciup.MaisonInternationale;
-import ciup.Service;
+import modeles.MaisonInternationale;
+import modeles.Service;
 
 public class ServiceTest {
 

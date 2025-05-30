@@ -1,7 +1,11 @@
-package ciup;
+package modeles;
 
 import java.util.ArrayList;
 
+/**
+ * Classe représentant la maison internationale dans le système CIUP
+ * Gère les services associés
+ */
 public class MaisonInternationale extends Maison {
 
     // Liste des services proposant la Maison Internationale
@@ -12,6 +16,7 @@ public class MaisonInternationale extends Maison {
     public MaisonInternationale(int num, String nom, String desc, String tel, String localisation, String directeur,
                                 int anneeCreation, String dateFete, int dureeFete) {
         super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
+        this.sesServices = new ArrayList<>();
     }
 
     // Constructeur vide
@@ -22,6 +27,9 @@ public class MaisonInternationale extends Maison {
 
     // Methode pour ajouter un service a la Maison Internationale
     public void ajoutService(Service service) {
+        if (sesServices == null) {
+            sesServices = new ArrayList<>();
+        }
         sesServices.add(service);
 
         // Ajout de la maison a la liste des maisons proposant ce service
@@ -30,6 +38,10 @@ public class MaisonInternationale extends Maison {
 
     // Methode pour supprimer un service de la Maison Internationale
     public void supprService(Service service) {
+        if (sesServices == null) {
+            sesServices = new ArrayList<>();
+            return;
+        }
         sesServices.remove(service);
 
         // Suppression de la maison de la liste des maisons proposant ce service
@@ -38,6 +50,12 @@ public class MaisonInternationale extends Maison {
 
     // Methode pour afficher les services proposes
     public void afficheServices() {
+        if (sesServices == null) {
+            sesServices = new ArrayList<>();
+            System.out.println("Aucun service proposé par la Maison Internationale");
+            return;
+        }
+
         System.out.println("Services proposes par la Maison Internationale:");
 
         for (Service service : sesServices) {
@@ -46,6 +64,9 @@ public class MaisonInternationale extends Maison {
     }
 
     public ArrayList<Service> getSesServices() {
+        if (sesServices == null) {
+            sesServices = new ArrayList<>();
+        }
         return sesServices;
     }
 }

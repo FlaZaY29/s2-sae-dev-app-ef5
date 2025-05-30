@@ -1,7 +1,11 @@
-package ciup;
+package modeles;
 
 import java.util.ArrayList;
 
+/**
+ * Classe représentant une maison classique dans le système CIUP
+ * Gère les étudiants et la liste d'attente
+ */
 public class MaisonClassique extends Maison {
 
     // Listes des Etudiant et Etudiant en attente de la MaisonClassique
@@ -15,6 +19,9 @@ public class MaisonClassique extends Maison {
     public MaisonClassique(int num, String nom, String desc, String tel, String localisation, String directeur,
                            int anneeCreation, String dateFete, int dureeFete) {
         super(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
+        // Initialiser les listes dans tous les constructeurs
+        this.listeEtudiant = new ArrayList<>();
+        this.listeAttente = new ArrayList<>();
     }
 
     // Constructeur vide
@@ -26,6 +33,11 @@ public class MaisonClassique extends Maison {
 
     // Methode pour ajouter un etudiant et le mettre en liste d'attente si la maison est pleine
     public void ajoutEtudiant(Etudiant etu) {
+        // Vérifier si la liste des étudiants est initialisée
+        if (listeEtudiant == null) {
+            listeEtudiant = new ArrayList<>();
+        }
+
         if (listeEtudiant.size() < capacite) {
             listeEtudiant.add(etu);
             etu.setActuEtudiant(true);
@@ -37,12 +49,24 @@ public class MaisonClassique extends Maison {
 
     // Methode pour supprimer un etudiant et le remplacer par l'etudiant en premiere position de la liste d'attente
     public void supprEtudiant(Etudiant etu) {
+        // Vérifier si la liste des étudiants est initialisée
+        if (listeEtudiant == null) {
+            listeEtudiant = new ArrayList<>();
+            return;
+        }
+
         if (listeEtudiant.contains(etu)) {
             listeEtudiant.remove(etu);
             System.out.println("L'etudiant a ete supprime de la maison");
             etu.setActuEtudiant(false);
         } else {
             System.out.println("L'etudiant n'est pas present dans la maison");
+        }
+
+        // Vérifier si la liste d'attente est initialisée
+        if (listeAttente == null) {
+            listeAttente = new ArrayList<>();
+            return;
         }
 
         if (listeAttente.size() > 0) {
@@ -56,6 +80,13 @@ public class MaisonClassique extends Maison {
 
     // Methode pour afficher la liste des etudiants dans la maison
     public void afficheEtudiants() {
+        // Vérifier si la liste des étudiants est initialisée
+        if (listeEtudiant == null) {
+            listeEtudiant = new ArrayList<>();
+            System.out.println("Aucun étudiant dans la maison " + getNom());
+            return;
+        }
+
         System.out.println("Liste des etudiants dans la maison " + getNom() + ":");
 
         for (Etudiant etu : listeEtudiant) {
@@ -65,18 +96,36 @@ public class MaisonClassique extends Maison {
 
     // Methode pour ajouter un etudiant en attente
     public void ajoutEtudiantAttente(Etudiant etu) {
+        // Vérifier si la liste d'attente est initialisée
+        if (listeAttente == null) {
+            listeAttente = new ArrayList<>();
+        }
+
         listeAttente.add(etu);
         etu.setEnAttente(true);
     }
 
     // Methode pour supprimer un etudiant de la liste d'attente
     public void supprEtudiantAttente(Etudiant etu) {
+        // Vérifier si la liste d'attente est initialisée
+        if (listeAttente == null) {
+            listeAttente = new ArrayList<>();
+            return;
+        }
+
         listeAttente.remove(etu);
         etu.setEnAttente(false);
     }
 
     // Methode pour afficher la liste des etudiants en attente
     public void afficheEtudiantsAttente() {
+        // Vérifier si la liste d'attente est initialisée
+        if (listeAttente == null) {
+            listeAttente = new ArrayList<>();
+            System.out.println("Aucun étudiant en attente pour la maison " + getNom());
+            return;
+        }
+
         System.out.println("Liste des etudiants en attente pour la maison " + getNom() + ":");
 
         for (Etudiant etu : listeAttente) {
@@ -102,6 +151,10 @@ public class MaisonClassique extends Maison {
     }
 
     public ArrayList<Etudiant> getListeEtudiant() {
+        // Vérifier si la liste des étudiants est initialisée
+        if (listeEtudiant == null) {
+            listeEtudiant = new ArrayList<>();
+        }
         return listeEtudiant;
     }
 
@@ -110,6 +163,10 @@ public class MaisonClassique extends Maison {
     }
 
     public ArrayList<Etudiant> getListeAttente() {
+        // Vérifier si la liste d'attente est initialisée
+        if (listeAttente == null) {
+            listeAttente = new ArrayList<>();
+        }
         return listeAttente;
     }
 

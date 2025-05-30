@@ -1,5 +1,8 @@
-package ciup;
+package modeles;
 
+/**
+ * Classe abstraite représentant une maison dans le système CIUP
+ */
 public class Maison {
 
     private int num;
@@ -11,6 +14,7 @@ public class Maison {
     private int anneeCreation;
     private String dateFete;
     private int dureeFete;
+    private java.util.HashMap<String, String> properties = new java.util.HashMap<>();
 
     // Constructeur
     public Maison(int num, String nom, String desc, String tel, String localisation, String directeur,
@@ -30,7 +34,8 @@ public class Maison {
     public Maison() {}
 
     // Methode toString
-    public String toString() {
+    @Override
+	public String toString() {
         String s = "";
         s += num;
         s += " ; " + nom;
@@ -134,5 +139,41 @@ public class Maison {
 
     public void setDureeFete(int dureeFete) {
         this.dureeFete = dureeFete;
+    }
+
+    /**
+     * Définit une propriété pour la maison
+     * @param key La clé de la propriété
+     * @param value La valeur de la propriété
+     */
+    public void setProperty(String key, String value) {
+        if (properties == null) {
+            properties = new java.util.HashMap<>();
+        }
+        properties.put(key, value);
+    }
+
+    /**
+     * Récupère une propriété de la maison
+     * @param key La clé de la propriété
+     * @return La valeur de la propriété ou null si elle n'existe pas
+     */
+    public String getProperty(String key) {
+        if (properties == null) {
+            return null;
+        }
+        return properties.get(key);
+    }
+
+    /**
+     * Vérifie si une propriété existe
+     * @param key La clé de la propriété
+     * @return true si la propriété existe, false sinon
+     */
+    public boolean hasProperty(String key) {
+        if (properties == null) {
+            return false;
+        }
+        return properties.containsKey(key);
     }
 }

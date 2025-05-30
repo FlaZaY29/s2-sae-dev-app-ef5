@@ -1,7 +1,11 @@
-package ciup;
+package modeles;
 
 import java.util.ArrayList;
 
+/**
+ * Classe principale du modèle représentant la Cité Internationale Universitaire de Paris
+ * Gère les collections de maisons, services et étudiants
+ */
 public class CIUP {
 
     private ArrayList<Maison> listeMaison = new ArrayList<>();
@@ -29,70 +33,54 @@ public class CIUP {
         }
     }
 
-    // MÃ©thode pour ajouter une Maison
+    // Méthode pour ajouter une Maison
     public void ajouterMaison(Maison maison) {
         listeMaison.add(maison);
     }
 
-    // MÃ©thode pour supprimer une Maison
+    // Méthode pour supprimer une Maison
     public void supprMaison(Maison maison) {
         listeMaison.remove(maison);
     }
 
-    // MÃ©thode pour ajouter un service
+    // Méthode pour ajouter un service
     public void ajouterService(Service service) {
         listeService.add(service);
     }
 
-    // MÃ©thode pour supprimer un service
+    // Méthode pour supprimer un service
     public void supprService(Service service) {
         listeService.remove(service);
     }
 
-    // MÃ©thode pour ajouter un Ã©tudiant
+    // Méthode pour ajouter un étudiant
     public void ajouterEtudiant(Etudiant etudiant) {
         listeEtudiant.add(etudiant);
     }
 
-    // MÃ©thode pour supprimer un Ã©tudiant
+    // Méthode pour supprimer un étudiant
     public void supprEtudiant(Etudiant etudiant) {
         listeEtudiant.remove(etudiant);
     }
 
-    public static void main(String[] args) {
-        CIUP ciup = new CIUP();
-
-        // Maison Internationale & Maisons & Services
-        MaisonInternationale mInternationale = FactoryCIUP.creeMaisonInternationale();
-        Maison m1 = FactoryCIUP.maisonFrancaise();
-        Maison m2 = FactoryCIUP.maisonJaponaise();
-
-        Service s1 = FactoryCIUP.creeServiceRestauration();
-        Service s2 = FactoryCIUP.creeServiceSecurite();
-        mInternationale.ajoutService(s1);
-        mInternationale.ajoutService(s2);
-
-        // Ajouter les Maisons & Services & Etudiants dans CIUP
-        ciup.ajouterMaison(mInternationale);
-        ciup.ajouterMaison(m1);
-        ciup.ajouterMaison(m2);
-
-        ciup.ajouterService(s1);
-        ciup.ajouterService(s2);
-
-        // Optionel mais pas fiable : j'ajoute les Ã©tudiants
-        for (Etudiant etudiant : FactoryCIUP.maisonFrancaise().getListeEtudiant()) {
-            ciup.ajouterEtudiant(etudiant);
+    // Méthode pour rechercher une maison par nom
+    public Maison rechercherMaisonParNom(String nom) {
+        for (Maison maison : listeMaison) {
+            if (maison.getNom().equalsIgnoreCase(nom)) {
+                return maison;
+            }
         }
-        for (Etudiant etudiant : FactoryCIUP.maisonJaponaise().getListeEtudiant()) {
-            ciup.ajouterEtudiant(etudiant);
+        return null;
+    }
+
+    // Méthode pour rechercher un étudiant par nom et prénom
+    public Etudiant rechercherEtudiantParNomPrenom(String nom, String prenom) {
+        for (Etudiant etudiant : listeEtudiant) {
+            if (etudiant.getNom().equalsIgnoreCase(nom) && etudiant.getPrenom().equalsIgnoreCase(prenom)) {
+                return etudiant;
+            }
         }
-
-        // Affichage toutes les liste dans ciup
-        ciup.afficheListeMaison();
-        ciup.afficheListeService();
-        ciup.afficheListeEtudiant();
-
+        return null;
     }
 
     public ArrayList<Maison> getListeMaison() {

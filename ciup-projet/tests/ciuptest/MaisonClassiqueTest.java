@@ -1,7 +1,7 @@
 package ciuptest;
 
-import ciup.MaisonClassique;
-import ciup.Etudiant;
+import modeles.MaisonClassique;
+import modeles.Etudiant;
 
 public class MaisonClassiqueTest {
 

@@ -1,5 +1,8 @@
-package ciup;
+package modeles;
 
+/**
+ * Classe représentant un étudiant dans le système CIUP
+ */
 public class Etudiant {
 
     private int num;
@@ -38,8 +41,9 @@ public class Etudiant {
     // Constructeur vide
     public Etudiant() {}
 
-    // MÃ©thode toString
-    public String toString() {
+    // Méthode toString
+    @Override
+	public String toString() {
         String s = "";
         s += num;
         s += " ; " + nom;
@@ -63,7 +67,7 @@ public class Etudiant {
         System.out.println(toString());
     }
 
-    // Affiche le rÃ©sumÃ© l'informations
+    // Affiche le résumé l'informations
     public void afficheInfoResume() {
         System.out.println(num + " ; " + nom + " ; " + prenom + " ; " + promotion + " ; " + universite);
     }

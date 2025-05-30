@@ -1,7 +1,7 @@
 package ciuptest;
 
-import ciup.Etudiant;
-import ciup.Maison;
+import modeles.Etudiant;
+import modeles.Maison;
 
 public class EtudiantTest {
 

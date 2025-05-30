@@ -126,7 +126,7 @@ public class MaisonInternationale extends Maison {
      * 
      * @return ArrayList des services proposés
      */
-    public ArrayList<Sservice> getSesServices() {
+    public ArrayList<Service> getSesServices() {
         if (sesServices == null) {
             sesServices = new ArrayList<>();
         }

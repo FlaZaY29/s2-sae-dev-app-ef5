@@ -90,5 +90,5 @@ public class MainFrame extends JFrame {
     }
 }
 /**
- * cette classe a été crée par @Maksen
+ * cette classe a été crée par @author Flavio Zamperlini
  */

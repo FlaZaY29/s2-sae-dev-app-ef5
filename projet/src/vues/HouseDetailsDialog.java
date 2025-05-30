@@ -376,5 +376,5 @@ public class HouseDetailsDialog extends JDialog {
     }
 }
 /**
- * cette classe a été crée par @Flavio
+ * cette classe a été crée par @author Donald Se Maksen Mouhou
  */

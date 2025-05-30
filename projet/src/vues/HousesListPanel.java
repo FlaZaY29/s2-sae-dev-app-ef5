@@ -168,5 +168,5 @@ public class HousesListPanel extends JPanel {
     }
 }
 /**
- * cette classe a été crée par @Donald
+ * cette classe a été crée par @author Donald Se Maksen Mouhou
  */

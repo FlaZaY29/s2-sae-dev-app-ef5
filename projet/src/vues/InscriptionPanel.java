@@ -539,5 +539,5 @@ public class InscriptionPanel extends JPanel {
     }
 }
 /**
- * cette classe a été crée par @Donald
+ * cette classe a été crée par @author Flavio Zamperlini
  */

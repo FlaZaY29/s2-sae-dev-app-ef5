@@ -260,5 +260,5 @@ public class ServiceControleur {
     }
 }
 /**
- * cette classe a été crée par @Maksen
+ * cette classe a été crée par @author Maksen Mouhou
  */

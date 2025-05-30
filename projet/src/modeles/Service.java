@@ -264,5 +264,5 @@ public class Service {
     }
 }
 /**
- * cette classe a été crée par @Maksen
+ * cette classe a été crée par @author Maksen Mouhou
  */

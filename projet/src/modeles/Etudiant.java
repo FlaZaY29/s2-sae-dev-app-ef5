@@ -405,5 +405,5 @@ public class Etudiant {
     }
 }
 /**
- * cette classe a été crée par @Flavio
- */
+* cette classe a été crée par @author Flavio Zamperlini
+*/

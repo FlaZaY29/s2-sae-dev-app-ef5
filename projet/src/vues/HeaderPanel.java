@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 /**
- * Panneau d'en-tête de l'application
+ * Panneau d'en-tÃªte de l'application
  * Contient le logo et le champ de recherche
  */
 public class HeaderPanel extends JPanel {
@@ -24,7 +24,7 @@ public class HeaderPanel extends JPanel {
     private JTextField searchField;
 
     /**
-     * Constructeur du panneau d'en-tête
+     * Constructeur du panneau d'en-tÃªte
      */
     public HeaderPanel() {
         setBackground(Color.WHITE);
@@ -42,10 +42,10 @@ public class HeaderPanel extends JPanel {
         // Logo - essayer de charger le nouveau logo CIUP
         ImageIcon logoIcon = loadLogoImage();
         if (logoIcon != null) {
-            Image scaledImage = logoIcon.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH);
+            Image scaledImage = logoIcon.getImage().getScaledInstance(152, 66, Image.SCALE_SMOOTH);
             logoLabel = new JLabel(new ImageIcon(scaledImage));
         } else {
-            // Fallback si le logo n'est pas trouvé
+            // Fallback si le logo n'est pas trouvÃ©
             logoLabel = new JLabel("CIUP");
             logoLabel.setFont(new Font("Arial", Font.BOLD, 20));
             logoLabel.setForeground(new Color(0, 150, 136));
@@ -86,7 +86,7 @@ public class HeaderPanel extends JPanel {
 
     /**
      * Charge l'image du logo
-     * @return L'icône du logo ou null si non trouvée
+     * @return L'icÃ´ne du logo ou null si non trouvÃ©e
      */
     private ImageIcon loadLogoImage() {
         try {
@@ -154,7 +154,7 @@ public class HeaderPanel extends JPanel {
         // Center panel for title
         JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         centerPanel.setBackground(Color.WHITE);
-        JLabel titleLabel = new JLabel("CITÉ INTERNATIONALE UNIVERSITAIRE DE PARIS");
+        JLabel titleLabel = new JLabel("CITÃ‰ INTERNATIONALE UNIVERSITAIRE DE PARIS");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
         titleLabel.setForeground(new Color(0, 150, 136));
         centerPanel.add(titleLabel);
@@ -178,5 +178,5 @@ public class HeaderPanel extends JPanel {
     }
 }
 /**
- * cette classe a été crée par @author Flavio Zamperlini
+ * cette classe a Ã©tÃ© crÃ©e par @author Flavio Zamperlini
  */

@@ -167,3 +167,6 @@ public class HousesListPanel extends JPanel {
         return addButton;
     }
 }
+/**
+ * cette classe a été crée par @Donald
+ */

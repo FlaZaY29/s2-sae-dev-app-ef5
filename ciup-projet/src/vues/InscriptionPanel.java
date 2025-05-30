@@ -538,3 +538,6 @@ public class InscriptionPanel extends JPanel {
         return null;
     }
 }
+/**
+ * cette classe a été crée par @Donald
+ */

@@ -107,3 +107,6 @@ public class SidebarPanel extends JPanel {
         return inscriptionButton;
     }
 }
+/**
+ * cette classe a été crée par @Donald
+ */

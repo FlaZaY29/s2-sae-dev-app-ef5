@@ -281,3 +281,6 @@ public class ManageServicesDialog extends JDialog {
         return servicesTable;
     }
 }
+/**
+ * cette classe a été crée par @Maksen
+ */

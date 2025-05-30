@@ -276,3 +276,6 @@ public class AddServiceDialog extends JDialog {
         return heureFermSpinner;
     }
 }
+/**
+ * cette classe a été crée par @Maksen
+ */

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\Donald Se\Documents\ProjetSAE\s2-sae-dev-app-ef5\release\exec\CIUP.jar</jar>
+  <outfile>C:\Users\Donald Se\Documents\ProjetSAE\s2-sae-dev-app-ef5\release\CIUP\CIUP.exe</outfile>
+  <errTitle>Erreur</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\Donald Se\Documents\ProjetSAE\s2-sae-dev-app-ef5\release\config\icon.ico</icon>
+  <jre>
+    <path>./jre</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>23</minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>

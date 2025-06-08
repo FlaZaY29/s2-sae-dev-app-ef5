@@ -1,0 +1,58 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\Donald Se\Documents\ProjetSAE\s2-sae-dev-app-ef5\release\CIUP\CIUP.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\Donald Se\Documents\ProjetSAE\s2-sae-dev-app-ef5\release\CIUP\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.017.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Donald Se\AppData\Local\Programs\Python\Launcher\;C:\Users\Donald Se\AppData\Local\Microsoft\WindowsApps;C:\Users\Donald Se\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Donald Se\.dotnet\tools;C:\Users\Donald Se\AppData\Roaming\npm;C:\Program Files\Java\jre1.8.0_451\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Donald Se\AppData\Local\Programs\Python\Launcher\;C:\Users\Donald Se\AppData\Local\Microsoft\WindowsApps;C:\Users\Donald Se\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Donald Se\.dotnet\tools;C:\Users\Donald Se\AppData\Roaming\npm;C:\Program Files\Java\jre1.8.0_451\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Common Files\Oracle\Java\java8path\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\VMware\VMware Workstation\bin\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MySQL\MySQL Shell 8.0\bin\bin\javaw.exe (not found)
+Check launcher:	C:\Users\Donald Se\AppData\Local\Programs\Python\Launcher\bin\javaw.exe (not found)
+Check launcher:	C:\Users\Donald Se\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\Donald Se\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Users\Donald Se\.dotnet\tools\bin\javaw.exe (not found)
+Check launcher:	C:\Users\Donald Se\AppData\Roaming\npm\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jre1.8.0_451\bin\javaw.exe (OK)
+Version string: 1.008.000_451 / 64-Bit (Ignore)
+64-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Version string: 1.008.000 / 64-Bit (Ignore)
+Ignore:		1.008.000
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_451
+Version string: 1.008.000_451 / 64-Bit (Ignore)
+Ignore:		1.008.000_451
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+64-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+64-bit search:	SOFTWARE\JavaSoft\JDK...
+Check:		SOFTWARE\JavaSoft\JDK\24.0.1
+Version string: 1.024.000_001 / 64-Bit (OK)
+Check launcher:	C:\Program Files\Java\jdk-24\bin\javaw.exe (OK)
+Match:		1.024.000_001
+Runtime used:	1.024.000_001 (64-bit)
+Launcher:	C:\Program Files\Java\jdk-24\bin\javaw.exe
+Launcher args:	-jar "C:\Users\Donald Se\Documents\ProjetSAE\s2-sae-dev-app-ef5\release\CIUP\CIUP.exe"
+Args length:	86/32768 chars
+Exit code:	0

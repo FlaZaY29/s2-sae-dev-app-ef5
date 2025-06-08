@@ -17,6 +17,8 @@ import java.net.URL;
  * Panneau représentant une carte de maison
  */
 public class HouseCardPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
+	
     private Maison maison;
     private JPanel imagePanel;
     private JLabel nameLabel;

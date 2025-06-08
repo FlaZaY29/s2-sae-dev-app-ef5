@@ -17,6 +17,7 @@ import java.awt.event.KeyEvent;
  * @version 1.0
  */
 public class MenuBar extends JMenuBar {
+	private static final long serialVersionUID = 1L;
     
     private MainControleur controleur;
     

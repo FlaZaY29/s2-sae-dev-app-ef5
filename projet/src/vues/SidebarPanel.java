@@ -9,6 +9,8 @@ import java.awt.*;
  * Contient les boutons de navigation
  */
 public class SidebarPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
+	
     private JPanel maisonsButton;
     private JPanel inscriptionButton;
     

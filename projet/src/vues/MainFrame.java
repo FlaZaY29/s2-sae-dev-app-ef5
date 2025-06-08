@@ -13,6 +13,8 @@ import java.net.URL;
  * Contient tous les panneaux de l'interface
  */
 public class MainFrame extends JFrame {
+	private static final long serialVersionUID = 1L;
+	
     private HeaderPanel headerPanel;
     private SidebarPanel sidebarPanel;
     private JPanel contentPanel;

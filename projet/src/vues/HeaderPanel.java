@@ -11,6 +11,8 @@ import java.io.File;
  * Contient le logo et le champ de recherche
  */
 public class HeaderPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
+	
     private JLabel logoLabel;
     private JTextField searchField;
 

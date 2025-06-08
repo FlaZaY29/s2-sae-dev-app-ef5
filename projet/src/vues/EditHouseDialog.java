@@ -16,6 +16,8 @@ import java.io.File;
  * Boîte de dialogue pour modifier une maison
  */
 public class EditHouseDialog extends JDialog {
+	private static final long serialVersionUID = 1L;
+	
     private JComboBox<String> typeComboBox;
     private JTextField numField;
     private JTextField nomField;

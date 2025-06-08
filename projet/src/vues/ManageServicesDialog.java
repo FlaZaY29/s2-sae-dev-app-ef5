@@ -16,6 +16,8 @@ import java.util.ArrayList;
  * Boîte de dialogue pour gérer les services d'une maison internationale
  */
 public class ManageServicesDialog extends JDialog {
+	private static final long serialVersionUID = 1L;
+	
     private MaisonInternationale maisonInternationale;
     private ServiceControleur serviceControleur;
     

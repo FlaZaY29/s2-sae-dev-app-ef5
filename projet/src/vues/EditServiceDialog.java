@@ -13,6 +13,8 @@ import java.awt.*;
  * Boîte de dialogue pour modifier un service
  */
 public class EditServiceDialog extends JDialog {
+	private static final long serialVersionUID = 1L;
+	
     private ServiceControleur serviceControleur;
     private MaisonInternationale maisonInternationale;
     private Service serviceToEdit;

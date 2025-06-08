@@ -16,6 +16,8 @@ import java.util.ArrayList;
  * Panneau d'inscription des étudiants
  */
 public class InscriptionPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
+	
     private JLabel titleLabel;
     private JComboBox<String> maisonComboBox;
     private JTextField nomField;

@@ -21,6 +21,7 @@ import java.util.ArrayList;
  * @see Service
  */
 public class MaisonInternationale extends Maison {
+	private static final long serialVersionUID = 1L;
 
     /** Liste des services proposés par cette maison internationale */
     private ArrayList<Service> sesServices;

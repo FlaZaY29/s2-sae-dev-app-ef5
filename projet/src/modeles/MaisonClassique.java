@@ -20,8 +20,9 @@ import java.util.ArrayList;
  * @see Etudiant
  */
 public class MaisonClassique extends Maison {
+	private static final long serialVersionUID = 1L;
 
-    /** Liste des étudiants actuellement logés dans la maison */
+	/** Liste des étudiants actuellement logés dans la maison */
     private ArrayList<Etudiant> listeEtudiant;
     
     /** Liste des étudiants en attente d'une place dans la maison */

@@ -19,6 +19,8 @@ import java.util.ArrayList;
  * Boîte de dialogue affichant les détails d'une maison
  */
 public class HouseDetailsDialog extends JDialog {
+	private static final long serialVersionUID = 1L;
+	
     private Maison maison;
     private MainControleur controleur;
     private JButton closeButton;

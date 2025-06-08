@@ -12,6 +12,8 @@ import java.util.ArrayList;
  * Panneau affichant la liste des maisons
  */
 public class HousesListPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
+	
     private JLabel titleLabel;
     private JButton addButton;
     private JPanel housesContainer;
@@ -22,7 +24,7 @@ public class HousesListPanel extends JPanel {
      * Constructeur du panneau de liste des maisons
      * @param controleur Le contrôleur principal
      */
-    public HousesListPanel(MainControleur controleur) {
+    public HousesListPanel(MainControleur controleur) {    	
         this.controleur = controleur;
         
         setBackground(Color.WHITE);

@@ -9,8 +9,6 @@ import vues.EditHouseDialog;
 import vues.HouseDetailsDialog;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Contrôleur pour la gestion des maisons

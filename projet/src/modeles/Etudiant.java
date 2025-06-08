@@ -24,66 +24,67 @@ public class Etudiant implements Serializable {
 
     /** Identifiant de version pour la sérialisation */
     private static final long serialVersionUID = 1L;
-    /** Num�ro unique d'identification de l'�tudiant */
+
+    /** Numéro unique d'identification de l'étudiant */
     private int num;
     
-    /** Nom de famille de l'�tudiant */
+    /** Nom de famille de l'étudiant */
     private String nom;
     
-    /** Pr�nom de l'�tudiant */
+    /** Prénom de l'étudiant */
     private String prenom;
     
-    /** Adresse de r�sidence de l'�tudiant */
+    /** Adresse de résidence de l'étudiant */
     private String adresse;
     
-    /** Nationalit� de l'�tudiant */
+    /** Nationalité de l'étudiant */
     private String nationalite;
     
-    /** Date de naissance de l'�tudiant (format String) */
+    /** Date de naissance de l'étudiant (format String) */
     private String dateNaissance;
     
-    /** Num�ro de t�l�phone de l'�tudiant */
+    /** Numéro de téléphone de l'étudiant */
     private String tel;
     
-    /** Adresse email de l'�tudiant */
+    /** Adresse email de l'étudiant */
     private String email;
     
-    /** Promotion ou classe de l'�tudiant */
+    /** Promotion ou classe de l'étudiant */
     private String promotion;
     
-    /** Universit� d'origine de l'�tudiant */
+    /** Université d'origine de l'étudiant */
     private String universite;
     
-    /** R�f�rence du document d'identit� */
+    /** Référence du document d'identité */
     private String pieceIdentite;
     
-    /** Indique si l'�tudiant est actuellement en p�riode d'�tudes */
+    /** Indique si l'étudiant est actuellement en période d'études */
     private boolean actuEtudiant;
     
-    /** Indique si l'�tudiant est en liste d'attente */
+    /** Indique si l'étudiant est en liste d'attente */
     private boolean enAttente;
     
-    /** Maison � laquelle l'�tudiant est actuellement affect� */
+    /** Maison à laquelle l'étudiant est actuellement affecté */
     private Maison maisonActuelle;
 
     /**
-     * Constructeur complet pour cr�er un �tudiant avec toutes ses informations.
+     * Constructeur complet pour créer un étudiant avec toutes ses informations.
      * <p>
-     * Initialise un �tudiant avec le statut par d�faut : actuellement �tudiant,
+     * Initialise un étudiant avec le statut par défaut : actuellement étudiant,
      * non en attente, et sans affectation de maison.
      * </p>
      * 
-     * @param num Num�ro unique d'identification
+     * @param num Numéro unique d'identification
      * @param nom Nom de famille
-     * @param prenom Pr�nom
-     * @param adresse Adresse de r�sidence
-     * @param nationalite Nationalit�
+     * @param prenom Prénom
+     * @param adresse Adresse de résidence
+     * @param nationalite Nationalité
      * @param dateNaissance Date de naissance
-     * @param tel Num�ro de t�l�phone
+     * @param tel Numéro de téléphone
      * @param email Adresse email
      * @param promotion Promotion ou classe
-     * @param universite Universit� d'origine
-     * @param pieceIdentite R�f�rence du document d'identit�
+     * @param universite Université d'origine
+     * @param pieceIdentite Référence du document d'identité
      */
     public Etudiant(int num, String nom, String prenom, String adresse, String nationalite, String dateNaissance, String tel, String email, String promotion, String universite, String pieceIdentite) {
         this.num = num;
@@ -103,21 +104,21 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * Constructeur par d�faut.
+     * Constructeur par défaut.
      * <p>
-     * Cr�e un �tudiant avec des valeurs par d�faut.
-     * Utilis� principalement pour l'instanciation avant initialisation des champs.
+     * Crée un étudiant avec des valeurs par défaut.
+     * Utilisé principalement pour l'instanciation avant initialisation des champs.
      * </p>
      */
     public Etudiant() {}
 
     /**
-     * Retourne une repr�sentation textuelle compl�te de l'�tudiant.
+     * Retourne une représentation textuelle complète de l'étudiant.
      * <p>
      * Format : num ; nom ; prenom ; adresse ; nationalite ; dateNaissance ; tel ; email ; promotion ; universite ; pieceIdentite ; actuEtudiant ; enAttente ; maisonActuelle
      * </p>
      * 
-     * @return Cha�ne de caract�res repr�sentant l'�tudiant
+     * @return Chaîne de caractères représentant l'étudiant
      */
     public String toString() {
         String s = "";
@@ -139,9 +140,9 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * Affiche toutes les informations de l'�tudiant sur la console.
+     * Affiche toutes les informations de l'étudiant sur la console.
      * <p>
-     * Utilise la m�thode toString() pour afficher les informations compl�tes.
+     * Utilise la méthode toString() pour afficher les informations complètes.
      * </p>
      */
     public void afficheInfo() {
@@ -149,7 +150,7 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * Affiche un r�sum� des informations principales de l'�tudiant.
+     * Affiche un résumé des informations principales de l'étudiant.
      * <p>
      * Format d'affichage : num ; nom ; prenom ; promotion ; universite
      * </p>
@@ -161,25 +162,25 @@ public class Etudiant implements Serializable {
     // Getters et Setters avec documentation
 
     /**
-     * Retourne le num�ro d'identification de l'�tudiant.
+     * Retourne le numéro d'identification de l'étudiant.
      * 
-     * @return Le num�ro unique d'identification
+     * @return Le numéro unique d'identification
      */
     public int getNum() {
         return num;
     }
 
     /**
-     * D�finit le num�ro d'identification de l'�tudiant.
+     * Définit le numéro d'identification de l'étudiant.
      * 
-     * @param num Le num�ro unique d'identification
+     * @param num Le numéro unique d'identification
      */
     public void setNum(int num) {
         this.num = num;
     }
 
     /**
-     * Retourne le nom de famille de l'�tudiant.
+     * Retourne le nom de famille de l'étudiant.
      * 
      * @return Le nom de famille
      */
@@ -188,7 +189,7 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * D�finit le nom de famille de l'�tudiant.
+     * Définit le nom de famille de l'étudiant.
      * 
      * @param nom Le nom de famille
      */
@@ -197,61 +198,61 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * Retourne le pr�nom de l'�tudiant.
+     * Retourne le prénom de l'étudiant.
      * 
-     * @return Le pr�nom
+     * @return Le prénom
      */
     public String getPrenom() {
         return prenom;
     }
 
     /**
-     * D�finit le pr�nom de l'�tudiant.
+     * Définit le prénom de l'étudiant.
      * 
-     * @param prenom Le pr�nom
+     * @param prenom Le prénom
      */
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
 
     /**
-     * Retourne l'adresse de r�sidence de l'�tudiant.
+     * Retourne l'adresse de résidence de l'étudiant.
      * 
-     * @return L'adresse de r�sidence
+     * @return L'adresse de résidence
      */
     public String getAdresse() {
         return adresse;
     }
 
     /**
-     * D�finit l'adresse de r�sidence de l'�tudiant.
+     * Définit l'adresse de résidence de l'étudiant.
      * 
-     * @param adresse L'adresse de r�sidence
+     * @param adresse L'adresse de résidence
      */
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
 
     /**
-     * Retourne la nationalit� de l'�tudiant.
+     * Retourne la nationalité de l'étudiant.
      * 
-     * @return La nationalit�
+     * @return La nationalité
      */
     public String getNationalite() {
         return nationalite;
     }
 
     /**
-     * D�finit la nationalit� de l'�tudiant.
+     * Définit la nationalité de l'étudiant.
      * 
-     * @param nationalite La nationalit�
+     * @param nationalite La nationalité
      */
     public void setNationalite(String nationalite) {
         this.nationalite = nationalite;
     }
 
     /**
-     * Retourne la date de naissance de l'�tudiant.
+     * Retourne la date de naissance de l'étudiant.
      * 
      * @return La date de naissance (format String)
      */
@@ -260,7 +261,7 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * D�finit la date de naissance de l'�tudiant.
+     * Définit la date de naissance de l'étudiant.
      * 
      * @param dateNaissance La date de naissance
      */
@@ -269,25 +270,25 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * Retourne le num�ro de t�l�phone de l'�tudiant.
+     * Retourne le numéro de téléphone de l'étudiant.
      * 
-     * @return Le num�ro de t�l�phone
+     * @return Le numéro de téléphone
      */
     public String getTel() {
         return tel;
     }
 
     /**
-     * D�finit le num�ro de t�l�phone de l'�tudiant.
+     * Définit le numéro de téléphone de l'étudiant.
      * 
-     * @param tel Le num�ro de t�l�phone
+     * @param tel Le numéro de téléphone
      */
     public void setTel(String tel) {
         this.tel = tel;
     }
 
     /**
-     * Retourne l'adresse email de l'�tudiant.
+     * Retourne l'adresse email de l'étudiant.
      * 
      * @return L'adresse email
      */
@@ -296,7 +297,7 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * D�finit l'adresse email de l'�tudiant.
+     * Définit l'adresse email de l'étudiant.
      * 
      * @param email L'adresse email
      */
@@ -305,7 +306,7 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * Retourne la promotion de l'�tudiant.
+     * Retourne la promotion de l'étudiant.
      * 
      * @return La promotion ou classe
      */
@@ -314,7 +315,7 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * D�finit la promotion de l'�tudiant.
+     * Définit la promotion de l'étudiant.
      * 
      * @param promotion La promotion ou classe
      */
@@ -323,79 +324,79 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * Retourne l'universit� d'origine de l'�tudiant.
+     * Retourne l'université d'origine de l'étudiant.
      * 
-     * @return L'universit� d'origine
+     * @return L'université d'origine
      */
     public String getUniversite() {
         return universite;
     }
 
     /**
-     * D�finit l'universit� d'origine de l'�tudiant.
+     * Définit l'université d'origine de l'étudiant.
      * 
-     * @param universite L'universit� d'origine
+     * @param universite L'université d'origine
      */
     public void setUniversite(String universite) {
         this.universite = universite;
     }
 
     /**
-     * Retourne la r�f�rence du document d'identit�.
+     * Retourne la référence du document d'identité.
      * 
-     * @return La r�f�rence du document d'identit�
+     * @return La référence du document d'identité
      */
     public String getPieceIdentite() {
         return pieceIdentite;
     }
 
     /**
-     * D�finit la r�f�rence du document d'identit�.
+     * Définit la référence du document d'identité.
      * 
-     * @param pieceIdentite La r�f�rence du document d'identit�
+     * @param pieceIdentite La référence du document d'identité
      */
     public void setPieceIdentite(String pieceIdentite) {
         this.pieceIdentite = pieceIdentite;
     }
 
     /**
-     * Indique si l'�tudiant est actuellement en p�riode d'�tudes.
+     * Indique si l'étudiant est actuellement en période d'études.
      * 
-     * @return true si l'�tudiant est actuellement �tudiant, false sinon
+     * @return true si l'étudiant est actuellement étudiant, false sinon
      */
     public boolean isActuEtudiant() {
         return actuEtudiant;
     }
 
     /**
-     * D�finit le statut d'�tudiant actuel.
+     * Définit le statut d'étudiant actuel.
      * 
-     * @param actuEtudiant true si l'�tudiant est actuellement �tudiant
+     * @param actuEtudiant true si l'étudiant est actuellement étudiant
      */
     public void setActuEtudiant(boolean actuEtudiant) {
         this.actuEtudiant = actuEtudiant;
     }
 
     /**
-     * Indique si l'�tudiant est en liste d'attente.
+     * Indique si l'étudiant est en liste d'attente.
      * 
-     * @return true si l'�tudiant est en attente, false sinon
+     * @return true si l'étudiant est en attente, false sinon
      */
     public boolean isEnAttente() {
         return enAttente;
     }
 
     /**
-     * D�finit le statut d'attente de l'�tudiant.
+     * Définit le statut d'attente de l'étudiant.
      * 
-     * @param enAttente true si l'�tudiant est en attente
+     * @param enAttente true si l'étudiant est en attente
      */
     public void setEnAttente(boolean enAttente) {
         this.enAttente = enAttente;
     }
 
     /**
-     * Retourne la maison actuellement affect�e � l'�tudiant.
+     * Retourne la maison actuellement affectée à l'étudiant.
      * 
      * @return La maison actuelle ou null si aucune affectation
      */
@@ -404,14 +405,14 @@ public class Etudiant implements Serializable {
     }
 
     /**
-     * D�finit la maison affect�e � l'�tudiant.
+     * Définit la maison affectée à l'étudiant.
      * 
-     * @param maisonActuelle La maison � affecter
+     * @param maisonActuelle La maison à affecter
      */
     public void setMaisonActuelle(Maison maisonActuelle) {
         this.maisonActuelle = maisonActuelle;
     }
 }
 /**
-* cette classe a �t� cr�e par @author Flavio Zamperlini
+* cette classe a été crée par @author Flavio Zamperlini
 */

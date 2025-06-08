@@ -12,7 +12,7 @@ import java.io.*;
  * le modèle CIUP depuis le disque dur en utilisant la sérialisation Java.
  * </p>
  * 
- * @author Flavio Zamperlini
+ * @author CIUP Development Team
  * @version 1.0
  */
 public class PersistenceControleur {
@@ -169,3 +169,6 @@ public class PersistenceControleur {
         return null;
     }
 }
+/**
+ * cette classe a été crée par @author Flavio Zamperlini
+ */

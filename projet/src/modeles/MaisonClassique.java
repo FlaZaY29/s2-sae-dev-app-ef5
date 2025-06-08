@@ -3,15 +3,15 @@ package modeles;
 import java.util.ArrayList;
 
 /**
- * Classe représentant une maison classique dans le système CIUP.
+ * Classe reprÃ©sentant une maison classique dans le systÃ¨me CIUP.
  * <p>
- * Une maison classique est caractérisée par une nationalité spécifique
- * et une capacité d'accueil limitée. Elle gère directement les étudiants
- * qui y résident ainsi qu'une liste d'attente pour les demandes excédentaires.
+ * Une maison classique est caractÃ©risÃ©e par une nationalitÃ© spÃ©cifique
+ * et une capacitÃ© d'accueil limitÃ©e. Elle gÃ¨re directement les Ã©tudiants
+ * qui y rÃ©sident ainsi qu'une liste d'attente pour les demandes excÃ©dentaires.
  * </p>
  * <p>
- * Cette classe implémente la logique de gestion des places disponibles
- * et du système de liste d'attente automatique.
+ * Cette classe implÃ©mente la logique de gestion des places disponibles
+ * et du systÃ¨me de liste d'attente automatique.
  * </p>
  * 
  * @author CIUP Development Team
@@ -21,33 +21,33 @@ import java.util.ArrayList;
  */
 public class MaisonClassique extends Maison {
 
-    /** Liste des étudiants actuellement logés dans la maison */
+    /** Liste des Ã©tudiants actuellement logÃ©s dans la maison */
     private ArrayList<Etudiant> listeEtudiant;
     
-    /** Liste des étudiants en attente d'une place dans la maison */
+    /** Liste des Ã©tudiants en attente d'une place dans la maison */
     private ArrayList<Etudiant> listeAttente;
 
-    /** Nationalité principale de la maison */
+    /** NationalitÃ© principale de la maison */
     private String nationalite;
     
-    /** Capacité maximale d'accueil de la maison */
+    /** CapacitÃ© maximale d'accueil de la maison */
     private int capacite;
 
     /**
-     * Constructeur complet pour créer une maison classique.
+     * Constructeur complet pour crÃ©er une maison classique.
      * <p>
-     * Initialise automatiquement les listes d'étudiants et d'attente.
+     * Initialise automatiquement les listes d'Ã©tudiants et d'attente.
      * </p>
      * 
-     * @param num Numéro unique d'identification
+     * @param num NumÃ©ro unique d'identification
      * @param nom Nom de la maison
      * @param desc Description de la maison
-     * @param tel Numéro de téléphone
-     * @param localisation Localisation géographique
+     * @param tel NumÃ©ro de tÃ©lÃ©phone
+     * @param localisation Localisation gÃ©ographique
      * @param directeur Nom du directeur
-     * @param anneeCreation Année de création
-     * @param dateFete Date de la fête annuelle
-     * @param dureeFete Durée de la fête en jours
+     * @param anneeCreation AnnÃ©e de crÃ©ation
+     * @param dateFete Date de la fÃªte annuelle
+     * @param dureeFete DurÃ©e de la fÃªte en jours
      */
     public MaisonClassique(int num, String nom, String desc, String tel, String localisation, String directeur,
                            int anneeCreation, String dateFete, int dureeFete) {
@@ -58,10 +58,10 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Constructeur par défaut.
+     * Constructeur par dÃ©faut.
      * <p>
-     * Crée une maison classique avec des valeurs par défaut et
-     * initialise les listes d'étudiants.
+     * CrÃ©e une maison classique avec des valeurs par dÃ©faut et
+     * initialise les listes d'Ã©tudiants.
      * </p>
      */
     public MaisonClassique() {
@@ -71,16 +71,16 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Ajoute un étudiant à la maison ou en liste d'attente.
+     * Ajoute un Ã©tudiant Ã  la maison ou en liste d'attente.
      * <p>
-     * Si la maison n'est pas pleine, l'étudiant est directement ajouté.
-     * Sinon, il est placé en liste d'attente automatiquement.
+     * Si la maison n'est pas pleine, l'Ã©tudiant est directement ajoutÃ©.
+     * Sinon, il est placÃ© en liste d'attente automatiquement.
      * </p>
      * 
-     * @param etu L'étudiant à ajouter
+     * @param etu L'Ã©tudiant Ã  ajouter
      */
     public void ajoutEtudiant(Etudiant etu) {
-        // Vérifier si la liste des étudiants est initialisée
+        // VÃ©rifier si la liste des Ã©tudiants est initialisÃ©e
         if (listeEtudiant == null) {
             listeEtudiant = new ArrayList<>();
         }
@@ -95,16 +95,16 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Supprime un étudiant de la maison et gère la liste d'attente.
+     * Supprime un Ã©tudiant de la maison et gÃ¨re la liste d'attente.
      * <p>
-     * Après suppression, si des étudiants sont en attente, le premier
-     * de la liste est automatiquement affecté à la place libérée.
+     * AprÃ¨s suppression, si des Ã©tudiants sont en attente, le premier
+     * de la liste est automatiquement affectÃ© Ã  la place libÃ©rÃ©e.
      * </p>
      * 
-     * @param etu L'étudiant à supprimer
+     * @param etu L'Ã©tudiant Ã  supprimer
      */
     public void supprEtudiant(Etudiant etu) {
-        // Vérifier si la liste des étudiants est initialisée
+        // VÃ©rifier si la liste des Ã©tudiants est initialisÃ©e
         if (listeEtudiant == null) {
             listeEtudiant = new ArrayList<>();
             return;
@@ -118,7 +118,7 @@ public class MaisonClassique extends Maison {
             System.out.println("L'etudiant n'est pas present dans la maison");
         }
 
-        // Vérifier si la liste d'attente est initialisée
+        // VÃ©rifier si la liste d'attente est initialisÃ©e
         if (listeAttente == null) {
             listeAttente = new ArrayList<>();
             return;
@@ -134,17 +134,17 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Affiche la liste des étudiants logés dans la maison.
+     * Affiche la liste des Ã©tudiants logÃ©s dans la maison.
      * <p>
-     * Affiche le nom et prénom de chaque étudiant résidant actuellement
+     * Affiche le nom et prÃ©nom de chaque Ã©tudiant rÃ©sidant actuellement
      * dans la maison.
      * </p>
      */
     public void afficheEtudiants() {
-        // Vérifier si la liste des étudiants est initialisée
+        // VÃ©rifier si la liste des Ã©tudiants est initialisÃ©e
         if (listeEtudiant == null) {
             listeEtudiant = new ArrayList<>();
-            System.out.println("Aucun étudiant dans la maison " + getNom());
+            System.out.println("Aucun Ã©tudiant dans la maison " + getNom());
             return;
         }
         
@@ -156,15 +156,15 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Ajoute un étudiant à la liste d'attente.
+     * Ajoute un Ã©tudiant Ã  la liste d'attente.
      * <p>
-     * L'étudiant est marqué comme étant en attente.
+     * L'Ã©tudiant est marquÃ© comme Ã©tant en attente.
      * </p>
      * 
-     * @param etu L'étudiant à mettre en attente
+     * @param etu L'Ã©tudiant Ã  mettre en attente
      */
     public void ajoutEtudiantAttente(Etudiant etu) {
-        // Vérifier si la liste d'attente est initialisée
+        // VÃ©rifier si la liste d'attente est initialisÃ©e
         if (listeAttente == null) {
             listeAttente = new ArrayList<>();
         }
@@ -174,15 +174,15 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Supprime un étudiant de la liste d'attente.
+     * Supprime un Ã©tudiant de la liste d'attente.
      * <p>
-     * L'étudiant n'est plus marqué comme étant en attente.
+     * L'Ã©tudiant n'est plus marquÃ© comme Ã©tant en attente.
      * </p>
      * 
-     * @param etu L'étudiant à retirer de la liste d'attente
+     * @param etu L'Ã©tudiant Ã  retirer de la liste d'attente
      */
     public void supprEtudiantAttente(Etudiant etu) {
-        // Vérifier si la liste d'attente est initialisée
+        // VÃ©rifier si la liste d'attente est initialisÃ©e
         if (listeAttente == null) {
             listeAttente = new ArrayList<>();
             return;
@@ -193,17 +193,17 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Affiche la liste des étudiants en attente.
+     * Affiche la liste des Ã©tudiants en attente.
      * <p>
-     * Affiche le nom et prénom de chaque étudiant en liste d'attente
+     * Affiche le nom et prÃ©nom de chaque Ã©tudiant en liste d'attente
      * pour cette maison.
      * </p>
      */
     public void afficheEtudiantsAttente() {
-        // Vérifier si la liste d'attente est initialisée
+        // VÃ©rifier si la liste d'attente est initialisÃ©e
         if (listeAttente == null) {
             listeAttente = new ArrayList<>();
-            System.out.println("Aucun étudiant en attente pour la maison " + getNom());
+            System.out.println("Aucun Ã©tudiant en attente pour la maison " + getNom());
             return;
         }
         
@@ -217,51 +217,51 @@ public class MaisonClassique extends Maison {
     // Getters et Setters avec documentation
 
     /**
-     * Retourne la nationalité principale de la maison.
+     * Retourne la nationalitÃ© principale de la maison.
      * 
-     * @return La nationalité de la maison
+     * @return La nationalitÃ© de la maison
      */
     public String getNationalite() {
         return nationalite;
     }
 
     /**
-     * Définit la nationalité principale de la maison.
+     * DÃ©finit la nationalitÃ© principale de la maison.
      * 
-     * @param nationalite La nationalité de la maison
+     * @param nationalite La nationalitÃ© de la maison
      */
     public void setNationalite(String nationalite) {
         this.nationalite = nationalite;
     }
 
     /**
-     * Retourne la capacité maximale d'accueil.
+     * Retourne la capacitÃ© maximale d'accueil.
      * 
-     * @return La capacité maximale
+     * @return La capacitÃ© maximale
      */
     public int getCapacite() {
         return capacite;
     }
 
     /**
-     * Définit la capacité maximale d'accueil.
+     * DÃ©finit la capacitÃ© maximale d'accueil.
      * 
-     * @param capacite La capacité maximale
+     * @param capacite La capacitÃ© maximale
      */
     public void setCapacite(int capacite) {
         this.capacite = capacite;
     }
 
     /**
-     * Retourne la liste des étudiants logés.
+     * Retourne la liste des Ã©tudiants logÃ©s.
      * <p>
      * Initialise la liste si elle n'existe pas encore.
      * </p>
      * 
-     * @return ArrayList des étudiants logés
+     * @return ArrayList des Ã©tudiants logÃ©s
      */
     public ArrayList<Etudiant> getListeEtudiant() {
-        // Vérifier si la liste des étudiants est initialisée
+        // VÃ©rifier si la liste des Ã©tudiants est initialisÃ©e
         if (listeEtudiant == null) {
             listeEtudiant = new ArrayList<>();
         }
@@ -269,24 +269,24 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Définit la liste des étudiants logés.
+     * DÃ©finit la liste des Ã©tudiants logÃ©s.
      * 
-     * @param listeEtudiant La nouvelle liste d'étudiants
+     * @param listeEtudiant La nouvelle liste d'Ã©tudiants
      */
     public void setListeEtudiant(ArrayList<Etudiant> listeEtudiant) {
         this.listeEtudiant = listeEtudiant;
     }
 
     /**
-     * Retourne la liste des étudiants en attente.
+     * Retourne la liste des Ã©tudiants en attente.
      * <p>
      * Initialise la liste si elle n'existe pas encore.
      * </p>
      * 
-     * @return ArrayList des étudiants en attente
+     * @return ArrayList des Ã©tudiants en attente
      */
     public ArrayList<Etudiant> getListeAttente() {
-        // Vérifier si la liste d'attente est initialisée
+        // VÃ©rifier si la liste d'attente est initialisÃ©e
         if (listeAttente == null) {
             listeAttente = new ArrayList<>();
         }
@@ -294,7 +294,7 @@ public class MaisonClassique extends Maison {
     }
 
     /**
-     * Définit la liste des étudiants en attente.
+     * DÃ©finit la liste des Ã©tudiants en attente.
      * 
      * @param listeAttente La nouvelle liste d'attente
      */
@@ -303,5 +303,5 @@ public class MaisonClassique extends Maison {
     }
 }
 /**
- * cette classe a été crée par @author Donald Se
+ * cette classe a Ã©tÃ© crÃ©e par @author Donald Se
  */

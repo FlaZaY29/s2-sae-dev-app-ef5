@@ -1,19 +1,10 @@
 package vues;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Image;
-import java.io.File;
-import java.net.URL;
-
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.net.URL;
+import java.io.File;
 
 /**
  * Panneau d'en-tête de l'application
@@ -30,11 +21,11 @@ public class HeaderPanel extends JPanel {
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(10, 10, 10, 10));
         setLayout(new BorderLayout());
-
+        
         initComponents();
         layoutComponents();
     }
-
+    
     /**
      * Initialise les composants du panneau
      */
@@ -54,28 +45,26 @@ public class HeaderPanel extends JPanel {
                 BorderFactory.createEmptyBorder(10, 15, 10, 15)
             ));
         }
-
+        
         // Search field
         searchField = new JTextField(20);
         searchField.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1, true),
             BorderFactory.createEmptyBorder(5, 10, 5, 10)
         ));
-
+        
         // Placeholder text
         searchField.setText("Rechercher ...");
         searchField.setForeground(Color.GRAY);
-
+        
         searchField.addFocusListener(new java.awt.event.FocusAdapter() {
-            @Override
-			public void focusGained(java.awt.event.FocusEvent evt) {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 if (searchField.getText().equals("Rechercher ...")) {
                     searchField.setText("");
                     searchField.setForeground(Color.BLACK);
                 }
             }
-            @Override
-			public void focusLost(java.awt.event.FocusEvent evt) {
+            public void focusLost(java.awt.event.FocusEvent evt) {
                 if (searchField.getText().isEmpty()) {
                     searchField.setText("Rechercher ...");
                     searchField.setForeground(Color.GRAY);
@@ -83,7 +72,7 @@ public class HeaderPanel extends JPanel {
             }
         });
     }
-
+    
     /**
      * Charge l'image du logo
      * @return L'icône du logo ou null si non trouvée
@@ -95,7 +84,7 @@ public class HeaderPanel extends JPanel {
                 "/resources/logo.png",
                 "resources/logo.png"
             };
-
+            
             for (String path : logoPaths) {
                 URL logoUrl = getClass().getResource(path);
                 if (logoUrl != null) {
@@ -105,7 +94,7 @@ public class HeaderPanel extends JPanel {
                     }
                 }
             }
-
+            
             // Essayer avec le ClassLoader
             URL logoUrl = getClass().getClassLoader().getResource("resources/logo.png");
             if (logoUrl != null) {
@@ -114,7 +103,7 @@ public class HeaderPanel extends JPanel {
                     return icon;
                 }
             }
-
+            
             // Essayer avec un chemin absolu
             String binPath = System.getProperty("user.dir") + File.separator + "bin" + File.separator + "resources" + File.separator + "logo.png";
             File logoFile = new File(binPath);
@@ -124,7 +113,7 @@ public class HeaderPanel extends JPanel {
                     return icon;
                 }
             }
-
+            
             // Essayer avec un chemin relatif
             String relativePath = "resources" + File.separator + "logo.png";
             File relativeFile = new File(relativePath);
@@ -134,16 +123,14 @@ public class HeaderPanel extends JPanel {
                     return icon;
                 }
             }
-
+            
             return null;
-
+            
         } catch (Exception e) {
             return null;
         }
     }
-
     
-
     /**
      * Organise les composants dans le panneau
      */
@@ -152,7 +139,7 @@ public class HeaderPanel extends JPanel {
         JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         leftPanel.setBackground(Color.WHITE);
         leftPanel.add(logoLabel);
-
+        
         // Center panel for title
         JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         centerPanel.setBackground(Color.WHITE);
@@ -160,17 +147,17 @@ public class HeaderPanel extends JPanel {
         titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
         titleLabel.setForeground(new Color(0, 150, 136));
         centerPanel.add(titleLabel);
-
+        
         // Right panel for search
         JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         rightPanel.setBackground(Color.WHITE);
         rightPanel.add(searchField);
-
+        
         add(leftPanel, BorderLayout.WEST);
         add(centerPanel, BorderLayout.CENTER);
         add(rightPanel, BorderLayout.EAST);
     }
-
+    
     /**
      * Retourne le champ de recherche
      * @return Le champ de recherche

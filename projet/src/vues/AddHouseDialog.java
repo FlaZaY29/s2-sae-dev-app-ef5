@@ -1,37 +1,19 @@
 package vues;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.ItemEvent;
-import java.io.File;
-
-import javax.swing.BorderFactory;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
-
 import controleurs.MainControleur;
+import modeles.Maison;
 import modeles.MaisonClassique;
 import modeles.MaisonInternationale;
 
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.io.File;
+
 /**
- * Boîte de dialogue pour ajouter une maison
+ * BoÃ®te de dialogue pour ajouter une maison
  */
 public class AddHouseDialog extends JDialog {
     private JComboBox<String> typeComboBox;
@@ -44,8 +26,8 @@ public class AddHouseDialog extends JDialog {
     private JTextField anneeCreationField;
     private JTextField dateFeteField;
     private JTextField dureeFeteField;
-
-    // Champs spécifiques pour MaisonClassique
+    
+    // Champs spÃ©cifiques pour MaisonClassique
     private JPanel maisonClassiquePanel;
     private JTextField nationaliteField;
     private JTextField capaciteField;
@@ -53,51 +35,51 @@ public class AddHouseDialog extends JDialog {
     private JTextField imagePathField;
     private JButton browseButton;
     private String selectedImagePath;
-
+    
     private JButton saveButton;
     private JButton cancelButton;
-
+    
     private MainControleur controleur;
-
+    
     /**
-     * Constructeur de la boîte de dialogue d'ajout de maison
-     * @param parent La fenêtre parente
-     * @param controleur Le contrôleur principal
+     * Constructeur de la boÃ®te de dialogue d'ajout de maison
+     * @param parent La fenÃªtre parente
+     * @param controleur Le contrÃ´leur principal
      */
     public AddHouseDialog(JFrame parent, MainControleur controleur) {
         super(parent, "Ajouter une maison", true);
         this.controleur = controleur;
-
+        
         setSize(600, 650);
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
-
+        
         initComponents();
         layoutComponents();
-
-        // Ajouter les écouteurs d'événements
+        
+        // Ajouter les Ã©couteurs d'Ã©vÃ©nements
         typeComboBox.addItemListener(e -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
                 updateFieldsVisibility((String) typeComboBox.getSelectedItem());
             }
         });
-
+        
         saveButton.addActionListener(e -> saveHouse());
-
+        
         cancelButton.addActionListener(e -> dispose());
 
-        // Par défaut, on affiche les champs pour MaisonClassique
+        // Par dÃ©faut, on affiche les champs pour MaisonClassique
         updateFieldsVisibility("Maison Classique");
     }
-
+    
     /**
-     * Initialise les composants de la boîte de dialogue
+     * Initialise les composants de la boÃ®te de dialogue
      */
     private void initComponents() {
         // Type de maison
         String[] types = {"Maison Classique", "Maison Internationale"};
         typeComboBox = new JComboBox<>(types);
-
+        
         // Champs communs
         numField = new JTextField(10);
         nomField = new JTextField(20);
@@ -108,8 +90,8 @@ public class AddHouseDialog extends JDialog {
         anneeCreationField = new JTextField(10);
         dateFeteField = new JTextField(10);
         dureeFeteField = new JTextField(10);
-
-        // Champs spécifiques pour MaisonClassique
+        
+        // Champs spÃ©cifiques pour MaisonClassique
         nationaliteField = new JTextField(20);
         capaciteField = new JTextField(10);
 
@@ -118,130 +100,130 @@ public class AddHouseDialog extends JDialog {
         imagePathField.setEditable(false);
         browseButton = new JButton("Parcourir...");
         browseButton.addActionListener(e -> browseForImage());
-
+        
         // Boutons
         saveButton = new JButton("Enregistrer");
         cancelButton = new JButton("Annuler");
     }
-
+    
     /**
-     * Organise les composants dans la boîte de dialogue
+     * Organise les composants dans la boÃ®te de dialogue
      */
     private void layoutComponents() {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
-
+        
         // Panel pour le type de maison
         JPanel typePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         typePanel.add(new JLabel("Type de maison:"));
         typePanel.add(typeComboBox);
-
-        // Panel pour les informations générales
+        
+        // Panel pour les informations gÃ©nÃ©rales
         JPanel generalPanel = new JPanel(new GridBagLayout());
         generalPanel.setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createEtchedBorder(),
-            "Informations générales",
+            BorderFactory.createEtchedBorder(), 
+            "Informations gÃ©nÃ©rales",
             TitledBorder.LEFT,
             TitledBorder.TOP
         ));
-
+        
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 5, 5, 5);
-
+        
         // Ligne 1
         gbc.gridx = 0;
         gbc.gridy = 0;
-        generalPanel.add(new JLabel("Numéro:"), gbc);
-
+        generalPanel.add(new JLabel("NumÃ©ro:"), gbc);
+        
         gbc.gridx = 1;
         generalPanel.add(numField, gbc);
-
+        
         gbc.gridx = 2;
         generalPanel.add(new JLabel("Nom:"), gbc);
-
+        
         gbc.gridx = 3;
         generalPanel.add(nomField, gbc);
-
+        
         // Ligne 2
         gbc.gridx = 0;
         gbc.gridy = 1;
         generalPanel.add(new JLabel("Description:"), gbc);
-
+        
         gbc.gridx = 1;
         gbc.gridwidth = 3;
         generalPanel.add(descField, gbc);
-
+        
         // Ligne 3
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 1;
-        generalPanel.add(new JLabel("Téléphone:"), gbc);
-
+        generalPanel.add(new JLabel("TÃ©lÃ©phone:"), gbc);
+        
         gbc.gridx = 1;
         generalPanel.add(telField, gbc);
-
+        
         gbc.gridx = 2;
         generalPanel.add(new JLabel("Localisation:"), gbc);
-
+        
         gbc.gridx = 3;
         generalPanel.add(localisationField, gbc);
-
+        
         // Ligne 4
         gbc.gridx = 0;
         gbc.gridy = 3;
         generalPanel.add(new JLabel("Directeur:"), gbc);
-
+        
         gbc.gridx = 1;
         generalPanel.add(directeurField, gbc);
-
+        
         gbc.gridx = 2;
-        generalPanel.add(new JLabel("Année de création:"), gbc);
-
+        generalPanel.add(new JLabel("AnnÃ©e de crÃ©ation:"), gbc);
+        
         gbc.gridx = 3;
         generalPanel.add(anneeCreationField, gbc);
-
+        
         // Ligne 5
         gbc.gridx = 0;
         gbc.gridy = 4;
-        generalPanel.add(new JLabel("Date de fête:"), gbc);
-
+        generalPanel.add(new JLabel("Date de fÃªte:"), gbc);
+        
         gbc.gridx = 1;
         generalPanel.add(dateFeteField, gbc);
-
+        
         gbc.gridx = 2;
-        generalPanel.add(new JLabel("Durée de fête (jours):"), gbc);
-
+        generalPanel.add(new JLabel("DurÃ©e de fÃªte (jours):"), gbc);
+        
         gbc.gridx = 3;
         generalPanel.add(dureeFeteField, gbc);
-
-        // Panel pour les informations spécifiques à MaisonClassique
+        
+        // Panel pour les informations spÃ©cifiques Ã  MaisonClassique
         maisonClassiquePanel = new JPanel(new GridBagLayout());
         maisonClassiquePanel.setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createEtchedBorder(),
-            "Informations spécifiques",
+            BorderFactory.createEtchedBorder(), 
+            "Informations spÃ©cifiques",
             TitledBorder.LEFT,
             TitledBorder.TOP
         ));
-
+        
         GridBagConstraints gbcSpecific = new GridBagConstraints();
         gbcSpecific.fill = GridBagConstraints.HORIZONTAL;
         gbcSpecific.insets = new Insets(5, 5, 5, 5);
-
+        
         // Ligne 1
         gbcSpecific.gridx = 0;
         gbcSpecific.gridy = 0;
-        maisonClassiquePanel.add(new JLabel("Nationalité:"), gbcSpecific);
-
+        maisonClassiquePanel.add(new JLabel("NationalitÃ©:"), gbcSpecific);
+        
         gbcSpecific.gridx = 1;
         maisonClassiquePanel.add(nationaliteField, gbcSpecific);
-
+        
         // Ligne 2
         gbcSpecific.gridx = 0;
         gbcSpecific.gridy = 1;
-        maisonClassiquePanel.add(new JLabel("Capacité:"), gbcSpecific);
-
+        maisonClassiquePanel.add(new JLabel("CapacitÃ©:"), gbcSpecific);
+        
         gbcSpecific.gridx = 1;
         maisonClassiquePanel.add(capaciteField, gbcSpecific);
 
@@ -249,24 +231,24 @@ public class AddHouseDialog extends JDialog {
         JPanel imagePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         imagePanel.setBackground(Color.WHITE);
         imagePanel.setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createEtchedBorder(),
+            BorderFactory.createEtchedBorder(), 
             "Image de la maison",
             TitledBorder.LEFT,
             TitledBorder.TOP
         ));
-
+        
         JPanel imageFieldPanel = new JPanel(new BorderLayout());
         imageFieldPanel.add(new JLabel("Chemin de l'image:"), BorderLayout.WEST);
         imageFieldPanel.add(imagePathField, BorderLayout.CENTER);
         imageFieldPanel.add(browseButton, BorderLayout.EAST);
-
+        
         imagePanel.add(imageFieldPanel);
-
+        
         // Panel pour les boutons
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         buttonPanel.add(cancelButton);
         buttonPanel.add(saveButton);
-
+        
         // Ajouter tous les panels au panel principal
         mainPanel.add(typePanel);
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -277,13 +259,13 @@ public class AddHouseDialog extends JDialog {
         mainPanel.add(imagePanel);
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         mainPanel.add(buttonPanel);
-
-        // Ajouter le panel principal à la fenêtre
+        
+        // Ajouter le panel principal Ã  la fenÃªtre
         add(new JScrollPane(mainPanel), BorderLayout.CENTER);
     }
-
+    
     /**
-     * Met à jour la visibilité des champs en fonction du type de maison
+     * Met Ã  jour la visibilitÃ© des champs en fonction du type de maison
      * @param type Le type de maison
      */
     private void updateFieldsVisibility(String type) {
@@ -292,35 +274,33 @@ public class AddHouseDialog extends JDialog {
         } else {
             maisonClassiquePanel.setVisible(false);
         }
-
-        // Redimensionner la fenêtre
+        
+        // Redimensionner la fenÃªtre
         pack();
         setSize(getWidth(), Math.min(650, getHeight()));
     }
 
     /**
-     * Ouvre un sélecteur de fichier pour choisir une image
+     * Ouvre un sÃ©lecteur de fichier pour choisir une image
      */
     private void browseForImage() {
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Sélectionner une image");
+        fileChooser.setDialogTitle("SÃ©lectionner une image");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
-            @Override
-			public boolean accept(File f) {
+            public boolean accept(File f) {
                 if (f.isDirectory()) {
                     return true;
                 }
                 String name = f.getName().toLowerCase();
-                return name.endsWith(".jpg") || name.endsWith(".jpeg") ||
+                return name.endsWith(".jpg") || name.endsWith(".jpeg") || 
                        name.endsWith(".png") || name.endsWith(".gif");
             }
-            @Override
-			public String getDescription() {
+            public String getDescription() {
                 return "Images (*.jpg, *.jpeg, *.png, *.gif)";
             }
         });
-
+        
         int result = fileChooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
@@ -328,9 +308,9 @@ public class AddHouseDialog extends JDialog {
             imagePathField.setText(selectedImagePath);
         }
     }
-
+    
     /**
-     * Sauvegarde la maison créée
+     * Sauvegarde la maison crÃ©e
      */
     private void saveHouse() {
         // Valider les champs
@@ -339,43 +319,43 @@ public class AddHouseDialog extends JDialog {
             directeurField.getText().isEmpty() || anneeCreationField.getText().isEmpty() ||
             dateFeteField.getText().isEmpty() || dureeFeteField.getText().isEmpty() ||
             numField.getText().isEmpty()) {
-
-            JOptionPane.showMessageDialog(this,
-                "Veuillez remplir tous les champs obligatoires.",
-                "Formulaire incomplet",
+            
+            JOptionPane.showMessageDialog(this, 
+                "Veuillez remplir tous les champs obligatoires.", 
+                "Formulaire incomplet", 
                 JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+        
         try {
             int num = Integer.parseInt(numField.getText());
             int anneeCreation = Integer.parseInt(anneeCreationField.getText());
             int dureeFete = Integer.parseInt(dureeFeteField.getText());
-
+            
             String type = (String) typeComboBox.getSelectedItem();
-
+            
             if ("Maison Classique".equals(type)) {
-                // Valider les champs spécifiques
+                // Valider les champs spÃ©cifiques
                 if (nationaliteField.getText().isEmpty() || capaciteField.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(this,
-                        "Veuillez remplir tous les champs spécifiques.",
-                        "Formulaire incomplet",
+                    JOptionPane.showMessageDialog(this, 
+                        "Veuillez remplir tous les champs spÃ©cifiques.", 
+                        "Formulaire incomplet", 
                         JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-
+                
                 int capacite = Integer.parseInt(capaciteField.getText());
-
-                // Créer une MaisonClassique via le contrôleur
+                
+                // CrÃ©er une MaisonClassique via le contrÃ´leur
                 MaisonClassique maison = controleur.getMaisonControleur().createMaisonClassique(
-                    num,
-                    nomField.getText(),
-                    descField.getText(),
-                    telField.getText(),
-                    localisationField.getText(),
-                    directeurField.getText(),
-                    anneeCreation,
-                    dateFeteField.getText(),
+                    num, 
+                    nomField.getText(), 
+                    descField.getText(), 
+                    telField.getText(), 
+                    localisationField.getText(), 
+                    directeurField.getText(), 
+                    anneeCreation, 
+                    dateFeteField.getText(), 
                     dureeFete,
                     nationaliteField.getText(),
                     capacite
@@ -386,20 +366,20 @@ public class AddHouseDialog extends JDialog {
                     // Store the image path in a property of the maison
                     maison.setProperty("imagePath", selectedImagePath);
                 }
-
-                // Ajouter la maison via le contrôleur
+                
+                // Ajouter la maison via le contrÃ´leur
                 controleur.getMaisonControleur().addHouse(maison);
             } else {
-                // Créer une MaisonInternationale via le contrôleur
+                // CrÃ©er une MaisonInternationale via le contrÃ´leur
                 MaisonInternationale maison = controleur.getMaisonControleur().createMaisonInternationale(
-                    num,
-                    nomField.getText(),
-                    descField.getText(),
-                    telField.getText(),
-                    localisationField.getText(),
-                    directeurField.getText(),
-                    anneeCreation,
-                    dateFeteField.getText(),
+                    num, 
+                    nomField.getText(), 
+                    descField.getText(), 
+                    telField.getText(), 
+                    localisationField.getText(), 
+                    directeurField.getText(), 
+                    anneeCreation, 
+                    dateFeteField.getText(), 
                     dureeFete
                 );
 
@@ -408,38 +388,38 @@ public class AddHouseDialog extends JDialog {
                     // Store the image path in a property of the maison
                     maison.setProperty("imagePath", selectedImagePath);
                 }
-
-                // Ajouter la maison via le contrôleur
+                
+                // Ajouter la maison via le contrÃ´leur
                 controleur.getMaisonControleur().addHouse(maison);
             }
-
-            // Fermer la fenêtre
+            
+            // Fermer la fenÃªtre
             dispose();
-
+            
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this,
-                "Veuillez entrer des valeurs numériques valides pour les champs numériques.",
-                "Erreur de format",
+            JOptionPane.showMessageDialog(this, 
+                "Veuillez entrer des valeurs numÃ©riques valides pour les champs numÃ©riques.", 
+                "Erreur de format", 
                 JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    
     /**
-     * Retourne le type de maison sélectionné
+     * Retourne le type de maison sÃ©lectionnÃ©
      * @return Le type de maison
      */
     public String getSelectedType() {
         return (String) typeComboBox.getSelectedItem();
     }
-
+    
     /**
-     * Retourne le numéro de la maison
-     * @return Le numéro de la maison
+     * Retourne le numÃ©ro de la maison
+     * @return Le numÃ©ro de la maison
      */
     public String getNumField() {
         return numField.getText();
     }
-
+    
     /**
      * Retourne le nom de la maison
      * @return Le nom de la maison
@@ -447,7 +427,7 @@ public class AddHouseDialog extends JDialog {
     public String getNomField() {
         return nomField.getText();
     }
-
+    
     /**
      * Retourne la description de la maison
      * @return La description de la maison
@@ -455,15 +435,15 @@ public class AddHouseDialog extends JDialog {
     public String getDescField() {
         return descField.getText();
     }
-
+    
     /**
-     * Retourne le téléphone de la maison
-     * @return Le téléphone de la maison
+     * Retourne le tÃ©lÃ©phone de la maison
+     * @return Le tÃ©lÃ©phone de la maison
      */
     public String getTelField() {
         return telField.getText();
     }
-
+    
     /**
      * Retourne la localisation de la maison
      * @return La localisation de la maison
@@ -471,7 +451,7 @@ public class AddHouseDialog extends JDialog {
     public String getLocalisationField() {
         return localisationField.getText();
     }
-
+    
     /**
      * Retourne le directeur de la maison
      * @return Le directeur de la maison
@@ -479,55 +459,55 @@ public class AddHouseDialog extends JDialog {
     public String getDirecteurField() {
         return directeurField.getText();
     }
-
+    
     /**
-     * Retourne l'année de création de la maison
-     * @return L'année de création de la maison
+     * Retourne l'annÃ©e de crÃ©ation de la maison
+     * @return L'annÃ©e de crÃ©ation de la maison
      */
     public String getAnneeCreationField() {
         return anneeCreationField.getText();
     }
-
+    
     /**
-     * Retourne la date de fête de la maison
-     * @return La date de fête de la maison
+     * Retourne la date de fÃªte de la maison
+     * @return La date de fÃªte de la maison
      */
     public String getDateFeteField() {
         return dateFeteField.getText();
     }
-
+    
     /**
-     * Retourne la durée de fête de la maison
-     * @return La durée de fête de la maison
+     * Retourne la durÃ©e de fÃªte de la maison
+     * @return La durÃ©e de fÃªte de la maison
      */
     public String getDureeFeteField() {
         return dureeFeteField.getText();
     }
-
+    
     /**
-     * Retourne la nationalité de la maison
-     * @return La nationalité de la maison
+     * Retourne la nationalitÃ© de la maison
+     * @return La nationalitÃ© de la maison
      */
     public String getNationaliteField() {
         return nationaliteField.getText();
     }
-
+    
     /**
-     * Retourne la capacité de la maison
-     * @return La capacité de la maison
+     * Retourne la capacitÃ© de la maison
+     * @return La capacitÃ© de la maison
      */
     public String getCapaciteField() {
         return capaciteField.getText();
     }
 
     /**
-     * Retourne le chemin de l'image sélectionnée
+     * Retourne le chemin de l'image sÃ©lectionnÃ©e
      * @return Le chemin de l'image
      */
     public String getSelectedImagePath() {
         return selectedImagePath;
     }
-
+    
     /**
      * Retourne le bouton d'enregistrement
      * @return Le bouton d'enregistrement
@@ -535,7 +515,7 @@ public class AddHouseDialog extends JDialog {
     public JButton getSaveButton() {
         return saveButton;
     }
-
+    
     /**
      * Retourne le bouton d'annulation
      * @return Le bouton d'annulation
@@ -543,7 +523,7 @@ public class AddHouseDialog extends JDialog {
     public JButton getCancelButton() {
         return cancelButton;
     }
-
+    
     /**
      * Retourne la combobox de type
      * @return La combobox de type
@@ -553,5 +533,5 @@ public class AddHouseDialog extends JDialog {
     }
 }
 /**
- * cette classe a été crée par @author Donald Se
+ * cette classe a Ã©tÃ© crÃ©e par @author Donald Se
  */

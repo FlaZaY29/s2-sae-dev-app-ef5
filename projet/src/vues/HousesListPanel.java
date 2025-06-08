@@ -1,23 +1,12 @@
 package vues;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.util.ArrayList;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.SwingUtilities;
-import javax.swing.border.EmptyBorder;
-
 import controleurs.MainControleur;
 import modeles.Maison;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Panneau affichant la liste des maisons
@@ -31,19 +20,19 @@ public class HousesListPanel extends JPanel {
 
     /**
      * Constructeur du panneau de liste des maisons
-     * @param controleur Le contrôleur principal
+     * @param controleur Le contrÃ´leur principal
      */
     public HousesListPanel(MainControleur controleur) {
         this.controleur = controleur;
-
+        
         setBackground(Color.WHITE);
         setLayout(new BorderLayout());
         setBorder(new EmptyBorder(20, 20, 20, 20));
-
+        
         initComponents();
         layoutComponents();
     }
-
+    
     /**
      * Initialise les composants du panneau
      */
@@ -52,10 +41,10 @@ public class HousesListPanel extends JPanel {
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setBackground(Color.WHITE);
         headerPanel.setBorder(new EmptyBorder(0, 0, 20, 0));
-
+        
         titleLabel = new JLabel("Listes des maisons");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
-
+        
         addButton = new JButton("+");
         addButton.setFont(new Font("Arial", Font.BOLD, 20));
         addButton.setFocusPainted(false);
@@ -63,25 +52,25 @@ public class HousesListPanel extends JPanel {
         addButton.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
         addButton.setPreferredSize(new Dimension(40, 40));
 
-        // Dans la méthode initComponents(), après la création du bouton addButton
+        // Dans la mÃ©thode initComponents(), aprÃ¨s la crÃ©ation du bouton addButton
         addButton.addActionListener(e -> {
             controleur.getMaisonControleur().showAddHouseDialog();
         });
-
+        
         headerPanel.add(titleLabel, BorderLayout.WEST);
         headerPanel.add(addButton, BorderLayout.EAST);
-
+        
         // Houses container with grid layout
         housesContainer = new JPanel();
         housesContainer.setBackground(Color.WHITE);
         housesContainer.setLayout(new GridLayout(0, 2, 20, 20)); // 2 columns, variable rows
-
+        
         // Scroll pane for houses
         scrollPane = new JScrollPane(housesContainer);
         scrollPane.setBorder(null);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
     }
-
+    
     /**
      * Organise les composants dans le panneau
      */
@@ -90,42 +79,42 @@ public class HousesListPanel extends JPanel {
         JPanel topRightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         topRightPanel.setBackground(Color.WHITE);
         topRightPanel.add(addButton);
-
+        
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.setBackground(Color.WHITE);
         topPanel.add(titleLabel, BorderLayout.WEST);
         topPanel.add(topRightPanel, BorderLayout.EAST);
-
+        
         // Ajouter les composants au panel principal
         add(topPanel, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
     }
-
+    
     /**
-     * Rafraîchit la liste des maisons
+     * RafraÃ®chit la liste des maisons
      */
     public void refreshHousesList() {
         if (controleur == null || controleur.getCiupModel() == null) {
-            System.out.println("Erreur: controleur ou modèle null dans refreshHousesList()");
+            System.out.println("Erreur: controleur ou modÃ¨le null dans refreshHousesList()");
             return;
         }
-
+        
         housesContainer.removeAll();
-
+        
         ArrayList<Maison> maisons = controleur.getCiupModel().getListeMaison();
-        System.out.println("Nombre de maisons à afficher: " + maisons.size());
-
+        System.out.println("Nombre de maisons Ã  afficher: " + maisons.size());
+        
         for (Maison maison : maisons) {
             System.out.println("Ajout de la maison: " + maison.getNom());
             HouseCardPanel houseCard = new HouseCardPanel(maison, controleur);
             housesContainer.add(houseCard);
         }
-
+        
         // Revalidate and repaint
         housesContainer.revalidate();
         housesContainer.repaint();
-
-        // Forcer la mise à jour de la fenêtre
+        
+        // Forcer la mise Ã  jour de la fenÃªtre
         SwingUtilities.invokeLater(() -> {
             scrollPane.revalidate();
             scrollPane.repaint();
@@ -133,7 +122,7 @@ public class HousesListPanel extends JPanel {
             repaint();
         });
     }
-
+    
     /**
      * Filtre les maisons par nom
      * @param searchText Le texte de recherche
@@ -142,23 +131,23 @@ public class HousesListPanel extends JPanel {
         if (controleur == null || controleur.getCiupModel() == null) {
             return;
         }
-
+        
         housesContainer.removeAll();
-
+        
         ArrayList<Maison> maisons = controleur.getCiupModel().getListeMaison();
         for (Maison maison : maisons) {
-            if (searchText.isEmpty() ||
+            if (searchText.isEmpty() || 
                 maison.getNom().toLowerCase().contains(searchText.toLowerCase())) {
                 HouseCardPanel houseCard = new HouseCardPanel(maison, controleur);
                 housesContainer.add(houseCard);
             }
         }
-
+        
         // Revalidate and repaint
         housesContainer.revalidate();
         housesContainer.repaint();
     }
-
+    
     /**
      * Retourne le bouton d'ajout
      * @return Le bouton d'ajout
@@ -168,5 +157,5 @@ public class HousesListPanel extends JPanel {
     }
 }
 /**
- * cette classe a été crée par @author Donald Se Maksen Mouhou
+ * cette classe a Ã©tÃ© crÃ©e par @author Donald Se Maksen Mouhou
  */

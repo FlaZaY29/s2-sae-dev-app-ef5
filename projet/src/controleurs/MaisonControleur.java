@@ -13,16 +13,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Contrôleur pour la gestion des maisons
+ * ContrÃ´leur pour la gestion des maisons
  */
 public class MaisonControleur {
     private CIUP ciupModel;
     private MainControleur mainControleur;
     
     /**
-     * Constructeur du contrôleur de maisons
-     * @param ciupModel Le modèle CIUP
-     * @param mainControleur Le contrôleur principal
+     * Constructeur du contrÃ´leur de maisons
+     * @param ciupModel Le modÃ¨le CIUP
+     * @param mainControleur Le contrÃ´leur principal
      */
     public MaisonControleur(CIUP ciupModel, MainControleur mainControleur) {
         this.ciupModel = ciupModel;
@@ -30,8 +30,8 @@ public class MaisonControleur {
     }
     
     /**
-     * Affiche les détails d'une maison
-     * @param maison La maison à afficher
+     * Affiche les dÃ©tails d'une maison
+     * @param maison La maison Ã  afficher
      */
     public void showHouseDetails(Maison maison) {
         HouseDetailsDialog dialog = new HouseDetailsDialog(mainControleur.getMainFrame(), maison, mainControleur);
@@ -39,14 +39,14 @@ public class MaisonControleur {
     }
     
     /**
-     * Affiche la boîte de dialogue d'ajout de maison
+     * Affiche la boÃ®te de dialogue d'ajout de maison
      */
     public void showAddHouseDialog() {
         AddHouseDialog dialog = new AddHouseDialog(mainControleur.getMainFrame(), mainControleur);
         
-        // Ajouter les écouteurs d'événements aux boutons
+        // Ajouter les Ã©couteurs d'Ã©vÃ©nements aux boutons
         dialog.getSaveButton().addActionListener(e -> {
-            // La logique de sauvegarde est maintenant dans la méthode saveHouse() de AddHouseDialog
+            // La logique de sauvegarde est maintenant dans la mÃ©thode saveHouse() de AddHouseDialog
         });
         
         dialog.getCancelButton().addActionListener(e -> {
@@ -57,43 +57,43 @@ public class MaisonControleur {
     }
     
     /**
-     * Ajoute une maison au modèle
-     * @param maison La maison à ajouter
+     * Ajoute une maison au modÃ¨le
+     * @param maison La maison Ã  ajouter
      */
     public void addHouse(Maison maison) {
         ciupModel.ajouterMaison(maison);
         
-        // Rafraîchir la liste des maisons
+        // RafraÃ®chir la liste des maisons
         mainControleur.getMainFrame().getHousesListPanel().refreshHousesList();
         
-        // Mettre à jour la liste des maisons dans le panel d'inscription
+        // Mettre Ã  jour la liste des maisons dans le panel d'inscription
         mainControleur.getMainFrame().getInscriptionPanel().updateMaisonComboBox();
         
         JOptionPane.showMessageDialog(
             mainControleur.getMainFrame(),
-            "Maison ajoutée avec succès: " + maison.getNom(),
-            "Succès",
+            "Maison ajoutÃ©e avec succÃ¨s: " + maison.getNom(),
+            "SuccÃ¨s",
             JOptionPane.INFORMATION_MESSAGE
         );
         
-        // Proposer d'ajouter des étudiants à la nouvelle maison ou des services si c'est une maison internationale
+        // Proposer d'ajouter des Ã©tudiants Ã  la nouvelle maison ou des services si c'est une maison internationale
         if (maison instanceof MaisonClassique) {
             int result = JOptionPane.showConfirmDialog(
                 mainControleur.getMainFrame(),
-                "Voulez-vous ajouter des étudiants à cette maison maintenant?",
-                "Ajouter des étudiants",
+                "Voulez-vous ajouter des Ã©tudiants Ã  cette maison maintenant?",
+                "Ajouter des Ã©tudiants",
                 JOptionPane.YES_NO_OPTION
             );
             
             if (result == JOptionPane.YES_OPTION) {
                 mainControleur.showInscription();
-                // Sélectionner la nouvelle maison dans la liste déroulante
+                // SÃ©lectionner la nouvelle maison dans la liste dÃ©roulante
                 mainControleur.getMainFrame().getInscriptionPanel().selectMaison(maison.getNom());
             }
         } else if (maison instanceof MaisonInternationale) {
             int result = JOptionPane.showConfirmDialog(
                 mainControleur.getMainFrame(),
-                "Voulez-vous ajouter des services à cette maison maintenant?",
+                "Voulez-vous ajouter des services Ã  cette maison maintenant?",
                 "Ajouter des services",
                 JOptionPane.YES_NO_OPTION
             );
@@ -105,8 +105,8 @@ public class MaisonControleur {
     }
     
     /**
-     * Affiche la boîte de dialogue de modification de maison
-     * @param maison La maison à modifier
+     * Affiche la boÃ®te de dialogue de modification de maison
+     * @param maison La maison Ã  modifier
      */
     public void showEditHouseDialog(Maison maison) {
         EditHouseDialog dialog = new EditHouseDialog(mainControleur.getMainFrame(), mainControleur, maison);
@@ -114,33 +114,33 @@ public class MaisonControleur {
     }
 
     /**
-     * Met à jour une maison dans le modèle
-     * @param maison La maison mise à jour
+     * Met Ã  jour une maison dans le modÃ¨le
+     * @param maison La maison mise Ã  jour
      */
     public void updateHouse(Maison maison) {
-        // Rafraîchir la liste des maisons
+        // RafraÃ®chir la liste des maisons
         mainControleur.getMainFrame().getHousesListPanel().refreshHousesList();
         
-        // Mettre à jour la liste des maisons dans le panel d'inscription
+        // Mettre Ã  jour la liste des maisons dans le panel d'inscription
         mainControleur.getMainFrame().getInscriptionPanel().updateMaisonComboBox();
         
         JOptionPane.showMessageDialog(
             mainControleur.getMainFrame(),
-            "Maison modifiée avec succès: " + maison.getNom(),
-            "Succès",
+            "Maison modifiÃ©e avec succÃ¨s: " + maison.getNom(),
+            "SuccÃ¨s",
             JOptionPane.INFORMATION_MESSAGE
         );
     }
     
     /**
-     * Supprime une maison du modèle
-     * @param maison La maison à supprimer
+     * Supprime une maison du modÃ¨le
+     * @param maison La maison Ã  supprimer
      */
     public void deleteHouse(Maison maison) {
         // Confirm deletion
         int result = JOptionPane.showConfirmDialog(
             mainControleur.getMainFrame(),
-            "Êtes-vous sûr de vouloir supprimer la maison " + maison.getNom() + " ?",
+            "ÃŠtes-vous sÃ»r de vouloir supprimer la maison " + maison.getNom() + " ?",
             "Confirmation de suppression",
             JOptionPane.YES_NO_OPTION
         );
@@ -148,15 +148,15 @@ public class MaisonControleur {
         if (result == JOptionPane.YES_OPTION) {
             ciupModel.supprMaison(maison);
             
-            // Rafraîchir la liste des maisons
+            // RafraÃ®chir la liste des maisons
             mainControleur.getMainFrame().getHousesListPanel().refreshHousesList();
             
-            // Mettre à jour la liste des maisons dans le panel d'inscription
+            // Mettre Ã  jour la liste des maisons dans le panel d'inscription
             mainControleur.getMainFrame().getInscriptionPanel().updateMaisonComboBox();
             
             JOptionPane.showMessageDialog(
                 mainControleur.getMainFrame(),
-                "Maison supprimée avec succès",
+                "Maison supprimÃ©e avec succÃ¨s",
                 "Information",
                 JOptionPane.INFORMATION_MESSAGE
             );
@@ -164,19 +164,19 @@ public class MaisonControleur {
     }
     
     /**
-     * Crée une nouvelle maison classique
-     * @param num Numéro de la maison
+     * CrÃ©e une nouvelle maison classique
+     * @param num NumÃ©ro de la maison
      * @param nom Nom de la maison
      * @param desc Description de la maison
-     * @param tel Téléphone de la maison
+     * @param tel TÃ©lÃ©phone de la maison
      * @param localisation Localisation de la maison
      * @param directeur Directeur de la maison
-     * @param anneeCreation Année de création de la maison
-     * @param dateFete Date de la fête de la maison
-     * @param dureeFete Durée de la fête de la maison
-     * @param nationalite Nationalité de la maison
-     * @param capacite Capacité de la maison
-     * @return La maison classique créée
+     * @param anneeCreation AnnÃ©e de crÃ©ation de la maison
+     * @param dateFete Date de la fÃªte de la maison
+     * @param dureeFete DurÃ©e de la fÃªte de la maison
+     * @param nationalite NationalitÃ© de la maison
+     * @param capacite CapacitÃ© de la maison
+     * @return La maison classique crÃ©e
      */
     public MaisonClassique createMaisonClassique(int num, String nom, String desc, String tel, String localisation, 
                                                 String directeur, int anneeCreation, String dateFete, int dureeFete, 
@@ -188,23 +188,24 @@ public class MaisonControleur {
     }
     
     /**
-     * Crée une nouvelle maison internationale
-     * @param num Numéro de la maison
+     * CrÃ©e une nouvelle maison internationale
+     * @param num NumÃ©ro de la maison
      * @param nom Nom de la maison
      * @param desc Description de la maison
-     * @param tel Téléphone de la maison
+     * @param tel TÃ©lÃ©phone de la maison
      * @param localisation Localisation de la maison
      * @param directeur Directeur de la maison
-     * @param anneeCreation Année de création de la maison
-     * @param dateFete Date de la fête de la maison
-     * @param dureeFete Durée de la fête de la maison
-     * @return La maison internationale créée
+     * @param anneeCreation AnnÃ©e de crÃ©ation de la maison
+     * @param dateFete Date de la fÃªte de la maison
+     * @param dureeFete DurÃ©e de la fÃªte de la maison
+     * @return La maison internationale crÃ©e
      */
     public MaisonInternationale createMaisonInternationale(int num, String nom, String desc, String tel, String localisation, 
                                                           String directeur, int anneeCreation, String dateFete, int dureeFete) {
         return new MaisonInternationale(num, nom, desc, tel, localisation, directeur, anneeCreation, dateFete, dureeFete);
     }
 }
+
 /**
- * cette classe a été crée par @author Donald Se
+ * cette classe a Ã©tÃ© crÃ©e par @author Donald Se
  */

@@ -1,31 +1,17 @@
 package vues;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.File;
-import java.net.URL;
-
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-
 import controleurs.MainControleur;
 import modeles.Maison;
 import modeles.MaisonClassique;
 import modeles.MaisonInternationale;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.File;
+import java.net.URL;
 
 /**
  * Panneau représentant une carte de maison
@@ -36,7 +22,7 @@ public class HouseCardPanel extends JPanel {
     private JLabel nameLabel;
     private JButton menuButton;
     private MainControleur controleur;
-
+    
     // House image paths - chemins relatifs depuis la racine des ressources
     private static final String MAISON_INTERNATIONALE_PATH = "resources/maison_internationale.jpg";
     private static final String MAISON_JAPONAISE_PATH = "resources/maison_japon.jpg";
@@ -50,12 +36,12 @@ public class HouseCardPanel extends JPanel {
     public HouseCardPanel(Maison maison, MainControleur controleur) {
         this.maison = maison;
         this.controleur = controleur;
-
+        
         setBackground(new Color(240, 240, 240));
         setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1, true));
         setLayout(new BorderLayout());
         setPreferredSize(new Dimension(400, 300)); // Taille d'origine
-
+        
         initComponents();
         layoutComponents();
 
@@ -65,13 +51,13 @@ public class HouseCardPanel extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 controleur.getMaisonControleur().showHouseDetails(maison);
             }
-
+            
             @Override
             public void mouseEntered(MouseEvent e) {
                 setBorder(BorderFactory.createLineBorder(new Color(0, 150, 136), 2, true));
                 setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             }
-
+            
             @Override
             public void mouseExited(MouseEvent e) {
                 setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1, true));
@@ -84,7 +70,7 @@ public class HouseCardPanel extends JPanel {
             showPopupMenu(menuButton);
         });
     }
-
+    
     /**
      * Initialise les composants du panneau
      */
@@ -95,18 +81,17 @@ public class HouseCardPanel extends JPanel {
         imagePanel.setMinimumSize(new Dimension(380, 200));
         imagePanel.setLayout(new BorderLayout());
         imagePanel.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-
+        
         // Créer un panel coloré selon le type de maison (sera visible si l'image ne se charge pas)
         Color backgroundColor = getColorForHouse(maison);
         imagePanel.setBackground(backgroundColor);
-
+        
         // Ajouter un label avec le nom de la maison au centre du panel (sera visible si l'image ne se charge pas)
         JLabel houseTypeLabel = new JLabel(getLabelTextForHouse(maison));
-        houseTypeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        houseTypeLabel.setForeground(Color.WHITE);
+        houseTypeLabel.setHorizontalAlignment(JLabel.CENTER);
         houseTypeLabel.setFont(new Font("Arial", Font.BOLD, 16)); // Taille d'origine
         imagePanel.add(houseTypeLabel, BorderLayout.CENTER);
-
+        
         // Vérifier si la maison a une image personnalisée
         boolean imageLoaded = false;
         if (maison.hasProperty("imagePath")) {
@@ -125,7 +110,7 @@ public class HouseCardPanel extends JPanel {
                 // Silently fail and use default image
             }
         }
-
+        
         // Si aucune image personnalisée n'a été chargée, essayer de charger l'image par défaut
         if (!imageLoaded) {
             try {
@@ -134,14 +119,14 @@ public class HouseCardPanel extends JPanel {
                 if (imageUrl != null) {
                     ImageIcon originalIcon = new ImageIcon(imageUrl);
                     Image originalImage = originalIcon.getImage();
-
+                    
                     if (originalImage.getWidth(null) > 0) {
                         Image scaledImage = originalImage.getScaledInstance(380, 200, Image.SCALE_SMOOTH); // Taille d'origine
                         ImageIcon scaledIcon = new ImageIcon(scaledImage);
-
+                        
                         JLabel imageLabel = new JLabel(scaledIcon);
-                        imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
-
+                        imageLabel.setHorizontalAlignment(JLabel.CENTER);
+                        
                         imagePanel.removeAll();
                         imagePanel.add(imageLabel, BorderLayout.CENTER);
                     }
@@ -150,12 +135,12 @@ public class HouseCardPanel extends JPanel {
                 // Silently fail and use colored background with text
             }
         }
-
+        
         // House name
         nameLabel = new JLabel(maison.getNom());
         nameLabel.setFont(new Font("Arial", Font.BOLD, 18)); // Taille d'origine
         nameLabel.setBorder(new EmptyBorder(10, 10, 10, 10)); // Padding d'origine
-
+        
         // Menu button
         menuButton = new JButton("⋮");
         menuButton.setFont(new Font("Arial", Font.BOLD, 20)); // Taille d'origine
@@ -164,7 +149,7 @@ public class HouseCardPanel extends JPanel {
         menuButton.setContentAreaFilled(false);
         menuButton.setPreferredSize(new Dimension(30, 30)); // Taille d'origine
     }
-
+    
     /**
      * Retourne la couleur de fond pour une maison
      * @param maison La maison
@@ -176,7 +161,7 @@ public class HouseCardPanel extends JPanel {
         } else if (maison instanceof MaisonClassique) {
             MaisonClassique maisonClassique = (MaisonClassique) maison;
             String nationalite = maisonClassique.getNationalite();
-
+            
             if ("Japonaise".equalsIgnoreCase(nationalite)) {
                 return new Color(220, 20, 60); // Crimson
             } else if ("Francaise".equalsIgnoreCase(nationalite)) {
@@ -185,7 +170,7 @@ public class HouseCardPanel extends JPanel {
         }
         return Color.GRAY;
     }
-
+    
     /**
      * Retourne le texte du label pour une maison
      * @param maison La maison
@@ -197,7 +182,7 @@ public class HouseCardPanel extends JPanel {
         } else if (maison instanceof MaisonClassique) {
             MaisonClassique maisonClassique = (MaisonClassique) maison;
             String nationalite = maisonClassique.getNationalite();
-
+            
             if ("Japonaise".equalsIgnoreCase(nationalite)) {
                 return "Maison Japonaise";
             } else if ("Francaise".equalsIgnoreCase(nationalite)) {
@@ -206,26 +191,26 @@ public class HouseCardPanel extends JPanel {
         }
         return maison.getNom();
     }
-
+    
     /**
      * Organise les composants dans le panneau
      */
     private void layoutComponents() {
         add(imagePanel, BorderLayout.CENTER);
-
+        
         // Panel for name and menu button
         JPanel bottomPanel = new JPanel(new BorderLayout());
         bottomPanel.setBackground(new Color(240, 240, 240));
         bottomPanel.add(nameLabel, BorderLayout.WEST);
         bottomPanel.add(menuButton, BorderLayout.EAST);
-
+        
         add(bottomPanel, BorderLayout.SOUTH);
-
+        
         // Forcer la revalidation et le repaint
         revalidate();
         repaint();
     }
-
+    
     /**
      * Retourne le chemin de l'image pour une maison
      * @param maison La maison
@@ -237,7 +222,7 @@ public class HouseCardPanel extends JPanel {
         } else if (maison instanceof MaisonClassique) {
             MaisonClassique maisonClassique = (MaisonClassique) maison;
             String nationalite = maisonClassique.getNationalite();
-
+            
             if ("Japonaise".equalsIgnoreCase(nationalite)) {
                 return MAISON_JAPONAISE_PATH;
             } else if ("Francaise".equalsIgnoreCase(nationalite)) {
@@ -246,7 +231,7 @@ public class HouseCardPanel extends JPanel {
         }
         return MAISON_INTERNATIONALE_PATH; // Default fallback
     }
-
+    
     /**
      * Retourne la maison
      * @return La maison
@@ -254,7 +239,7 @@ public class HouseCardPanel extends JPanel {
     public Maison getMaison() {
         return maison;
     }
-
+    
     /**
      * Retourne le bouton de menu
      * @return Le bouton de menu
@@ -292,7 +277,7 @@ public class HouseCardPanel extends JPanel {
         } else if (maison instanceof MaisonClassique) {
             MaisonClassique maisonClassique = (MaisonClassique) maison;
             String nationalite = maisonClassique.getNationalite();
-
+            
             if ("Japonaise".equalsIgnoreCase(nationalite)) {
                 return "maison_japon.jpg";
             } else if ("Francaise".equalsIgnoreCase(nationalite)) {

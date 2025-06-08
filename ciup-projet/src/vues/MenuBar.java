@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
  * Barre de menu de l'application CIUP.
  * <p>
  * Cette classe fournit une barre de menu avec des options pour
- * gérer les fichiers, les maisons, les étudiants et les services.
+ * gÃ©rer les fichiers, les maisons, les Ã©tudiants et les services.
  * </p>
  * 
  * @author CIUP Development Team
@@ -24,7 +24,7 @@ public class MenuBar extends JMenuBar {
     /**
      * Constructeur de la barre de menu.
      * 
-     * @param controleur Le contrôleur principal
+     * @param controleur Le contrÃ´leur principal
      */
     public MenuBar(MainControleur controleur) {
         this.controleur = controleur;
@@ -78,11 +78,11 @@ public class MenuBar extends JMenuBar {
         housesMenu.add(listHousesItem);
         housesMenu.add(addHouseItem);
         
-        // Menu Étudiants
-        JMenu studentsMenu = new JMenu("Étudiants");
+        // Menu Ã‰tudiants
+        JMenu studentsMenu = new JMenu("Ã‰tudiants");
         studentsMenu.setMnemonic(KeyEvent.VK_E);
         
-        JMenuItem registerStudentItem = new JMenuItem("Inscrire un étudiant", KeyEvent.VK_I);
+        JMenuItem registerStudentItem = new JMenuItem("Inscrire un Ã©tudiant", KeyEvent.VK_I);
         registerStudentItem.addActionListener(e -> controleur.showInscription());
         
         studentsMenu.add(registerStudentItem);
@@ -91,12 +91,12 @@ public class MenuBar extends JMenuBar {
         JMenu helpMenu = new JMenu("Aide");
         helpMenu.setMnemonic(KeyEvent.VK_A);
         
-        JMenuItem aboutItem = new JMenuItem("À propos", KeyEvent.VK_P);
+        JMenuItem aboutItem = new JMenuItem("Ã€ propos", KeyEvent.VK_P);
         aboutItem.addActionListener(e -> showAboutDialog());
         
         helpMenu.add(aboutItem);
         
-        // Ajouter les menus à la barre
+        // Ajouter les menus Ã  la barre
         add(fileMenu);
         add(housesMenu);
         add(studentsMenu);
@@ -104,16 +104,16 @@ public class MenuBar extends JMenuBar {
     }
     
     /**
-     * Affiche la boîte de dialogue "À propos".
+     * Affiche la boÃ®te de dialogue "Ã€ propos".
      */
     private void showAboutDialog() {
         JOptionPane.showMessageDialog(
             controleur.getMainFrame(),
-            "CIUP - Cité Internationale Universitaire de Paris\n" +
+            "CIUP - CitÃ© Internationale Universitaire de Paris\n" +
             "Version 1.1\n\n" +
-            "Application de gestion des maisons et des étudiants\n" +
-            "© 2025 CIUP Development Team",
-            "À propos de CIUP",
+            "Application de gestion des maisons et des Ã©tudiants\n" +
+            "Â© 2025 CIUP Development Team",
+            "Ã€ propos de CIUP",
             JOptionPane.INFORMATION_MESSAGE
         );
     }

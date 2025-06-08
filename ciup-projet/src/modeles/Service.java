@@ -4,18 +4,18 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Classe représentant un service dans le système CIUP.
+ * Classe reprÃ©sentant un service dans le systÃ¨me CIUP.
  * <p>
- * Un service est une prestation offerte aux étudiants de la CIUP par une ou
+ * Un service est une prestation offerte aux Ã©tudiants de la CIUP par une ou
  * plusieurs maisons internationales. Chaque service a des horaires d'ouverture
- * et peut être proposé par plusieurs maisons simultanément.
+ * et peut Ãªtre proposÃ© par plusieurs maisons simultanÃ©ment.
  * </p>
  * <p>
- * Cette classe gère la relation bidirectionnelle avec les maisons internationales
+ * Cette classe gÃ¨re la relation bidirectionnelle avec les maisons internationales
  * qui proposent le service.
  * </p>
  * <p>
- * Cette classe implémente Serializable pour permettre la sauvegarde des services
+ * Cette classe implÃ©mente Serializable pour permettre la sauvegarde des services
  * sur le disque dur.
  * </p>
  * 
@@ -25,19 +25,19 @@ import java.util.ArrayList;
  */
 public class Service implements Serializable {
 
-    /** Identifiant de version pour la sérialisation */
+    /** Identifiant de version pour la sÃ©rialisation */
     private static final long serialVersionUID = 1L;
 
     /** Liste des maisons internationales proposant ce service */
     private ArrayList<MaisonInternationale> sesMaison;
 
-    /** Numéro unique d'identification du service */
+    /** NumÃ©ro unique d'identification du service */
     private int num;
     
     /** Nom du service */
     private String nom;
     
-    /** Description détaillée du service */
+    /** Description dÃ©taillÃ©e du service */
     private String desc;
     
     /** Heure d'ouverture du service (format 24h) */
@@ -47,12 +47,12 @@ public class Service implements Serializable {
     private int heureFerm;
 
     /**
-     * Constructeur complet pour créer un service.
+     * Constructeur complet pour crÃ©er un service.
      * <p>
      * Initialise automatiquement la liste des maisons proposant le service.
      * </p>
      * 
-     * @param num Numéro unique d'identification
+     * @param num NumÃ©ro unique d'identification
      * @param nom Nom du service
      * @param desc Description du service
      * @param heureOuv Heure d'ouverture (0-23)
@@ -68,9 +68,9 @@ public class Service implements Serializable {
     }
 
     /**
-     * Constructeur par défaut.
+     * Constructeur par dÃ©faut.
      * <p>
-     * Crée un service avec des valeurs par défaut et initialise
+     * CrÃ©e un service avec des valeurs par dÃ©faut et initialise
      * la liste des maisons.
      * </p>
      */
@@ -79,12 +79,12 @@ public class Service implements Serializable {
     }
 
     /**
-     * Retourne une représentation textuelle complète du service.
+     * Retourne une reprÃ©sentation textuelle complÃ¨te du service.
      * <p>
      * Format : num ; nom ; desc ; heureOuv ; heureFerm
      * </p>
      * 
-     * @return Chaîne de caractères représentant le service
+     * @return ChaÃ®ne de caractÃ¨res reprÃ©sentant le service
      */
     public String toString() {
         String s = "";
@@ -97,13 +97,13 @@ public class Service implements Serializable {
     }
 
     /**
-     * Ajoute une maison internationale à la liste des maisons proposant ce service.
+     * Ajoute une maison internationale Ã  la liste des maisons proposant ce service.
      * <p>
-     * Cette méthode est appelée automatiquement lors de l'ajout d'un service
-     * à une maison internationale pour maintenir la cohérence bidirectionnelle.
+     * Cette mÃ©thode est appelÃ©e automatiquement lors de l'ajout d'un service
+     * Ã  une maison internationale pour maintenir la cohÃ©rence bidirectionnelle.
      * </p>
      * 
-     * @param maison La maison internationale à ajouter
+     * @param maison La maison internationale Ã  ajouter
      */
     public void ajoutMaison(MaisonInternationale maison) {
         if (sesMaison == null) {
@@ -115,11 +115,11 @@ public class Service implements Serializable {
     /**
      * Supprime une maison internationale de la liste des maisons proposant ce service.
      * <p>
-     * Cette méthode est appelée automatiquement lors de la suppression d'un service
-     * d'une maison internationale pour maintenir la cohérence bidirectionnelle.
+     * Cette mÃ©thode est appelÃ©e automatiquement lors de la suppression d'un service
+     * d'une maison internationale pour maintenir la cohÃ©rence bidirectionnelle.
      * </p>
      * 
-     * @param maison La maison internationale à supprimer
+     * @param maison La maison internationale Ã  supprimer
      */
     public void supprMaison(MaisonInternationale maison) {
         if (sesMaison == null) {
@@ -130,7 +130,7 @@ public class Service implements Serializable {
     }
 
     /**
-     * Affiche les informations complètes du service sur la console.
+     * Affiche les informations complÃ¨tes du service sur la console.
      * <p>
      * Affiche toutes les informations du service ainsi que la liste
      * des maisons qui le proposent.
@@ -146,7 +146,7 @@ public class Service implements Serializable {
         
         if (sesMaison == null) {
             sesMaison = new ArrayList<>();
-            System.out.println("Aucune maison associée");
+            System.out.println("Aucune maison associÃ©e");
         } else {
             for (MaisonInternationale maison : sesMaison) {
                 System.out.println(maison.getNom());
@@ -173,7 +173,7 @@ public class Service implements Serializable {
     }
 
     /**
-     * Définit la liste des maisons proposant ce service.
+     * DÃ©finit la liste des maisons proposant ce service.
      * 
      * @param sesMaison La nouvelle liste de maisons
      */
@@ -182,18 +182,18 @@ public class Service implements Serializable {
     }
 
     /**
-     * Retourne le numéro d'identification du service.
+     * Retourne le numÃ©ro d'identification du service.
      * 
-     * @return Le numéro unique d'identification
+     * @return Le numÃ©ro unique d'identification
      */
     public int getNum() {
         return num;
     }
 
     /**
-     * Définit le numéro d'identification du service.
+     * DÃ©finit le numÃ©ro d'identification du service.
      * 
-     * @param num Le numéro unique d'identification
+     * @param num Le numÃ©ro unique d'identification
      */
     public void setNum(int num) {
         this.num = num;
@@ -209,7 +209,7 @@ public class Service implements Serializable {
     }
 
     /**
-     * Définit le nom du service.
+     * DÃ©finit le nom du service.
      * 
      * @param nom Le nom du service
      */
@@ -227,7 +227,7 @@ public class Service implements Serializable {
     }
 
     /**
-     * Définit la description du service.
+     * DÃ©finit la description du service.
      * 
      * @param desc La description du service
      */
@@ -245,7 +245,7 @@ public class Service implements Serializable {
     }
 
     /**
-     * Définit l'heure d'ouverture du service.
+     * DÃ©finit l'heure d'ouverture du service.
      * 
      * @param heureOuv L'heure d'ouverture (0-23)
      */
@@ -263,7 +263,7 @@ public class Service implements Serializable {
     }
 
     /**
-     * Définit l'heure de fermeture du service.
+     * DÃ©finit l'heure de fermeture du service.
      * 
      * @param heureFerm L'heure de fermeture (0-23)
      */
@@ -272,5 +272,5 @@ public class Service implements Serializable {
     }
 }
 /**
- * cette classe a été crée par @author Maksen Mouhou
+ * cette classe a Ã©tÃ© crÃ©e par @author Maksen Mouhou
  */

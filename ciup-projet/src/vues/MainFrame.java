@@ -94,7 +94,7 @@ public class MainFrame extends JFrame {
 }
 
     /**
-     * Initialise les composants de la fen�tre
+     * Initialise les composants de la fenêtre
      */
     private void initComponents() {
         setJMenuBar(new MenuBar(controleur));

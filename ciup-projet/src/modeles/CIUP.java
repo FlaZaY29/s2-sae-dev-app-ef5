@@ -4,19 +4,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Classe principale du modèle représentant la Cité Internationale Universitaire de Paris.
+ * Classe principale du modÃ¨le reprÃ©sentant la CitÃ© Internationale Universitaire de Paris.
  * <p>
- * Cette classe constitue le point central du modèle de données de l'application.
- * Elle gère les collections principales de l'établissement : les maisons, les services
- * et les étudiants. Elle fournit les méthodes nécessaires pour manipuler ces collections
+ * Cette classe constitue le point central du modÃ¨le de donnÃ©es de l'application.
+ * Elle gÃ¨re les collections principales de l'Ã©tablissement : les maisons, les services
+ * et les Ã©tudiants. Elle fournit les mÃ©thodes nÃ©cessaires pour manipuler ces collections
  * et effectuer des recherches.
  * </p>
  * <p>
- * La classe suit le pattern Singleton implicite en tant que modèle principal de l'application
- * et centralise toutes les opérations CRUD sur les entités principales.
+ * La classe suit le pattern Singleton implicite en tant que modÃ¨le principal de l'application
+ * et centralise toutes les opÃ©rations CRUD sur les entitÃ©s principales.
  * </p>
  * <p>
- * Cette classe implémente Serializable pour permettre la sauvegarde de l'état de l'application
+ * Cette classe implÃ©mente Serializable pour permettre la sauvegarde de l'Ã©tat de l'application
  * sur le disque dur.
  * </p>
  * 
@@ -28,23 +28,23 @@ import java.util.ArrayList;
  */
 public class CIUP implements Serializable {
     
-    /** Identifiant de version pour la sérialisation */
+    /** Identifiant de version pour la sÃ©rialisation */
     private static final long serialVersionUID = 1L;
 
     /** Liste des maisons de la CIUP */
     private ArrayList<Maison> listeMaison = new ArrayList<>();
     
-    /** Liste des services proposés par la CIUP */
+    /** Liste des services proposÃ©s par la CIUP */
     private ArrayList<Service> listeService = new ArrayList<>();
     
-    /** Liste des étudiants inscrits à la CIUP */
+    /** Liste des Ã©tudiants inscrits Ã  la CIUP */
     private ArrayList<Etudiant> listeEtudiant = new ArrayList<>();
 
     /**
-     * Affiche la liste complète des maisons de la CIUP.
+     * Affiche la liste complÃ¨te des maisons de la CIUP.
      * <p>
-     * Cette méthode parcourt toutes les maisons enregistrées et affiche
-     * leurs informations via la méthode afficheMaison() de chaque maison.
+     * Cette mÃ©thode parcourt toutes les maisons enregistrÃ©es et affiche
+     * leurs informations via la mÃ©thode afficheMaison() de chaque maison.
      * </p>
      */
     public void afficheListeMaison() {
@@ -54,10 +54,10 @@ public class CIUP implements Serializable {
     }
 
     /**
-     * Affiche la liste complète des services de la CIUP.
+     * Affiche la liste complÃ¨te des services de la CIUP.
      * <p>
-     * Cette méthode parcourt tous les services enregistrés et affiche
-     * leurs informations via la méthode afficheService() de chaque service.
+     * Cette mÃ©thode parcourt tous les services enregistrÃ©s et affiche
+     * leurs informations via la mÃ©thode afficheService() de chaque service.
      * </p>
      */
     public void afficheListeService() {
@@ -67,10 +67,10 @@ public class CIUP implements Serializable {
     }
 
     /**
-     * Affiche la liste complète des étudiants de la CIUP.
+     * Affiche la liste complÃ¨te des Ã©tudiants de la CIUP.
      * <p>
-     * Cette méthode parcourt tous les étudiants enregistrés et affiche
-     * un résumé de leurs informations via la méthode afficheInfoResume().
+     * Cette mÃ©thode parcourt tous les Ã©tudiants enregistrÃ©s et affiche
+     * un rÃ©sumÃ© de leurs informations via la mÃ©thode afficheInfoResume().
      * </p>
      */
     public void afficheListeEtudiant() {
@@ -80,9 +80,9 @@ public class CIUP implements Serializable {
     }
 
     /**
-     * Ajoute une maison à la collection des maisons de la CIUP.
+     * Ajoute une maison Ã  la collection des maisons de la CIUP.
      * 
-     * @param maison La maison à ajouter à la collection
+     * @param maison La maison Ã  ajouter Ã  la collection
      */
     public void ajouterMaison(Maison maison) {
         listeMaison.add(maison);
@@ -91,16 +91,16 @@ public class CIUP implements Serializable {
     /**
      * Supprime une maison de la collection des maisons de la CIUP.
      * 
-     * @param maison La maison à supprimer de la collection
+     * @param maison La maison Ã  supprimer de la collection
      */
     public void supprMaison(Maison maison) {
         listeMaison.remove(maison);
     }
 
     /**
-     * Ajoute un service à la collection des services de la CIUP.
+     * Ajoute un service Ã  la collection des services de la CIUP.
      * 
-     * @param service Le service à ajouter à la collection
+     * @param service Le service Ã  ajouter Ã  la collection
      */
     public void ajouterService(Service service) {
         listeService.add(service);
@@ -109,25 +109,25 @@ public class CIUP implements Serializable {
     /**
      * Supprime un service de la collection des services de la CIUP.
      * 
-     * @param service Le service à supprimer de la collection
+     * @param service Le service Ã  supprimer de la collection
      */
     public void supprService(Service service) {
         listeService.remove(service);
     }
 
     /**
-     * Ajoute un étudiant à la collection des étudiants de la CIUP.
+     * Ajoute un Ã©tudiant Ã  la collection des Ã©tudiants de la CIUP.
      * 
-     * @param etudiant L'étudiant à ajouter à la collection
+     * @param etudiant L'Ã©tudiant Ã  ajouter Ã  la collection
      */
     public void ajouterEtudiant(Etudiant etudiant) {
         listeEtudiant.add(etudiant);
     }
 
     /**
-     * Supprime un étudiant de la collection des étudiants de la CIUP.
+     * Supprime un Ã©tudiant de la collection des Ã©tudiants de la CIUP.
      * 
-     * @param etudiant L'étudiant à supprimer de la collection
+     * @param etudiant L'Ã©tudiant Ã  supprimer de la collection
      */
     public void supprEtudiant(Etudiant etudiant) {
         listeEtudiant.remove(etudiant);
@@ -136,11 +136,11 @@ public class CIUP implements Serializable {
     /**
      * Recherche une maison par son nom.
      * <p>
-     * La recherche est insensible à la casse (ignore majuscules/minuscules).
+     * La recherche est insensible Ã  la casse (ignore majuscules/minuscules).
      * </p>
      * 
-     * @param nom Le nom de la maison à rechercher
-     * @return La maison trouvée ou null si aucune maison ne correspond
+     * @param nom Le nom de la maison Ã  rechercher
+     * @return La maison trouvÃ©e ou null si aucune maison ne correspond
      */
     public Maison rechercherMaisonParNom(String nom) {
         for (Maison maison : listeMaison) {
@@ -152,14 +152,14 @@ public class CIUP implements Serializable {
     }
 
     /**
-     * Recherche un étudiant par son nom et prénom.
+     * Recherche un Ã©tudiant par son nom et prÃ©nom.
      * <p>
-     * La recherche est insensible à la casse pour les deux critères.
+     * La recherche est insensible Ã  la casse pour les deux critÃ¨res.
      * </p>
      * 
-     * @param nom Le nom de famille de l'étudiant
-     * @param prenom Le prénom de l'étudiant
-     * @return L'étudiant trouvé ou null si aucun étudiant ne correspond
+     * @param nom Le nom de famille de l'Ã©tudiant
+     * @param prenom Le prÃ©nom de l'Ã©tudiant
+     * @return L'Ã©tudiant trouvÃ© ou null si aucun Ã©tudiant ne correspond
      */
     public Etudiant rechercherEtudiantParNomPrenom(String nom, String prenom) {
         for (Etudiant etudiant : listeEtudiant) {
@@ -189,14 +189,14 @@ public class CIUP implements Serializable {
     }
 
     /**
-     * Retourne la liste des étudiants de la CIUP.
+     * Retourne la liste des Ã©tudiants de la CIUP.
      * 
-     * @return ArrayList contenant tous les étudiants
+     * @return ArrayList contenant tous les Ã©tudiants
      */
     public ArrayList<Etudiant> getListeEtudiant() {
         return listeEtudiant;
     }
 }
 /**
- * cette classe a été crée par @author Flavio Zamperlini
+ * cette classe a Ã©tÃ© crÃ©e par @author Flavio Zamperlini
  */

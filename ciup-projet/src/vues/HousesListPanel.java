@@ -22,7 +22,7 @@ public class HousesListPanel extends JPanel {
 
     /**
      * Constructeur du panneau de liste des maisons
-     * @param controleur Le contrôleur principal
+     * @param controleur Le contrÃ´leur principal
      */
     public HousesListPanel(MainControleur controleur) {    	
         this.controleur = controleur;
@@ -54,7 +54,7 @@ public class HousesListPanel extends JPanel {
         addButton.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
         addButton.setPreferredSize(new Dimension(40, 40));
 
-        // Dans la méthode initComponents(), après la création du bouton addButton
+        // Dans la mÃ©thode initComponents(), aprÃ¨s la crÃ©ation du bouton addButton
         addButton.addActionListener(e -> {
             controleur.getMaisonControleur().showAddHouseDialog();
         });
@@ -93,18 +93,18 @@ public class HousesListPanel extends JPanel {
     }
     
     /**
-     * Rafraîchit la liste des maisons
+     * RafraÃ®chit la liste des maisons
      */
     public void refreshHousesList() {
         if (controleur == null || controleur.getCiupModel() == null) {
-            System.out.println("Erreur: controleur ou modèle null dans refreshHousesList()");
+            System.out.println("Erreur: controleur ou modÃ¨le null dans refreshHousesList()");
             return;
         }
         
         housesContainer.removeAll();
         
         ArrayList<Maison> maisons = controleur.getCiupModel().getListeMaison();
-        System.out.println("Nombre de maisons à afficher: " + maisons.size());
+        System.out.println("Nombre de maisons Ã  afficher: " + maisons.size());
         
         for (Maison maison : maisons) {
             System.out.println("Ajout de la maison: " + maison.getNom());
@@ -116,7 +116,7 @@ public class HousesListPanel extends JPanel {
         housesContainer.revalidate();
         housesContainer.repaint();
         
-        // Forcer la mise à jour de la fenêtre
+        // Forcer la mise Ã  jour de la fenÃªtre
         SwingUtilities.invokeLater(() -> {
             scrollPane.revalidate();
             scrollPane.repaint();
@@ -159,5 +159,5 @@ public class HousesListPanel extends JPanel {
     }
 }
 /**
- * cette classe a été crée par @author Donald Se Maksen Mouhou
+ * cette classe a Ã©tÃ© crÃ©e par @author Donald Se Maksen Mouhou
  */

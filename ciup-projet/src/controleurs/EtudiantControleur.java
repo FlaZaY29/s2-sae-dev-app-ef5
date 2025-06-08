@@ -8,16 +8,16 @@ import modeles.MaisonClassique;
 import javax.swing.*;
 
 /**
- * Contrôleur pour la gestion des étudiants
+ * ContrÃ´leur pour la gestion des Ã©tudiants
  */
 public class EtudiantControleur {
     private CIUP ciupModel;
     private MainControleur mainControleur;
     
     /**
-     * Constructeur du contrôleur d'étudiants
-     * @param ciupModel Le modèle CIUP
-     * @param mainControleur Le contrôleur principal
+     * Constructeur du contrÃ´leur d'Ã©tudiants
+     * @param ciupModel Le modÃ¨le CIUP
+     * @param mainControleur Le contrÃ´leur principal
      */
     public EtudiantControleur(CIUP ciupModel, MainControleur mainControleur) {
         this.ciupModel = ciupModel;
@@ -25,23 +25,23 @@ public class EtudiantControleur {
     }
     
     /**
-     * Inscrit un nouvel étudiant
-     * @param selectedMaisonName Nom de la maison sélectionnée
-     * @param nom Nom de l'étudiant
-     * @param prenom Prénom de l'étudiant
-     * @param adresse Adresse de l'étudiant
-     * @param nationalite Nationalité de l'étudiant
-     * @param dateNaissance Date de naissance de l'étudiant
-     * @param tel Téléphone de l'étudiant
-     * @param email Email de l'étudiant
-     * @param promotion Promotion de l'étudiant
-     * @param universite Université de l'étudiant
-     * @return true si l'inscription a réussi, false sinon
+     * Inscrit un nouvel Ã©tudiant
+     * @param selectedMaisonName Nom de la maison sÃ©lectionnÃ©e
+     * @param nom Nom de l'Ã©tudiant
+     * @param prenom PrÃ©nom de l'Ã©tudiant
+     * @param adresse Adresse de l'Ã©tudiant
+     * @param nationalite NationalitÃ© de l'Ã©tudiant
+     * @param dateNaissance Date de naissance de l'Ã©tudiant
+     * @param tel TÃ©lÃ©phone de l'Ã©tudiant
+     * @param email Email de l'Ã©tudiant
+     * @param promotion Promotion de l'Ã©tudiant
+     * @param universite UniversitÃ© de l'Ã©tudiant
+     * @return true si l'inscription a rÃ©ussi, false sinon
      */
     public boolean registerStudent(String selectedMaisonName, String nom, String prenom, String adresse, 
                                   String nationalite, String dateNaissance, String tel, String email, 
                                   String promotion, String universite) {
-        // Rechercher la maison sélectionnée
+        // Rechercher la maison sÃ©lectionnÃ©e
         MaisonClassique selectedMaison = null;
         
         for (Maison maison : ciupModel.getListeMaison()) {
@@ -54,14 +54,14 @@ public class EtudiantControleur {
         if (selectedMaison == null) {
             JOptionPane.showMessageDialog(
                 mainControleur.getMainFrame(),
-                "Veuillez sélectionner une maison valide.",
+                "Veuillez sÃ©lectionner une maison valide.",
                 "Erreur",
                 JOptionPane.ERROR_MESSAGE
             );
             return false;
         }
         
-        // Créer un nouvel étudiant
+        // CrÃ©er un nouvel Ã©tudiant
         int newId = ciupModel.getListeEtudiant().size() + 1;
         Etudiant newEtudiant = new Etudiant(
             newId,
@@ -77,17 +77,17 @@ public class EtudiantControleur {
             nom + "_" + prenom + ".jpg"
         );
         
-        // Ajouter l'étudiant à la maison et au CIUP
+        // Ajouter l'Ã©tudiant Ã  la maison et au CIUP
         selectedMaison.ajoutEtudiant(newEtudiant);
         ciupModel.ajouterEtudiant(newEtudiant);
         
-        // Mettre à jour le tableau des statistiques
+        // Mettre Ã  jour le tableau des statistiques
         mainControleur.getMainFrame().getInscriptionPanel().updateStatsTable();
         
         JOptionPane.showMessageDialog(
             mainControleur.getMainFrame(),
-            "Inscription réussie !",
-            "Succès",
+            "Inscription rÃ©ussie !",
+            "SuccÃ¨s",
             JOptionPane.INFORMATION_MESSAGE
         );
         
@@ -95,15 +95,15 @@ public class EtudiantControleur {
     }
     
     /**
-     * Vérifie si les champs du formulaire d'inscription sont valides
-     * @param nom Nom de l'étudiant
-     * @param prenom Prénom de l'étudiant
-     * @param nationalite Nationalité de l'étudiant
-     * @param dateNaissance Date de naissance de l'étudiant
-     * @param tel Téléphone de l'étudiant
-     * @param email Email de l'étudiant
-     * @param promotion Promotion de l'étudiant
-     * @param universite Université de l'étudiant
+     * VÃ©rifie si les champs du formulaire d'inscription sont valides
+     * @param nom Nom de l'Ã©tudiant
+     * @param prenom PrÃ©nom de l'Ã©tudiant
+     * @param nationalite NationalitÃ© de l'Ã©tudiant
+     * @param dateNaissance Date de naissance de l'Ã©tudiant
+     * @param tel TÃ©lÃ©phone de l'Ã©tudiant
+     * @param email Email de l'Ã©tudiant
+     * @param promotion Promotion de l'Ã©tudiant
+     * @param universite UniversitÃ© de l'Ã©tudiant
      * @return true si les champs sont valides, false sinon
      */
     public boolean validateStudentFields(String nom, String prenom, String nationalite, String dateNaissance, 
@@ -124,5 +124,5 @@ public class EtudiantControleur {
     }
 }
 /**
- * cette classe a été crée par @author Flavio Zamperlini
+ * cette classe a Ã©tÃ© crÃ©e par @author Flavio Zamperlini
  */

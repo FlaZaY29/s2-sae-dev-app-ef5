@@ -3,19 +3,19 @@ package modeles;
 import java.io.Serializable;
 
 /**
- * Classe abstraite représentant une maison dans le système CIUP.
+ * Classe abstraite reprÃ©sentant une maison dans le systÃ¨me CIUP.
  * <p>
  * Cette classe constitue la base pour tous les types de maisons de la CIUP.
- * Elle définit les propriétés communes à toutes les maisons : informations
- * administratives, coordonnées, et événements. Elle utilise également un
- * système de propriétés extensible pour stocker des informations additionnelles.
+ * Elle dÃ©finit les propriÃ©tÃ©s communes Ã  toutes les maisons : informations
+ * administratives, coordonnÃ©es, et Ã©vÃ©nements. Elle utilise Ã©galement un
+ * systÃ¨me de propriÃ©tÃ©s extensible pour stocker des informations additionnelles.
  * </p>
  * <p>
- * Les classes dérivées doivent implémenter les spécificités de chaque type
+ * Les classes dÃ©rivÃ©es doivent implÃ©menter les spÃ©cificitÃ©s de chaque type
  * de maison (classique, internationale).
  * </p>
  * <p>
- * Cette classe implémente Serializable pour permettre la sauvegarde des maisons
+ * Cette classe implÃ©mente Serializable pour permettre la sauvegarde des maisons
  * sur le disque dur.
  * </p>
  * 
@@ -26,10 +26,10 @@ import java.io.Serializable;
  */
 public abstract class Maison implements Serializable {
 
-    /** Identifiant de version pour la sérialisation */
+    /** Identifiant de version pour la sÃ©rialisation */
     private static final long serialVersionUID = 1L;
 
-    /** Numéro unique d'identification de la maison */
+    /** NumÃ©ro unique d'identification de la maison */
     private int num;
     
     /** Nom de la maison */
@@ -38,39 +38,39 @@ public abstract class Maison implements Serializable {
     /** Description de la maison */
     private String desc;
     
-    /** Numéro de téléphone de la maison */
+    /** NumÃ©ro de tÃ©lÃ©phone de la maison */
     private String tel;
     
-    /** Localisation géographique de la maison */
+    /** Localisation gÃ©ographique de la maison */
     private String localisation;
     
     /** Nom du directeur de la maison */
     private String directeur;
     
-    /** Année de création de la maison */
+    /** AnnÃ©e de crÃ©ation de la maison */
     private int anneeCreation;
     
-    /** Date de la fête annuelle de la maison */
+    /** Date de la fÃªte annuelle de la maison */
     private String dateFete;
     
-    /** Durée en jours de la fête annuelle */
+    /** DurÃ©e en jours de la fÃªte annuelle */
     private int dureeFete;
     
-    /** Système de propriétés extensible pour stocker des informations additionnelles */
+    /** SystÃ¨me de propriÃ©tÃ©s extensible pour stocker des informations additionnelles */
     private java.util.HashMap<String, String> properties = new java.util.HashMap<>();
 
     /**
-     * Constructeur complet pour créer une maison avec toutes ses informations.
+     * Constructeur complet pour crÃ©er une maison avec toutes ses informations.
      * 
-     * @param num Numéro unique d'identification
+     * @param num NumÃ©ro unique d'identification
      * @param nom Nom de la maison
      * @param desc Description de la maison
-     * @param tel Numéro de téléphone
-     * @param localisation Localisation géographique
+     * @param tel NumÃ©ro de tÃ©lÃ©phone
+     * @param localisation Localisation gÃ©ographique
      * @param directeur Nom du directeur
-     * @param anneeCreation Année de création
-     * @param dateFete Date de la fête annuelle
-     * @param dureeFete Durée de la fête en jours
+     * @param anneeCreation AnnÃ©e de crÃ©ation
+     * @param dateFete Date de la fÃªte annuelle
+     * @param dureeFete DurÃ©e de la fÃªte en jours
      */
     public Maison(int num, String nom, String desc, String tel, String localisation, String directeur,
                   int anneeCreation, String dateFete, int dureeFete) {
@@ -86,21 +86,21 @@ public abstract class Maison implements Serializable {
     }
 
     /**
-     * Constructeur par défaut.
+     * Constructeur par dÃ©faut.
      * <p>
-     * Crée une maison avec des valeurs par défaut et initialise
-     * le système de propriétés.
+     * CrÃ©e une maison avec des valeurs par dÃ©faut et initialise
+     * le systÃ¨me de propriÃ©tÃ©s.
      * </p>
      */
     public Maison() {}
 
     /**
-     * Retourne une représentation textuelle complète de la maison.
+     * Retourne une reprÃ©sentation textuelle complÃ¨te de la maison.
      * <p>
      * Format : num ; nom ; desc ; tel ; localisation ; directeur ; anneeCreation ; dateFete ; dureeFete
      * </p>
      * 
-     * @return Chaîne de caractères représentant la maison
+     * @return ChaÃ®ne de caractÃ¨res reprÃ©sentant la maison
      */
     public String toString() {
         String s = "";
@@ -117,7 +117,7 @@ public abstract class Maison implements Serializable {
     }
 
     /**
-     * Affiche la description complète de la maison sur la console.
+     * Affiche la description complÃ¨te de la maison sur la console.
      * <p>
      * Affiche toutes les informations de la maison dans un format lisible.
      * </p>
@@ -137,7 +137,7 @@ public abstract class Maison implements Serializable {
     /**
      * Affiche le nom de la maison sur la console.
      * <p>
-     * Affichage simplifié pour les listes.
+     * Affichage simplifiÃ© pour les listes.
      * </p>
      */
     public void afficheMaison() {
@@ -146,14 +146,14 @@ public abstract class Maison implements Serializable {
     }
 
     /**
-     * Définit une propriété personnalisée pour la maison.
+     * DÃ©finit une propriÃ©tÃ© personnalisÃ©e pour la maison.
      * <p>
-     * Le système de propriétés permet d'ajouter des informations
+     * Le systÃ¨me de propriÃ©tÃ©s permet d'ajouter des informations
      * additionnelles sans modifier la structure de la classe.
      * </p>
      * 
-     * @param key La clé de la propriété
-     * @param value La valeur de la propriété
+     * @param key La clÃ© de la propriÃ©tÃ©
+     * @param value La valeur de la propriÃ©tÃ©
      */
     public void setProperty(String key, String value) {
         if (properties == null) {
@@ -163,10 +163,10 @@ public abstract class Maison implements Serializable {
     }
     
     /**
-     * Récupère une propriété personnalisée de la maison.
+     * RÃ©cupÃ¨re une propriÃ©tÃ© personnalisÃ©e de la maison.
      * 
-     * @param key La clé de la propriété
-     * @return La valeur de la propriété ou null si elle n'existe pas
+     * @param key La clÃ© de la propriÃ©tÃ©
+     * @return La valeur de la propriÃ©tÃ© ou null si elle n'existe pas
      */
     public String getProperty(String key) {
         if (properties == null) {
@@ -176,10 +176,10 @@ public abstract class Maison implements Serializable {
     }
     
     /**
-     * Vérifie si une propriété personnalisée existe.
+     * VÃ©rifie si une propriÃ©tÃ© personnalisÃ©e existe.
      * 
-     * @param key La clé de la propriété
-     * @return true si la propriété existe, false sinon
+     * @param key La clÃ© de la propriÃ©tÃ©
+     * @return true si la propriÃ©tÃ© existe, false sinon
      */
     public boolean hasProperty(String key) {
         if (properties == null) {
@@ -191,18 +191,18 @@ public abstract class Maison implements Serializable {
     // Getters et Setters avec documentation
 
     /**
-     * Retourne le numéro d'identification de la maison.
+     * Retourne le numÃ©ro d'identification de la maison.
      * 
-     * @return Le numéro unique d'identification
+     * @return Le numÃ©ro unique d'identification
      */
     public int getNum() {
         return num;
     }
 
     /**
-     * Définit le numéro d'identification de la maison.
+     * DÃ©finit le numÃ©ro d'identification de la maison.
      * 
-     * @param num Le numéro unique d'identification
+     * @param num Le numÃ©ro unique d'identification
      */
     public void setNum(int num) {
         this.num = num;
@@ -218,7 +218,7 @@ public abstract class Maison implements Serializable {
     }
 
     /**
-     * Définit le nom de la maison.
+     * DÃ©finit le nom de la maison.
      * 
      * @param nom Le nom de la maison
      */
@@ -236,7 +236,7 @@ public abstract class Maison implements Serializable {
     }
 
     /**
-     * Définit la description de la maison.
+     * DÃ©finit la description de la maison.
      * 
      * @param desc La description de la maison
      */
@@ -245,18 +245,18 @@ public abstract class Maison implements Serializable {
     }
 
     /**
-     * Retourne le numéro de téléphone de la maison.
+     * Retourne le numÃ©ro de tÃ©lÃ©phone de la maison.
      * 
-     * @return Le numéro de téléphone
+     * @return Le numÃ©ro de tÃ©lÃ©phone
      */
     public String getTel() {
         return tel;
     }
 
     /**
-     * Définit le numéro de téléphone de la maison.
+     * DÃ©finit le numÃ©ro de tÃ©lÃ©phone de la maison.
      * 
-     * @param tel Le numéro de téléphone
+     * @param tel Le numÃ©ro de tÃ©lÃ©phone
      */
     public void setTel(String tel) {
         this.tel = tel;
@@ -265,16 +265,16 @@ public abstract class Maison implements Serializable {
     /**
      * Retourne la localisation de la maison.
      * 
-     * @return La localisation géographique
+     * @return La localisation gÃ©ographique
      */
     public String getLocalisation() {
         return localisation;
     }
 
     /**
-     * Définit la localisation de la maison.
+     * DÃ©finit la localisation de la maison.
      * 
-     * @param localisation La localisation géographique
+     * @param localisation La localisation gÃ©ographique
      */
     public void setLocalisation(String localisation) {
         this.localisation = localisation;
@@ -290,7 +290,7 @@ public abstract class Maison implements Serializable {
     }
 
     /**
-     * Définit le nom du directeur de la maison.
+     * DÃ©finit le nom du directeur de la maison.
      * 
      * @param directeur Le nom du directeur
      */
@@ -299,59 +299,59 @@ public abstract class Maison implements Serializable {
     }
 
     /**
-     * Retourne l'année de création de la maison.
+     * Retourne l'annÃ©e de crÃ©ation de la maison.
      * 
-     * @return L'année de création
+     * @return L'annÃ©e de crÃ©ation
      */
     public int getAnneeCreation() {
         return anneeCreation;
     }
 
     /**
-     * Définit l'année de création de la maison.
+     * DÃ©finit l'annÃ©e de crÃ©ation de la maison.
      * 
-     * @param anneeCreation L'année de création
+     * @param anneeCreation L'annÃ©e de crÃ©ation
      */
     public void setAnneeCreation(int anneeCreation) {
         this.anneeCreation = anneeCreation;
     }
 
     /**
-     * Retourne la date de la fête annuelle.
+     * Retourne la date de la fÃªte annuelle.
      * 
-     * @return La date de la fête annuelle
+     * @return La date de la fÃªte annuelle
      */
     public String getDateFete() {
         return dateFete;
     }
 
     /**
-     * Définit la date de la fête annuelle.
+     * DÃ©finit la date de la fÃªte annuelle.
      * 
-     * @param dateFete La date de la fête annuelle
+     * @param dateFete La date de la fÃªte annuelle
      */
     public void setDateFete(String dateFete) {
         this.dateFete = dateFete;
     }
 
     /**
-     * Retourne la durée de la fête annuelle.
+     * Retourne la durÃ©e de la fÃªte annuelle.
      * 
-     * @return La durée en jours
+     * @return La durÃ©e en jours
      */
     public int getDureeFete() {
         return dureeFete;
     }
 
     /**
-     * Définit la durée de la fête annuelle.
+     * DÃ©finit la durÃ©e de la fÃªte annuelle.
      * 
-     * @param dureeFete La durée en jours
+     * @param dureeFete La durÃ©e en jours
      */
     public void setDureeFete(int dureeFete) {
         this.dureeFete = dureeFete;
     }
 }
 /**
- * cette classe a été crée par @author Donald Se
+ * cette classe a Ã©tÃ© crÃ©e par @author Donald Se
  */

@@ -3,16 +3,16 @@ package modeles;
 import java.util.ArrayList;
 
 /**
- * Classe représentant la maison internationale dans le système CIUP.
+ * Classe reprÃ©sentant la maison internationale dans le systÃ¨me CIUP.
  * <p>
  * La maison internationale se distingue des maisons classiques par sa vocation
- * à accueillir des étudiants de toutes nationalités et par sa gestion de services
- * spécialisés. Elle ne gère pas directement les étudiants mais se concentre
- * sur l'offre de services à l'ensemble de la communauté CIUP.
+ * Ã  accueillir des Ã©tudiants de toutes nationalitÃ©s et par sa gestion de services
+ * spÃ©cialisÃ©s. Elle ne gÃ¨re pas directement les Ã©tudiants mais se concentre
+ * sur l'offre de services Ã  l'ensemble de la communautÃ© CIUP.
  * </p>
  * <p>
- * Cette classe implémente la gestion bidirectionnelle des services :
- * un service peut être proposé par plusieurs maisons internationales.
+ * Cette classe implÃ©mente la gestion bidirectionnelle des services :
+ * un service peut Ãªtre proposÃ© par plusieurs maisons internationales.
  * </p>
  * 
  * @author CIUP Development Team
@@ -23,24 +23,24 @@ import java.util.ArrayList;
 public class MaisonInternationale extends Maison {
 	private static final long serialVersionUID = 1L;
 
-    /** Liste des services proposés par cette maison internationale */
+    /** Liste des services proposÃ©s par cette maison internationale */
     private ArrayList<Service> sesServices;
 
     /**
-     * Constructeur complet pour créer une maison internationale.
+     * Constructeur complet pour crÃ©er une maison internationale.
      * <p>
      * Initialise automatiquement la liste des services.
      * </p>
      * 
-     * @param num Numéro unique d'identification
+     * @param num NumÃ©ro unique d'identification
      * @param nom Nom de la maison
      * @param desc Description de la maison
-     * @param tel Numéro de téléphone
-     * @param localisation Localisation géographique
+     * @param tel NumÃ©ro de tÃ©lÃ©phone
+     * @param localisation Localisation gÃ©ographique
      * @param directeur Nom du directeur
-     * @param anneeCreation Année de création
-     * @param dateFete Date de la fête annuelle
-     * @param dureeFete Durée de la fête en jours
+     * @param anneeCreation AnnÃ©e de crÃ©ation
+     * @param dateFete Date de la fÃªte annuelle
+     * @param dureeFete DurÃ©e de la fÃªte en jours
      */
     public MaisonInternationale(int num, String nom, String desc, String tel, String localisation, String directeur,
                                 int anneeCreation, String dateFete, int dureeFete) {
@@ -49,9 +49,9 @@ public class MaisonInternationale extends Maison {
     }
 
     /**
-     * Constructeur par défaut.
+     * Constructeur par dÃ©faut.
      * <p>
-     * Crée une maison internationale avec des valeurs par défaut et
+     * CrÃ©e une maison internationale avec des valeurs par dÃ©faut et
      * initialise la liste des services.
      * </p>
      */
@@ -61,13 +61,13 @@ public class MaisonInternationale extends Maison {
     }
 
     /**
-     * Ajoute un service à la maison internationale.
+     * Ajoute un service Ã  la maison internationale.
      * <p>
-     * Établit une relation bidirectionnelle : le service est ajouté à la maison
-     * et la maison est ajoutée à la liste des maisons proposant ce service.
+     * Ã‰tablit une relation bidirectionnelle : le service est ajoutÃ© Ã  la maison
+     * et la maison est ajoutÃ©e Ã  la liste des maisons proposant ce service.
      * </p>
      * 
-     * @param service Le service à ajouter
+     * @param service Le service Ã  ajouter
      */
     public void ajoutService(Service service) {
         if (sesServices == null) {
@@ -75,18 +75,18 @@ public class MaisonInternationale extends Maison {
         }
         sesServices.add(service);
 
-        // Ajout de la maison à la liste des maisons proposant ce service
+        // Ajout de la maison Ã  la liste des maisons proposant ce service
         service.ajoutMaison(this);
     }
 
     /**
      * Supprime un service de la maison internationale.
      * <p>
-     * Supprime la relation bidirectionnelle : le service est retiré de la maison
-     * et la maison est retirée de la liste des maisons proposant ce service.
+     * Supprime la relation bidirectionnelle : le service est retirÃ© de la maison
+     * et la maison est retirÃ©e de la liste des maisons proposant ce service.
      * </p>
      * 
-     * @param service Le service à supprimer
+     * @param service Le service Ã  supprimer
      */
     public void supprService(Service service) {
         if (sesServices == null) {
@@ -100,15 +100,15 @@ public class MaisonInternationale extends Maison {
     }
 
     /**
-     * Affiche la liste des services proposés par la maison.
+     * Affiche la liste des services proposÃ©s par la maison.
      * <p>
-     * Affiche le nom et la description de chaque service proposé.
+     * Affiche le nom et la description de chaque service proposÃ©.
      * </p>
      */
     public void afficheServices() {
         if (sesServices == null) {
             sesServices = new ArrayList<>();
-            System.out.println("Aucun service proposé par la Maison Internationale");
+            System.out.println("Aucun service proposÃ© par la Maison Internationale");
             return;
         }
         
@@ -120,12 +120,12 @@ public class MaisonInternationale extends Maison {
     }
 
     /**
-     * Retourne la liste des services proposés par la maison.
+     * Retourne la liste des services proposÃ©s par la maison.
      * <p>
      * Initialise la liste si elle n'existe pas encore.
      * </p>
      * 
-     * @return ArrayList des services proposés
+     * @return ArrayList des services proposÃ©s
      */
     public ArrayList<Service> getSesServices() {
         if (sesServices == null) {
@@ -135,5 +135,5 @@ public class MaisonInternationale extends Maison {
     }
 }
 /**
- * cette classe a été crée par @author Maksen Mouhou
+ * cette classe a Ã©tÃ© crÃ©e par @author Maksen Mouhou
  */

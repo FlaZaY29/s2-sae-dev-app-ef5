@@ -5,7 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
- * Panneau latÃ©ral de l'application
+ * Panneau latéral de l'application
  * Contient les boutons de navigation
  */
 public class SidebarPanel extends JPanel {
@@ -21,7 +21,7 @@ public class SidebarPanel extends JPanel {
     private final Color TEXT_COLOR = Color.BLACK;
 
     /**
-     * Constructeur du panneau latÃ©ral
+     * Constructeur du panneau latéral
      */
     public SidebarPanel() {
         setPreferredSize(new Dimension(200, 0));
@@ -55,10 +55,10 @@ public class SidebarPanel extends JPanel {
     }
     
     /**
-     * CrÃ©e un bouton de menu
+     * Crée un bouton de menu
      * @param text Le texte du bouton
      * @param isActive Si le bouton est actif
-     * @return Le bouton crÃ©Ã©
+     * @return Le bouton créé
      */
     private JPanel createMenuButton(String text, boolean isActive) {
         JPanel button = new JPanel();
@@ -77,8 +77,8 @@ public class SidebarPanel extends JPanel {
     }
     
     /**
-     * DÃ©finit le bouton actif
-     * @param activeButton Le bouton Ã  activer
+     * Définit le bouton actif
+     * @param activeButton Le bouton à activer
      */
     public void setActiveButton(JPanel activeButton) {
         maisonsButton.setBackground(maisonsButton == activeButton ? ACTIVE_COLOR : INACTIVE_COLOR);
@@ -102,5 +102,5 @@ public class SidebarPanel extends JPanel {
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Flavio Zamperlini
+ * cette classe a été crée par @author Flavio Zamperlini
  */

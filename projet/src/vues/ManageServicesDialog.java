@@ -13,7 +13,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 /**
- * BoÃ®te de dialogue pour gÃ©rer les services d'une maison internationale
+ * Boîte de dialogue pour gérer les services d'une maison internationale
  */
 public class ManageServicesDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
@@ -31,10 +31,10 @@ public class ManageServicesDialog extends JDialog {
     private String[] columnNames = {"ID", "Nom", "Description", "Ouverture", "Fermeture"};
 
     /**
-     * Constructeur de la boÃ®te de dialogue de gestion des services
-     * @param parent La fenÃªtre parente
+     * Constructeur de la boîte de dialogue de gestion des services
+     * @param parent La fenêtre parente
      * @param maisonInternationale La maison internationale
-     * @param serviceControleur Le contrÃ´leur de services
+     * @param serviceControleur Le contrôleur de services
      */
     public ManageServicesDialog(JFrame parent, MaisonInternationale maisonInternationale, 
                                ServiceControleur serviceControleur) {
@@ -52,7 +52,7 @@ public class ManageServicesDialog extends JDialog {
     }
     
     /**
-     * Initialise les composants de la boÃ®te de dialogue
+     * Initialise les composants de la boîte de dialogue
      */
     private void initComponents() {
         // Table model
@@ -104,7 +104,7 @@ public class ManageServicesDialog extends JDialog {
     }
     
     /**
-     * Organise les composants dans la boÃ®te de dialogue
+     * Organise les composants dans la boîte de dialogue
      */
     private void layoutComponents() {
         // Header panel
@@ -148,7 +148,7 @@ public class ManageServicesDialog extends JDialog {
     }
     
     /**
-     * RafraÃ®chit le tableau des services
+     * Rafraîchit le tableau des services
      */
     public void refreshServicesTable() {
         // Clear existing data
@@ -184,14 +184,14 @@ public class ManageServicesDialog extends JDialog {
     }
     
     /**
-     * Modifie le service sÃ©lectionnÃ©
+     * Modifie le service sélectionné
      */
     private void editSelectedService() {
         int selectedRow = servicesTable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this,
-                "Veuillez sÃ©lectionner un service Ã  modifier.",
-                "Aucune sÃ©lection",
+                "Veuillez sélectionner un service à modifier.",
+                "Aucune sélection",
                 JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -218,14 +218,14 @@ public class ManageServicesDialog extends JDialog {
     }
     
     /**
-     * Supprime le service sÃ©lectionnÃ©
+     * Supprime le service sélectionné
      */
     private void deleteSelectedService() {
         int selectedRow = servicesTable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this,
-                "Veuillez sÃ©lectionner un service Ã  supprimer.",
-                "Aucune sÃ©lection",
+                "Veuillez sélectionner un service à supprimer.",
+                "Aucune sélection",
                 JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -268,5 +268,5 @@ public class ManageServicesDialog extends JDialog {
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Maksen Mouhou
+ * cette classe a été crée par @author Maksen Mouhou
  */

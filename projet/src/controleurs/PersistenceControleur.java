@@ -6,10 +6,10 @@ import javax.swing.*;
 import java.io.*;
 
 /**
- * ContrÃ´leur pour la gestion de la persistance des donnÃ©es.
+ * Contrôleur pour la gestion de la persistance des données.
  * <p>
- * Cette classe fournit des mÃ©thodes pour sauvegarder et charger
- * le modÃ¨le CIUP depuis le disque dur en utilisant la sÃ©rialisation Java.
+ * Cette classe fournit des méthodes pour sauvegarder et charger
+ * le modèle CIUP depuis le disque dur en utilisant la sérialisation Java.
  * </p>
  * 
  * @author CIUP Development Team
@@ -21,23 +21,23 @@ public class PersistenceControleur {
     private static final String DEFAULT_SAVE_FILE = "ciup_data.ser";
     
     /**
-     * Constructeur du contrÃ´leur de persistance.
+     * Constructeur du contrôleur de persistance.
      * 
-     * @param mainControleur Le contrÃ´leur principal
+     * @param mainControleur Le contrôleur principal
      */
     public PersistenceControleur(MainControleur mainControleur) {
         this.mainControleur = mainControleur;
     }
     
     /**
-     * Sauvegarde le modÃ¨le CIUP dans un fichier.
+     * Sauvegarde le modèle CIUP dans un fichier.
      * <p>
-     * Utilise la sÃ©rialisation Java pour enregistrer l'Ã©tat complet
-     * du modÃ¨le CIUP sur le disque dur.
+     * Utilise la sérialisation Java pour enregistrer l'état complet
+     * du modèle CIUP sur le disque dur.
      * </p>
      * 
-     * @param file Le fichier dans lequel sauvegarder les donnÃ©es (optionnel)
-     * @return true si la sauvegarde a rÃ©ussi, false sinon
+     * @param file Le fichier dans lequel sauvegarder les données (optionnel)
+     * @return true si la sauvegarde a réussi, false sinon
      */
     public boolean saveData(File file) {
         File saveFile = (file != null) ? file : new File(DEFAULT_SAVE_FILE);
@@ -48,8 +48,8 @@ public class PersistenceControleur {
             
             JOptionPane.showMessageDialog(
                 mainControleur.getMainFrame(),
-                "DonnÃ©es sauvegardÃ©es avec succÃ¨s dans " + saveFile.getAbsolutePath(),
-                "Sauvegarde rÃ©ussie",
+                "Données sauvegardées avec succès dans " + saveFile.getAbsolutePath(),
+                "Sauvegarde réussie",
                 JOptionPane.INFORMATION_MESSAGE
             );
             
@@ -57,7 +57,7 @@ public class PersistenceControleur {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                 mainControleur.getMainFrame(),
-                "Erreur lors de la sauvegarde des donnÃ©es: " + e.getMessage(),
+                "Erreur lors de la sauvegarde des données: " + e.getMessage(),
                 "Erreur de sauvegarde",
                 JOptionPane.ERROR_MESSAGE
             );
@@ -67,23 +67,23 @@ public class PersistenceControleur {
     }
     
     /**
-     * Sauvegarde le modÃ¨le CIUP dans le fichier par dÃ©faut.
+     * Sauvegarde le modèle CIUP dans le fichier par défaut.
      * 
-     * @return true si la sauvegarde a rÃ©ussi, false sinon
+     * @return true si la sauvegarde a réussi, false sinon
      */
     public boolean saveData() {
         return saveData(null);
     }
     
     /**
-     * Charge le modÃ¨le CIUP depuis un fichier.
+     * Charge le modèle CIUP depuis un fichier.
      * <p>
-     * Utilise la dÃ©sÃ©rialisation Java pour restaurer l'Ã©tat complet
-     * du modÃ¨le CIUP depuis le disque dur.
+     * Utilise la désérialisation Java pour restaurer l'état complet
+     * du modèle CIUP depuis le disque dur.
      * </p>
      * 
-     * @param file Le fichier depuis lequel charger les donnÃ©es (optionnel)
-     * @return Le modÃ¨le CIUP chargÃ© ou null en cas d'Ã©chec
+     * @param file Le fichier depuis lequel charger les données (optionnel)
+     * @return Le modèle CIUP chargé ou null en cas d'échec
      */
     public CIUP loadData(File file) {
         File loadFile = (file != null) ? file : new File(DEFAULT_SAVE_FILE);
@@ -91,7 +91,7 @@ public class PersistenceControleur {
         if (!loadFile.exists()) {
             JOptionPane.showMessageDialog(
                 mainControleur.getMainFrame(),
-                "Aucun fichier de sauvegarde trouvÃ© Ã  " + loadFile.getAbsolutePath(),
+                "Aucun fichier de sauvegarde trouvé à " + loadFile.getAbsolutePath(),
                 "Fichier introuvable",
                 JOptionPane.WARNING_MESSAGE
             );
@@ -103,8 +103,8 @@ public class PersistenceControleur {
             
             JOptionPane.showMessageDialog(
                 mainControleur.getMainFrame(),
-                "DonnÃ©es chargÃ©es avec succÃ¨s depuis " + loadFile.getAbsolutePath(),
-                "Chargement rÃ©ussi",
+                "Données chargées avec succès depuis " + loadFile.getAbsolutePath(),
+                "Chargement réussi",
                 JOptionPane.INFORMATION_MESSAGE
             );
             
@@ -112,7 +112,7 @@ public class PersistenceControleur {
         } catch (IOException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(
                 mainControleur.getMainFrame(),
-                "Erreur lors du chargement des donnÃ©es: " + e.getMessage(),
+                "Erreur lors du chargement des données: " + e.getMessage(),
                 "Erreur de chargement",
                 JOptionPane.ERROR_MESSAGE
             );
@@ -122,23 +122,23 @@ public class PersistenceControleur {
     }
     
     /**
-     * Charge le modÃ¨le CIUP depuis le fichier par dÃ©faut.
+     * Charge le modèle CIUP depuis le fichier par défaut.
      * 
-     * @return Le modÃ¨le CIUP chargÃ© ou null en cas d'Ã©chec
+     * @return Le modèle CIUP chargé ou null en cas d'échec
      */
     public CIUP loadData() {
         return loadData(null);
     }
     
     /**
-     * Affiche une boÃ®te de dialogue pour sÃ©lectionner un fichier de sauvegarde.
+     * Affiche une boîte de dialogue pour sélectionner un fichier de sauvegarde.
      * 
      * @param forSaving true pour un dialogue de sauvegarde, false pour un dialogue d'ouverture
-     * @return Le fichier sÃ©lectionnÃ© ou null si annulÃ©
+     * @return Le fichier sélectionné ou null si annulé
      */
     public File showFileDialog(boolean forSaving) {
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle(forSaving ? "Sauvegarder les donnÃ©es" : "Charger les donnÃ©es");
+        fileChooser.setDialogTitle(forSaving ? "Sauvegarder les données" : "Charger les données");
         fileChooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
             @Override
             public boolean accept(File f) {
@@ -147,7 +147,7 @@ public class PersistenceControleur {
             
             @Override
             public String getDescription() {
-                return "Fichiers de donnÃ©es CIUP (*.ser)";
+                return "Fichiers de données CIUP (*.ser)";
             }
         });
         
@@ -158,7 +158,7 @@ public class PersistenceControleur {
         if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
             
-            // Ajouter l'extension .ser si nÃ©cessaire pour la sauvegarde
+            // Ajouter l'extension .ser si nécessaire pour la sauvegarde
             if (forSaving && !selectedFile.getName().toLowerCase().endsWith(".ser")) {
                 selectedFile = new File(selectedFile.getAbsolutePath() + ".ser");
             }
@@ -170,5 +170,5 @@ public class PersistenceControleur {
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Flavio Zamperlini
+ * cette classe a été crée par @author Flavio Zamperlini
  */

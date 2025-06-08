@@ -13,7 +13,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Panneau d'inscription des √©tudiants
+ * Panneau d'inscription des Ètudiants
  */
 public class InscriptionPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -35,11 +35,11 @@ public class InscriptionPanel extends JPanel {
     private MainControleur controleur;
     private JTable statsTable;
     private Object[][] statsData = new Object[0][4];
-    private String[] columnNames = {"Maison", "Capacit√©", "Occup√©e", "Attente"};
+    private String[] columnNames = {"Maison", "CapacitÈ", "OccupÈe", "Attente"};
 
     /**
      * Constructeur du panneau d'inscription
-     * @param controleur Le contr√¥leur principal
+     * @param controleur Le contrÙleur principal
      */
     public InscriptionPanel(MainControleur controleur) {
         this.controleur = controleur;
@@ -83,8 +83,8 @@ public class InscriptionPanel extends JPanel {
         clearButton.setBackground(Color.LIGHT_GRAY);
         clearButton.setFocusPainted(false);
 
-        // Dans la m√©thode initComponents(), apr√®s la cr√©ation des boutons
-        // Ajouter les √©couteurs d'√©v√©nements
+        // Dans la mÈthode initComponents(), aprËs la crÈation des boutons
+        // Ajouter les Ècouteurs d'ÈvÈnements
         submitButton.addActionListener(e -> {
             if (controleur.getEtudiantControleur().validateStudentFields(
                     nomField.getText(),
@@ -109,9 +109,9 @@ public class InscriptionPanel extends JPanel {
                         universiteField.getText());
 
                 if (success) {
-                    // Demander si l'utilisateur souhaite ajouter un autre √©tudiant
+                    // Demander si l'utilisateur souhaite ajouter un autre Ètudiant
                     int result = JOptionPane.showConfirmDialog(this,
-                            "Voulez-vous ajouter un autre √©tudiant?",
+                            "Voulez-vous ajouter un autre Ètudiant?",
                             "Continuer",
                             JOptionPane.YES_NO_OPTION);
 
@@ -151,7 +151,7 @@ public class InscriptionPanel extends JPanel {
         formPanel.setLayout(new BoxLayout(formPanel, BoxLayout.Y_AXIS));
         formPanel.setBackground(Color.WHITE);
         
-        // S√©lection de maison
+        // SÈlection de maison
         JPanel maisonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         maisonPanel.setBackground(Color.WHITE);
         maisonPanel.add(new JLabel("Maison:"));
@@ -181,7 +181,7 @@ public class InscriptionPanel extends JPanel {
         
         gbcPersonal.gridx = 0;
         gbcPersonal.gridy = 1;
-        personalInfoPanel.add(new JLabel("Pr√©nom:"), gbcPersonal);
+        personalInfoPanel.add(new JLabel("PrÈnom:"), gbcPersonal);
         
         gbcPersonal.gridx = 1;
         personalInfoPanel.add(prenomField, gbcPersonal);
@@ -189,7 +189,7 @@ public class InscriptionPanel extends JPanel {
         // Row 2
         gbcPersonal.gridx = 0;
         gbcPersonal.gridy = 2;
-        personalInfoPanel.add(new JLabel("Nationalit√©:"), gbcPersonal);
+        personalInfoPanel.add(new JLabel("NationalitÈ:"), gbcPersonal);
         
         gbcPersonal.gridx = 1;
         personalInfoPanel.add(nationaliteField, gbcPersonal);
@@ -212,7 +212,7 @@ public class InscriptionPanel extends JPanel {
         // Row 4
         gbcPersonal.gridx = 0;
         gbcPersonal.gridy = 5;
-        personalInfoPanel.add(new JLabel("T√©l√©phone:"), gbcPersonal);
+        personalInfoPanel.add(new JLabel("TÈlÈphone:"), gbcPersonal);
         
         gbcPersonal.gridx = 1;
         personalInfoPanel.add(telField, gbcPersonal);
@@ -229,7 +229,7 @@ public class InscriptionPanel extends JPanel {
         academicInfoPanel.setBackground(Color.WHITE);
         academicInfoPanel.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createEtchedBorder(), 
-            "Informations acad√©miques",
+            "Informations acadÈmiques",
             TitledBorder.LEFT,
             TitledBorder.TOP
         ));
@@ -248,7 +248,7 @@ public class InscriptionPanel extends JPanel {
         
         gbcAcademic.gridx = 0;
         gbcAcademic.gridy = 1;
-        academicInfoPanel.add(new JLabel("Universit√©:"), gbcAcademic);
+        academicInfoPanel.add(new JLabel("UniversitÈ:"), gbcAcademic);
         
         gbcAcademic.gridx = 1;
         academicInfoPanel.add(universiteField, gbcAcademic);
@@ -281,14 +281,14 @@ public class InscriptionPanel extends JPanel {
         
         // Ajouter des informations sur le processus d'inscription
         JTextArea infoText = new JTextArea(
-            "Processus d'inscription √† la CIUP\n\n" +
-            "1. Remplissez le formulaire avec vos informations personnelles et acad√©miques.\n\n" +
-            "2. S√©lectionnez la maison dans laquelle vous souhaitez r√©sider.\n\n" +
+            "Processus d'inscription ‡ la CIUP\n\n" +
+            "1. Remplissez le formulaire avec vos informations personnelles et acadÈmiques.\n\n" +
+            "2. SÈlectionnez la maison dans laquelle vous souhaitez rÈsider.\n\n" +
             "3. Soumettez votre demande en cliquant sur le bouton \"S'inscrire\".\n\n" +
-            "4. Votre demande sera examin√©e par l'administration de la maison s√©lectionn√©e.\n\n" +
-            "5. Si la maison est compl√®te, vous serez plac√© sur liste d'attente.\n\n" +
+            "4. Votre demande sera examinÈe par l'administration de la maison sÈlectionnÈe.\n\n" +
+            "5. Si la maison est complËte, vous serez placÈ sur liste d'attente.\n\n" +
             "6. Vous recevrez une notification par email concernant le statut de votre demande.\n\n" +
-            "Note: Assurez-vous que toutes les informations fournies sont exactes et compl√®tes."
+            "Note: Assurez-vous que toutes les informations fournies sont exactes et complËtes."
         );
         infoText.setEditable(false);
         infoText.setLineWrap(true);
@@ -308,7 +308,7 @@ public class InscriptionPanel extends JPanel {
         ));
         
         // Tableau des statistiques
-        updateStatsTable(); // Mettre √† jour les donn√©es avant de cr√©er la table
+        updateStatsTable(); // Mettre ‡ jour les donnÈes avant de crÈer la table
         statsTable = new JTable(statsData, columnNames);
         statsTable.setFillsViewportHeight(true);
         JScrollPane statsScrollPane = new JScrollPane(statsTable);
@@ -331,7 +331,7 @@ public class InscriptionPanel extends JPanel {
     }
     
     /**
-     * Met √† jour la liste des maisons dans le ComboBox
+     * Met ‡ jour la liste des maisons dans le ComboBox
      */
     public void updateMaisonComboBox() {
         if (controleur == null || controleur.getCiupModel() == null) {
@@ -352,13 +352,13 @@ public class InscriptionPanel extends JPanel {
                 }
             }
             
-            // Restaurer la s√©lection pr√©c√©dente si possible
+            // Restaurer la sÈlection prÈcÈdente si possible
             if (selectedMaison != null) {
                 selectMaison(selectedMaison);
             }
         }
         
-        // Mettre √† jour le tableau des statistiques
+        // Mettre ‡ jour le tableau des statistiques
         updateStatsTable();
         if (statsTable != null) {
             statsTable.repaint();
@@ -366,8 +366,8 @@ public class InscriptionPanel extends JPanel {
     }
     
     /**
-     * S√©lectionne une maison sp√©cifique dans le ComboBox
-     * @param maisonName Le nom de la maison √† s√©lectionner
+     * SÈlectionne une maison spÈcifique dans le ComboBox
+     * @param maisonName Le nom de la maison ‡ sÈlectionner
      */
     public void selectMaison(String maisonName) {
         if (maisonComboBox == null) return;
@@ -381,7 +381,7 @@ public class InscriptionPanel extends JPanel {
     }
     
     /**
-     * Met √† jour le tableau des statistiques
+     * Met ‡ jour le tableau des statistiques
      */
     public void updateStatsTable() {
         if (controleur == null || controleur.getCiupModel() == null) {
@@ -404,11 +404,11 @@ public class InscriptionPanel extends JPanel {
                 statsData[i][0] = maisonClassique.getNom();
                 statsData[i][1] = maisonClassique.getCapacite();
                 
-                // V√©rifier si la liste des √©tudiants est initialis√©e
+                // VÈrifier si la liste des Ètudiants est initialisÈe
                 ArrayList<Etudiant> listeEtudiant = maisonClassique.getListeEtudiant();
                 statsData[i][2] = (listeEtudiant != null) ? listeEtudiant.size() : 0;
                 
-                // V√©rifier si la liste d'attente est initialis√©e
+                // VÈrifier si la liste d'attente est initialisÈe
                 ArrayList<Etudiant> listeAttente = maisonClassique.getListeAttente();
                 statsData[i][3] = (listeAttente != null) ? listeAttente.size() : 0;
                 
@@ -416,7 +416,7 @@ public class InscriptionPanel extends JPanel {
             }
         }
         
-        // Mettre √† jour le mod√®le de donn√©es du tableau si le tableau existe d√©j√†
+        // Mettre ‡ jour le modËle de donnÈes du tableau si le tableau existe dÈj‡
         if (statsTable != null) {
             statsTable.setModel(new DefaultTableModel(statsData, columnNames));
         }
@@ -438,8 +438,8 @@ public class InscriptionPanel extends JPanel {
     }
     
     /**
-     * Retourne le nom de la maison s√©lectionn√©e
-     * @return Le nom de la maison s√©lectionn√©e
+     * Retourne le nom de la maison sÈlectionnÈe
+     * @return Le nom de la maison sÈlectionnÈe
      */
     public String getSelectedMaisonName() {
         return (String) maisonComboBox.getSelectedItem();
@@ -454,8 +454,8 @@ public class InscriptionPanel extends JPanel {
     }
     
     /**
-     * Retourne le champ de pr√©nom
-     * @return Le champ de pr√©nom
+     * Retourne le champ de prÈnom
+     * @return Le champ de prÈnom
      */
     public JTextField getPrenomField() {
         return prenomField;
@@ -470,8 +470,8 @@ public class InscriptionPanel extends JPanel {
     }
     
     /**
-     * Retourne le champ de nationalit√©
-     * @return Le champ de nationalit√©
+     * Retourne le champ de nationalitÈ
+     * @return Le champ de nationalitÈ
      */
     public JTextField getNationaliteField() {
         return nationaliteField;
@@ -486,8 +486,8 @@ public class InscriptionPanel extends JPanel {
     }
     
     /**
-     * Retourne le champ de t√©l√©phone
-     * @return Le champ de t√©l√©phone
+     * Retourne le champ de tÈlÈphone
+     * @return Le champ de tÈlÈphone
      */
     public JTextField getTelField() {
         return telField;
@@ -510,13 +510,13 @@ public class InscriptionPanel extends JPanel {
     }
     
     /**
-     * Retourne le champ d'universit√©
-     * @return Le champ d'universit√©
+     * Retourne le champ d'universitÈ
+     * @return Le champ d'universitÈ
      */
     public JTextField getUniversiteField() {
         return null;
     }
 }
 /**
- * cette classe a √©t√© cr√©e par @author Flavio Zamperlini
+ * cette classe a ÈtÈ crÈe par @author Flavio Zamperlini
  */

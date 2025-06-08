@@ -13,7 +13,7 @@ import java.awt.event.ItemEvent;
 import java.io.File;
 
 /**
- * BoÃ®te de dialogue pour modifier une maison
+ * Boîte de dialogue pour modifier une maison
  */
 public class EditHouseDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +29,7 @@ public class EditHouseDialog extends JDialog {
     private JTextField dateFeteField;
     private JTextField dureeFeteField;
     
-    // Champs spÃ©cifiques pour MaisonClassique
+    // Champs spécifiques pour MaisonClassique
     private JPanel maisonClassiquePanel;
     private JTextField nationaliteField;
     private JTextField capaciteField;
@@ -45,10 +45,10 @@ public class EditHouseDialog extends JDialog {
     private Maison maisonToEdit;
     
     /**
-     * Constructeur de la boÃ®te de dialogue de modification de maison
-     * @param parent La fenÃªtre parente
-     * @param controleur Le contrÃ´leur principal
-     * @param maison La maison Ã  modifier
+     * Constructeur de la boîte de dialogue de modification de maison
+     * @param parent La fenêtre parente
+     * @param controleur Le contrôleur principal
+     * @param maison La maison à modifier
      */
     public EditHouseDialog(JFrame parent, MainControleur controleur, Maison maison) {
         super(parent, "Modifier la maison", true);
@@ -63,7 +63,7 @@ public class EditHouseDialog extends JDialog {
         populateFields();
         layoutComponents();
         
-        // Ajouter les Ã©couteurs d'Ã©vÃ©nements
+        // Ajouter les écouteurs d'événements
         typeComboBox.addItemListener(e -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
                 updateFieldsVisibility((String) typeComboBox.getSelectedItem());
@@ -74,12 +74,12 @@ public class EditHouseDialog extends JDialog {
         
         cancelButton.addActionListener(e -> dispose());
 
-        // Mettre Ã  jour la visibilitÃ© des champs selon le type de maison
+        // Mettre à jour la visibilité des champs selon le type de maison
         updateFieldsVisibility((String) typeComboBox.getSelectedItem());
     }
     
     /**
-     * Initialise les composants de la boÃ®te de dialogue
+     * Initialise les composants de la boîte de dialogue
      */
     private void initComponents() {
         // Type de maison
@@ -97,7 +97,7 @@ public class EditHouseDialog extends JDialog {
         dateFeteField = new JTextField(10);
         dureeFeteField = new JTextField(10);
         
-        // Champs spÃ©cifiques pour MaisonClassique
+        // Champs spécifiques pour MaisonClassique
         nationaliteField = new JTextField(20);
         capaciteField = new JTextField(10);
 
@@ -113,7 +113,7 @@ public class EditHouseDialog extends JDialog {
     }
 
     /**
-     * Remplit les champs avec les donnÃ©es de la maison Ã  modifier
+     * Remplit les champs avec les données de la maison à modifier
      */
     private void populateFields() {
         numField.setText(String.valueOf(maisonToEdit.getNum()));
@@ -126,7 +126,7 @@ public class EditHouseDialog extends JDialog {
         dateFeteField.setText(maisonToEdit.getDateFete());
         dureeFeteField.setText(String.valueOf(maisonToEdit.getDureeFete()));
 
-        // DÃ©finir le type de maison
+        // Définir le type de maison
         if (maisonToEdit instanceof MaisonClassique) {
             typeComboBox.setSelectedItem("Maison Classique");
             MaisonClassique maisonClassique = (MaisonClassique) maisonToEdit;
@@ -144,7 +144,7 @@ public class EditHouseDialog extends JDialog {
     }
     
     /**
-     * Organise les composants dans la boÃ®te de dialogue
+     * Organise les composants dans la boîte de dialogue
      */
     private void layoutComponents() {
         JPanel mainPanel = new JPanel();
@@ -156,11 +156,11 @@ public class EditHouseDialog extends JDialog {
         typePanel.add(new JLabel("Type de maison:"));
         typePanel.add(typeComboBox);
         
-        // Panel pour les informations gÃ©nÃ©rales
+        // Panel pour les informations générales
         JPanel generalPanel = new JPanel(new GridBagLayout());
         generalPanel.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createEtchedBorder(), 
-            "Informations gÃ©nÃ©rales",
+            "Informations générales",
             TitledBorder.LEFT,
             TitledBorder.TOP
         ));
@@ -172,7 +172,7 @@ public class EditHouseDialog extends JDialog {
         // Ligne 1
         gbc.gridx = 0;
         gbc.gridy = 0;
-        generalPanel.add(new JLabel("NumÃ©ro:"), gbc);
+        generalPanel.add(new JLabel("Numéro:"), gbc);
         
         gbc.gridx = 1;
         generalPanel.add(numField, gbc);
@@ -196,7 +196,7 @@ public class EditHouseDialog extends JDialog {
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 1;
-        generalPanel.add(new JLabel("TÃ©lÃ©phone:"), gbc);
+        generalPanel.add(new JLabel("Téléphone:"), gbc);
         
         gbc.gridx = 1;
         generalPanel.add(telField, gbc);
@@ -216,7 +216,7 @@ public class EditHouseDialog extends JDialog {
         generalPanel.add(directeurField, gbc);
         
         gbc.gridx = 2;
-        generalPanel.add(new JLabel("AnnÃ©e de crÃ©ation:"), gbc);
+        generalPanel.add(new JLabel("Année de création:"), gbc);
         
         gbc.gridx = 3;
         generalPanel.add(anneeCreationField, gbc);
@@ -224,22 +224,22 @@ public class EditHouseDialog extends JDialog {
         // Ligne 5
         gbc.gridx = 0;
         gbc.gridy = 4;
-        generalPanel.add(new JLabel("Date de fÃªte:"), gbc);
+        generalPanel.add(new JLabel("Date de fête:"), gbc);
         
         gbc.gridx = 1;
         generalPanel.add(dateFeteField, gbc);
         
         gbc.gridx = 2;
-        generalPanel.add(new JLabel("DurÃ©e de fÃªte (jours):"), gbc);
+        generalPanel.add(new JLabel("Durée de fête (jours):"), gbc);
         
         gbc.gridx = 3;
         generalPanel.add(dureeFeteField, gbc);
         
-        // Panel pour les informations spÃ©cifiques Ã  MaisonClassique
+        // Panel pour les informations spécifiques à MaisonClassique
         maisonClassiquePanel = new JPanel(new GridBagLayout());
         maisonClassiquePanel.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createEtchedBorder(), 
-            "Informations spÃ©cifiques",
+            "Informations spécifiques",
             TitledBorder.LEFT,
             TitledBorder.TOP
         ));
@@ -251,7 +251,7 @@ public class EditHouseDialog extends JDialog {
         // Ligne 1
         gbcSpecific.gridx = 0;
         gbcSpecific.gridy = 0;
-        maisonClassiquePanel.add(new JLabel("NationalitÃ©:"), gbcSpecific);
+        maisonClassiquePanel.add(new JLabel("Nationalité:"), gbcSpecific);
         
         gbcSpecific.gridx = 1;
         maisonClassiquePanel.add(nationaliteField, gbcSpecific);
@@ -259,7 +259,7 @@ public class EditHouseDialog extends JDialog {
         // Ligne 2
         gbcSpecific.gridx = 0;
         gbcSpecific.gridy = 1;
-        maisonClassiquePanel.add(new JLabel("CapacitÃ©:"), gbcSpecific);
+        maisonClassiquePanel.add(new JLabel("Capacité:"), gbcSpecific);
         
         gbcSpecific.gridx = 1;
         maisonClassiquePanel.add(capaciteField, gbcSpecific);
@@ -297,12 +297,12 @@ public class EditHouseDialog extends JDialog {
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         mainPanel.add(buttonPanel);
         
-        // Ajouter le panel principal Ã  la fenÃªtre
+        // Ajouter le panel principal à la fenêtre
         add(new JScrollPane(mainPanel), BorderLayout.CENTER);
     }
     
     /**
-     * Met Ã  jour la visibilitÃ© des champs en fonction du type de maison
+     * Met à jour la visibilité des champs en fonction du type de maison
      * @param type Le type de maison
      */
     private void updateFieldsVisibility(String type) {
@@ -312,17 +312,17 @@ public class EditHouseDialog extends JDialog {
             maisonClassiquePanel.setVisible(false);
         }
         
-        // Redimensionner la fenÃªtre
+        // Redimensionner la fenêtre
         pack();
         setSize(getWidth(), Math.min(650, getHeight()));
     }
 
     /**
-     * Ouvre un sÃ©lecteur de fichier pour choisir une image
+     * Ouvre un sélecteur de fichier pour choisir une image
      */
     private void browseForImage() {
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("SÃ©lectionner une image");
+        fileChooser.setDialogTitle("Sélectionner une image");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
             public boolean accept(File f) {
@@ -369,7 +369,7 @@ public class EditHouseDialog extends JDialog {
             int anneeCreation = Integer.parseInt(anneeCreationField.getText());
             int dureeFete = Integer.parseInt(dureeFeteField.getText());
             
-            // Mettre Ã  jour les propriÃ©tÃ©s communes
+            // Mettre à jour les propriétés communes
             maisonToEdit.setNum(num);
             maisonToEdit.setNom(nomField.getText());
             maisonToEdit.setDesc(descField.getText());
@@ -383,10 +383,10 @@ public class EditHouseDialog extends JDialog {
             String type = (String) typeComboBox.getSelectedItem();
             
             if ("Maison Classique".equals(type) && maisonToEdit instanceof MaisonClassique) {
-                // Valider les champs spÃ©cifiques
+                // Valider les champs spécifiques
                 if (nationaliteField.getText().isEmpty() || capaciteField.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(this, 
-                        "Veuillez remplir tous les champs spÃ©cifiques.", 
+                        "Veuillez remplir tous les champs spécifiques.", 
                         "Formulaire incomplet", 
                         JOptionPane.WARNING_MESSAGE);
                     return;
@@ -399,25 +399,25 @@ public class EditHouseDialog extends JDialog {
                 maisonClassique.setCapacite(capacite);
             }
 
-            // Mettre Ã  jour le chemin de l'image si une nouvelle image a Ã©tÃ© sÃ©lectionnÃ©e
+            // Mettre à jour le chemin de l'image si une nouvelle image a été sélectionnée
             if (selectedImagePath != null && !selectedImagePath.isEmpty()) {
                 maisonToEdit.setProperty("imagePath", selectedImagePath);
             }
             
-            // Notifier le contrÃ´leur que la maison a Ã©tÃ© modifiÃ©e
+            // Notifier le contrôleur que la maison a été modifiée
             controleur.getMaisonControleur().updateHouse(maisonToEdit);
             
-            // Fermer la fenÃªtre
+            // Fermer la fenêtre
             dispose();
             
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Veuillez entrer des valeurs numÃ©riques valides pour les champs numÃ©riques.", 
+                "Veuillez entrer des valeurs numériques valides pour les champs numériques.", 
                 "Erreur de format", 
                 JOptionPane.ERROR_MESSAGE);
         }
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Donald Se
+ * cette classe a été crée par @author Donald Se
  */

@@ -10,7 +10,7 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
- * BoÃ®te de dialogue pour modifier un service
+ * Boîte de dialogue pour modifier un service
  */
 public class EditServiceDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
@@ -29,10 +29,10 @@ public class EditServiceDialog extends JDialog {
     private JButton cancelButton;
 
     /**
-     * Constructeur de la boÃ®te de dialogue de modification de service
-     * @param parent La fenÃªtre parente
-     * @param serviceControleur Le contrÃ´leur de services
-     * @param service Le service Ã  modifier
+     * Constructeur de la boîte de dialogue de modification de service
+     * @param parent La fenêtre parente
+     * @param serviceControleur Le contrôleur de services
+     * @param service Le service à modifier
      * @param maisonInternationale La maison internationale
      */
     public EditServiceDialog(JFrame parent, ServiceControleur serviceControleur, 
@@ -56,7 +56,7 @@ public class EditServiceDialog extends JDialog {
     }
     
     /**
-     * Initialise les composants de la boÃ®te de dialogue
+     * Initialise les composants de la boîte de dialogue
      */
     private void initComponents() {
         // Service information fields
@@ -77,7 +77,7 @@ public class EditServiceDialog extends JDialog {
     }
     
     /**
-     * Remplit les champs avec les donnÃ©es du service Ã  modifier
+     * Remplit les champs avec les données du service à modifier
      */
     private void populateFields() {
         numField.setText(String.valueOf(serviceToEdit.getNum()));
@@ -88,7 +88,7 @@ public class EditServiceDialog extends JDialog {
     }
     
     /**
-     * Organise les composants dans la boÃ®te de dialogue
+     * Organise les composants dans la boîte de dialogue
      */
     private void layoutComponents() {
         // Header panel
@@ -121,7 +121,7 @@ public class EditServiceDialog extends JDialog {
         // Row 1: Number and Name
         gbc.gridx = 0;
         gbc.gridy = 0;
-        infoPanel.add(new JLabel("NumÃ©ro:"), gbc);
+        infoPanel.add(new JLabel("Numéro:"), gbc);
         
         gbc.gridx = 1;
         numField.setEditable(false); // Don't allow editing the number
@@ -194,7 +194,7 @@ public class EditServiceDialog extends JDialog {
             // Validate hours
             if (heureOuv >= heureFerm) {
                 JOptionPane.showMessageDialog(this, 
-                    "L'heure d'ouverture doit Ãªtre antÃ©rieure Ã  l'heure de fermeture.", 
+                    "L'heure d'ouverture doit être antérieure à l'heure de fermeture.", 
                     "Heures invalides", 
                     JOptionPane.WARNING_MESSAGE);
                 return;
@@ -221,13 +221,13 @@ public class EditServiceDialog extends JDialog {
     }
     
     /**
-     * Retourne le service Ã  modifier
-     * @return Le service Ã  modifier
+     * Retourne le service à modifier
+     * @return Le service à modifier
      */
     public Service getServiceToEdit() {
         return serviceToEdit;
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Maksen Mouhou
+ * cette classe a été crée par @author Maksen Mouhou
  */

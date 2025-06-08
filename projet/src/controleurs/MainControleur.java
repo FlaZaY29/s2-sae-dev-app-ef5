@@ -10,27 +10,27 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 
 /**
- * ContrÃ´leur principal de l'application
- * GÃ¨re les interactions entre les vues et le modÃ¨le
+ * Contrôleur principal de l'application
+ * Gère les interactions entre les vues et le modèle
  */
 public class MainControleur {
     private CIUP ciupModel;
     private MainFrame mainFrame;
     
-    // Sous-contrÃ´leurs
+    // Sous-contrôleurs
     private MaisonControleur maisonControleur;
     private EtudiantControleur etudiantControleur;
     private ServiceControleur serviceControleur;
     private PersistenceControleur persistenceControleur;
     
     /**
-     * Constructeur du contrÃ´leur principal
-     * @param ciupModel Le modÃ¨le CIUP
+     * Constructeur du contrôleur principal
+     * @param ciupModel Le modèle CIUP
      */
     public MainControleur(CIUP ciupModel) {
         this.ciupModel = ciupModel;
         
-        // Initialisation des sous-contrÃ´leurs
+        // Initialisation des sous-contrôleurs
         this.maisonControleur = new MaisonControleur(ciupModel, this);
         this.etudiantControleur = new EtudiantControleur(ciupModel, this);
         this.serviceControleur = new ServiceControleur(ciupModel, this);
@@ -38,27 +38,27 @@ public class MainControleur {
     }
     
     /**
-     * DÃ©finit la vue principale
+     * Définit la vue principale
      * @param mainFrame La vue principale
      */
     public void setMainFrame(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
         
-        // Initialisation des Ã©couteurs d'Ã©vÃ©nements
+        // Initialisation des écouteurs d'événements
         initListeners();
 
-        // RafraÃ®chir la liste des maisons au dÃ©marrage
+        // Rafraîchir la liste des maisons au démarrage
         mainFrame.getHousesListPanel().refreshHousesList();
 
-        // Afficher le panel des maisons par dÃ©faut
+        // Afficher le panel des maisons par défaut
         showHousesList();
     }
     
     /**
-     * Initialise les Ã©couteurs d'Ã©vÃ©nements pour la vue principale
+     * Initialise les écouteurs d'événements pour la vue principale
      */
     private void initListeners() {
-        // Ã‰couteur pour le bouton de navigation vers la liste des maisons
+        // Écouteur pour le bouton de navigation vers la liste des maisons
         mainFrame.getSidebarPanel().getMaisonsButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -67,7 +67,7 @@ public class MainControleur {
             }
         });
         
-        // Ã‰couteur pour le bouton de navigation vers le formulaire d'inscription
+        // Écouteur pour le bouton de navigation vers le formulaire d'inscription
         mainFrame.getSidebarPanel().getInscriptionButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -76,7 +76,7 @@ public class MainControleur {
             }
         });
         
-        // Ã‰couteur pour le champ de recherche
+        // Écouteur pour le champ de recherche
         mainFrame.getHeaderPanel().getSearchField().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -89,7 +89,7 @@ public class MainControleur {
      * Affiche la liste des maisons
      */
     public void showHousesList() {
-        // RafraÃ®chir la liste des maisons avant d'afficher le panel
+        // Rafraîchir la liste des maisons avant d'afficher le panel
         mainFrame.getHousesListPanel().refreshHousesList();
         mainFrame.showPanel("HOUSES");
     }
@@ -98,7 +98,7 @@ public class MainControleur {
      * Affiche le formulaire d'inscription
      */
     public void showInscription() {
-        // Mettre Ã  jour la liste des maisons avant d'afficher le panel d'inscription
+        // Mettre à jour la liste des maisons avant d'afficher le panel d'inscription
         mainFrame.getInscriptionPanel().updateMaisonComboBox();
         mainFrame.showPanel("INSCRIPTION");
     }
@@ -108,13 +108,13 @@ public class MainControleur {
      * @param searchText Le texte de recherche
      */
     public void searchHouses(String searchText) {
-        // RÃ©cupÃ©rer le panel des maisons et filtrer
+        // Récupérer le panel des maisons et filtrer
         mainFrame.getHousesListPanel().filterHouses(searchText);
     }
     
     /**
-     * Retourne le modÃ¨le CIUP
-     * @return Le modÃ¨le CIUP
+     * Retourne le modèle CIUP
+     * @return Le modèle CIUP
      */
     public CIUP getCiupModel() {
         return ciupModel;
@@ -129,32 +129,32 @@ public class MainControleur {
     }
     
     /**
-     * Retourne le contrÃ´leur de maisons
-     * @return Le contrÃ´leur de maisons
+     * Retourne le contrôleur de maisons
+     * @return Le contrôleur de maisons
      */
     public MaisonControleur getMaisonControleur() {
         return maisonControleur;
     }
     
     /**
-     * Retourne le contrÃ´leur d'Ã©tudiants
-     * @return Le contrÃ´leur d'Ã©tudiants
+     * Retourne le contrôleur d'étudiants
+     * @return Le contrôleur d'étudiants
      */
     public EtudiantControleur getEtudiantControleur() {
         return etudiantControleur;
     }
     
     /**
-     * Retourne le contrÃ´leur de services
-     * @return Le contrÃ´leur de services
+     * Retourne le contrôleur de services
+     * @return Le contrôleur de services
      */
     public ServiceControleur getServiceControleur() {
         return serviceControleur;
     }
 
     /**
-     * Sauvegarde les donnÃ©es de l'application.
-     * Affiche une boÃ®te de dialogue pour sÃ©lectionner le fichier de sauvegarde.
+     * Sauvegarde les données de l'application.
+     * Affiche une boîte de dialogue pour sélectionner le fichier de sauvegarde.
      */
     public void saveDataWithDialog() {
         File file = persistenceControleur.showFileDialog(true);
@@ -164,15 +164,15 @@ public class MainControleur {
     }
 
     /**
-     * Sauvegarde les donnÃ©es de l'application dans le fichier par dÃ©faut.
+     * Sauvegarde les données de l'application dans le fichier par défaut.
      */
     public void saveData() {
         persistenceControleur.saveData();
     }
 
     /**
-     * Charge les donnÃ©es de l'application.
-     * Affiche une boÃ®te de dialogue pour sÃ©lectionner le fichier Ã  charger.
+     * Charge les données de l'application.
+     * Affiche une boîte de dialogue pour sélectionner le fichier à charger.
      */
     public void loadDataWithDialog() {
         File file = persistenceControleur.showFileDialog(false);
@@ -186,7 +186,7 @@ public class MainControleur {
     }
 
     /**
-     * Charge les donnÃ©es de l'application depuis le fichier par dÃ©faut.
+     * Charge les données de l'application depuis le fichier par défaut.
      */
     public void loadData() {
         CIUP loadedModel = persistenceControleur.loadData();
@@ -197,7 +197,7 @@ public class MainControleur {
     }
 
     /**
-     * RafraÃ®chit toutes les vues aprÃ¨s un chargement de donnÃ©es.
+     * Rafraîchit toutes les vues après un chargement de données.
      */
     private void refreshAllViews() {
         if (mainFrame != null) {
@@ -208,8 +208,8 @@ public class MainControleur {
     }
 
     /**
-     * Retourne le contrÃ´leur de persistance.
-     * @return Le contrÃ´leur de persistance
+     * Retourne le contrôleur de persistance.
+     * @return Le contrôleur de persistance
      */
     public PersistenceControleur getPersistenceControleur() {
         return persistenceControleur;
@@ -217,5 +217,5 @@ public class MainControleur {
 }
 
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Donald Se
+ * cette classe a été crée par @author Donald Se
  */

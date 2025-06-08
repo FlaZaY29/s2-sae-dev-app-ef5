@@ -10,7 +10,7 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
- * BoÃ®te de dialogue pour ajouter un service
+ * Boîte de dialogue pour ajouter un service
  */
 public class AddServiceDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
@@ -28,9 +28,9 @@ public class AddServiceDialog extends JDialog {
     private JButton cancelButton;
 
     /**
-     * Constructeur de la boÃ®te de dialogue d'ajout de service
-     * @param parent La fenÃªtre parente
-     * @param serviceControleur Le contrÃ´leur de services
+     * Constructeur de la boîte de dialogue d'ajout de service
+     * @param parent La fenêtre parente
+     * @param serviceControleur Le contrôleur de services
      * @param maisonInternationale La maison internationale
      */
     public AddServiceDialog(JFrame parent, ServiceControleur serviceControleur, 
@@ -55,7 +55,7 @@ public class AddServiceDialog extends JDialog {
     }
     
     /**
-     * Initialise les composants de la boÃ®te de dialogue
+     * Initialise les composants de la boîte de dialogue
      */
     private void initComponents() {
         // Service information fields
@@ -76,7 +76,7 @@ public class AddServiceDialog extends JDialog {
     }
     
     /**
-     * Organise les composants dans la boÃ®te de dialogue
+     * Organise les composants dans la boîte de dialogue
      */
     private void layoutComponents() {
         // Header panel
@@ -109,7 +109,7 @@ public class AddServiceDialog extends JDialog {
         // Row 1: Number and Name
         gbc.gridx = 0;
         gbc.gridy = 0;
-        infoPanel.add(new JLabel("NumÃ©ro:"), gbc);
+        infoPanel.add(new JLabel("Numéro:"), gbc);
         
         gbc.gridx = 1;
         infoPanel.add(numField, gbc);
@@ -160,7 +160,7 @@ public class AddServiceDialog extends JDialog {
     }
     
     /**
-     * Sauvegarde le service crÃ©Ã©
+     * Sauvegarde le service créé
      */
     private void saveService() {
         // Validate fields
@@ -184,7 +184,7 @@ public class AddServiceDialog extends JDialog {
             // Validate hours
             if (heureOuv >= heureFerm) {
                 JOptionPane.showMessageDialog(this, 
-                    "L'heure d'ouverture doit Ãªtre antÃ©rieure Ã  l'heure de fermeture.", 
+                    "L'heure d'ouverture doit être antérieure à l'heure de fermeture.", 
                     "Heures invalides", 
                     JOptionPane.WARNING_MESSAGE);
                 return;
@@ -193,8 +193,8 @@ public class AddServiceDialog extends JDialog {
             // Check if service number already exists
             if (serviceControleur.serviceNumberExists(num)) {
                 JOptionPane.showMessageDialog(this, 
-                    "Ce numÃ©ro de service existe dÃ©jÃ . Veuillez en choisir un autre.", 
-                    "NumÃ©ro existant", 
+                    "Ce numéro de service existe déjà. Veuillez en choisir un autre.", 
+                    "Numéro existant", 
                     JOptionPane.WARNING_MESSAGE);
                 return;
             }
@@ -210,15 +210,15 @@ public class AddServiceDialog extends JDialog {
             
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, 
-                "Veuillez entrer un numÃ©ro valide.", 
+                "Veuillez entrer un numéro valide.", 
                 "Erreur de format", 
                 JOptionPane.ERROR_MESSAGE);
         }
     }
     
     /**
-     * Retourne le champ de numÃ©ro
-     * @return Le champ de numÃ©ro
+     * Retourne le champ de numéro
+     * @return Le champ de numéro
      */
     public JTextField getNumField() {
         return numField;
@@ -257,5 +257,5 @@ public class AddServiceDialog extends JDialog {
     }
 }
 /**
- * cette classe a Ã©tÃ© crÃ©e par @author Maksen Mouhou
+ * cette classe a été crée par @author Maksen Mouhou
  */

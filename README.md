@@ -150,6 +150,7 @@ Le projet est divisé en plusieurs domaines spécifiques :
 Voici les documents produits dans le cadre du projet :
 
 [![Rapport DOO](https://img.shields.io/badge/Rapport%20DOO-PDF-red?logo=adobe)](./Rapports_CIUP/SAE1256_DOO_Rapport_EF5.pdf)  
+[![Rapport JavaSwing](https://img.shields.io/badge/Rapport%20DOO-PDF-red?logo=adobe)](./Rapports_CIUP/SAE1256_DOO_JavaSwing_Rapport_EF5.pdf)  
 [![Rapport QUALITÉ](https://img.shields.io/badge/Rapport%20QUALITÉ-PDF-blue?logo=adobe)](./Rapports_CIUP/SAE1256_QUALITE_Rapport_EF5.pdf)  
 
 ---

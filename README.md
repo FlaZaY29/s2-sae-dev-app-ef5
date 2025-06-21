@@ -181,7 +181,7 @@ Voici les documents produits dans le cadre du projet :
 [![Rapport DOO](https://img.shields.io/badge/Rapport%20DOO-PDF-red?logo=adobe)](./Rapports_CIUP/SAE1256_DOO_Rapport_EF5.pdf)  
 [![Rapport JavaSwing](https://img.shields.io/badge/Rapport%20JavaSwing-PDF-orange?logo=adobe)](./Rapports_CIUP/SAE1256_DOO_JavaSwing_Rapport_EF5.pdf)  
 [![Rapport IHM](https://img.shields.io/badge/Rapport%20IHM-PDF-blue?logo=adobe)](./Rapports_CIUP/SAE1256_IHM_Rapport_EF5.pdf)   
-[![Diaporama](https://img.shields.io/badge/Diaporama-PDF-green?logo=adobe)](./Rapports_CIUP/SAE1256_DIAPO_EF5.pdf)  
+[![Diaporama](https://img.shields.io/badge/Diaporama-PDF-green?logo=adobe)](./Rapports_CIUP/SAE1256_EF5_Soutenance.pdf)  
 
 ---
 

@@ -55,24 +55,38 @@ Le fichier CIUPTest contient `main()` avec tous les appels de test.
 | `MaisonClassique`      | Donald Se         | 
 | `MaisonInternationale` | Zamperlini Flavio         |
 | `Etudiant`             | Zamperlini Flavio         | |
-| `CIUPTest`               | Urkmez Yavuz         |
+| `CIUPTest`               | Urkmez Yavuz (abandon)         |
 | `Service`              | Mouhou Maksen         |
 
 
 ## 🏗️ Structure du Projet
 
-Le projet est organisé suivant :
+Le projet suit une architecture **MVC** (Modèle-Vue-Contrôleur) :
+
 ```{code}
 ciup-projet/
 ├── src/
-│   └── ciup/
-│       ├── CIUP.java
-│       ├── Etudiant.java
-│       ├── FactoryCIUP.java
-│       ├── Maison.java
-│       ├── MaisonClassique.java
-│       ├── MaisonInternationale.java
-│       └── Service.java
+│   ├── modeles/
+│   │   ├── CIUP.java
+│   │   ├── Etudiant.java
+│   │   ├── FactoryCIUP.java
+│   │   ├── Maison.java
+│   │   ├── MaisonClassique.java
+│   │   ├── MaisonInternationale.java
+│   │   └── Service.java
+│   ├── vues/
+│   │   ├── MainFrame.java
+│   │   ├── MaisonPanel.java
+│   │   ├── EtudiantPanel.java
+│   │   └── ... (autres vues Swing)
+│   ├── controleurs/
+│   │   ├── MainControleur.java
+│   │   ├── MaisonControleur.java
+│   │   └── PersistenceControleur.java
+│   ├── rapports/
+│   │   └── (rapports générés, logs, etc.)
+│   └── application/
+│       └── Main.java
 ├── tests/
 │   └── ciuptest/
 │       ├── CIUPTest.java
@@ -81,7 +95,21 @@ ciup-projet/
 │       ├── MaisonInternationaleTest.java
 │       ├── MaisonTest.java
 │       └── ServiceTest.java
+├── Rapports_CIUP/
+│   ├── SAE1256_DOO_Rapport_EF5.pdf
+│   ├── SAE1256_DOO_JavaSwing_Rapport_EF5.pdf
+│   ├── SAE1256_QUALITE_Rapport_EF5.pdf
+│   └── SAE1256_DIAPO_EF5.pdf
+└── README.md
 ```
+
+- **modeles/** : Toutes les classes métier (logique, données)
+- **vues/** : Les interfaces graphiques Java Swing (IHM)
+- **controleurs/** : Les classes qui font le lien entre vues et modèles
+- **rapports/** : Génération de rapports, logs, etc.
+- **application/** : Point d’entrée de l’application (Main.java)
+- **tests/** : Tests unitaires
+- **Rapports_CIUP/** : Tous les rapports PDF et diaporamas
 
 Le projet est divisé en plusieurs domaines spécifiques :
 
@@ -104,6 +132,7 @@ Le projet est divisé en plusieurs domaines spécifiques :
 ## 🛠️ Technologies Utilisées
 
 - **Java** : Langage de programmation principal  
+- **Java Swing** : Interface graphique (IHM)  
 - **Visual Studio Code / Eclipse / IntelliJ** : Environnement de développement  
 - **Visual Paradigm** : Modélisation UML  
 - **GitHub** : Gestion du code et versioning 
@@ -150,9 +179,9 @@ Le projet est divisé en plusieurs domaines spécifiques :
 Voici les documents produits dans le cadre du projet :
 
 [![Rapport DOO](https://img.shields.io/badge/Rapport%20DOO-PDF-red?logo=adobe)](./Rapports_CIUP/SAE1256_DOO_Rapport_EF5.pdf)  
-[![Rapport JavaSwing](https://img.shields.io/badge/Rapport%20DOO-PDF-red?logo=adobe)](./Rapports_CIUP/SAE1256_DOO_JavaSwing_Rapport_EF5.pdf)  
-[![Rapport IHM](https://img.shields.io/badge/Rapport%20QUALITÉ-PDF-blue?logo=adobe)](./Rapports_CIUP/SAE1256_QUALITE_Rapport_EF5.pdf)   
-[![Diapo](https://img.shields.io/badge/Rapport%20QUALITÉ-PDF-blue?logo=adobe)](./Rapports_CIUP/SAE1256_QUALITE_Rapport_EF5.pdf)  
+[![Rapport JavaSwing](https://img.shields.io/badge/Rapport%20JavaSwing-PDF-orange?logo=adobe)](./Rapports_CIUP/SAE1256_DOO_JavaSwing_Rapport_EF5.pdf)  
+[![Rapport IHM](https://img.shields.io/badge/Rapport%20IHM-PDF-blue?logo=adobe)](./Rapports_CIUP/SAE1256_IHM_Rapport_EF5.pdf)   
+[![Diaporama](https://img.shields.io/badge/Diaporama-PDF-green?logo=adobe)](./Rapports_CIUP/SAE1256_DIAPO_EF5.pdf)  
 
 ---
 
